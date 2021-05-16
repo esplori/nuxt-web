@@ -1,5 +1,7 @@
 # nuxt
 
+this is a nuxt project
+
 ## 启动应用
 
 ```bash
