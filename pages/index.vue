@@ -121,7 +121,7 @@ export default {
             }
             .cate-name {
               background: #e6f1fb;
-              color: #06c;
+              color: #828a92;
               font-weight: 400;
               line-height: 18px;
             }
