@@ -19,6 +19,9 @@
           </ul>
         </div>
       </li>
+      <li>
+        <div class="_oi1z2s14bx"></div>
+      </li>
       <!--<li>-->
         <!--<div class="category">-->
           <!--<div>分类</div>-->
@@ -54,6 +57,13 @@ export default {
       let str1=str.replace(/<\/?.+?>/g,"").replace(/&nbsp;/g,'');
       return str1.replace(/ /g,"");//dds为得到后的内容
     }
+  },
+  mounted() {
+    (window.slotbydup = window.slotbydup || []).push({
+        id: "u6324348",
+        container: "_oi1z2s14bx",
+        async: true
+    });
   }
 }
 </script>

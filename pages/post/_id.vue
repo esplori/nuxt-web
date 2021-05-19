@@ -40,7 +40,7 @@ export default {
           name: "keywords",
           content: this.detailData.keywords || this.detailData.title,
         },
-      ],
+      ]
     };
   },
   async asyncData({ $axios, route }) {

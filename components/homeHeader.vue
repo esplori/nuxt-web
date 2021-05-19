@@ -22,7 +22,7 @@ export default {
         { name: "网站导航", path: "/navigation" },
       ],
     };
-  },
+  }
 };
 </script>
 

@@ -8,7 +8,17 @@
   </div>
 
 </template>
-
+<script>
+export default {
+  head() {
+    return {
+      script: [
+        {src: 'http://cpro.baidustatic.com/cpro/ui/cm.js'}
+      ]
+    }
+  }
+};
+</script>
 <style lang="less">
   .home-footer{
     margin-top: 40px;
