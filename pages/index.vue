@@ -2,23 +2,7 @@
   <div class="container">
     <div class="home-body">
       <div class="left-body">
-        <ul>
-          <li v-for="(item, index) in homeList.result" :key="index">
-            <a :href="'/post/' + item.id" target="_blank">
-              <h1 class="home-post-title">{{ item.title }}</h1>
-              <div class="home-post-excerpt">
-                {{ deleteHtmlTag(item.content.slice(0, 120)) }} ...
-              </div>
-              <div class="home-post-info">
-                <span class="create-date el-icon-date">
-                  {{ item.createDate }}
-                </span>
-                <span class="views el-icon-view"> {{ item.views }} </span>
-                <span class="cate-name">{{ item.cateName || "" }} </span>
-              </div>
-            </a>
-          </li>
-        </ul>
+      <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
           <el-pagination
             @current-change="handleCurrentChange"
@@ -42,7 +26,7 @@ import { mapState, mapMutations } from "vuex";
 import { getListApi, getRecomListApi } from "./api/index";
 export default {
   components: {
-    homeHeader: () => import("../components/homeHeader.vue"),
+    listBody: () => import("../components/home/pageListBody.vue"),
     sideBar: () => import("../components/sideBar.vue"),
   },
   data() {
