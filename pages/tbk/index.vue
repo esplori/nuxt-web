@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <homeHeader></homeHeader>
     <div class="home-body">
       <goodsBody :list="list"></goodsBody>
     </div>
@@ -66,12 +65,11 @@ export default {
 
 <style lang="less" scoped>
 .container {
-  background: #fff;
+  // background: #fff;
   .home-body {
-    max-width: 1190px;
-    margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
+    background: #fff;
   }
 }
 </style>

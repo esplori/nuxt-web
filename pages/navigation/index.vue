@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <homeHeader></homeHeader>
     <div class="home-body">
       <el-row :gutter="10">
         <el-col :span="24">

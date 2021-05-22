@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <homeHeader></homeHeader>
     <div class="home-body">
       <div class="tbk-item">
         <div>
@@ -76,8 +75,6 @@ export default {
   background: #fff;
   min-height: 768px;
   .home-body {
-    max-width: 1190px;
-    margin: 10px auto;
     padding: 50px 0;
     display: flex;
     flex-wrap: wrap;

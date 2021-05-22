@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <homeHeader></homeHeader>
     <div class="home-body">
       <goodsBody :list="list"></goodsBody>
     </div>
@@ -68,8 +67,6 @@ export default {
 .container {
   background: #fff;
   .home-body {
-    max-width: 1190px;
-    margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
   }

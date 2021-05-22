@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <homeHeader></homeHeader>
     <div class="home-body">
       <div class="left-body">
         <div>
@@ -78,8 +77,6 @@ export default {
 <style lang="less" scoped>
 .container {
   .home-body {
-    max-width: 1200px;
-    margin: 10px auto;
     display: flex;
     justify-content: space-between;
     .left-body {
