@@ -4,8 +4,8 @@
       <!-- <h1 class="site-name"><a href="/">javascript技术分享</a></h1> -->
       <div class="menu">
         <el-menu mode="horizontal" :default-active="activeIndex" @select="handleSelect" >
-            <el-menu-item :index="item.path" v-if="!item.children" v-for="(item,index) in menList" :key="index">{{item.name}}</el-menu-item>
-            <el-submenu :index="item.path"  v-if="item.children" v-for="(item,index) in menList" :key="index">
+            <el-menu-item :index="item.path" v-for="(item,index) in noChildren" :key="index">{{item.name}}</el-menu-item>
+            <el-submenu :index="item.path"  v-for="(item,index) in hasChildren" :key="index">
               <template slot="title">{{item.name}}</template>
               <el-menu-item :index="it.path"  v-for="(it,idx) in item.children" :key="idx">{{it.name}}</el-menu-item>
             </el-submenu>
@@ -47,10 +47,21 @@ export default {
     };
   },
   async asyncData({ query, store, $axios, route }) {
-    console.log('route',route)
     // return {
     //   activeIndex: route.path
     // }
+  },
+  computed: {
+    noChildren () {
+      return this.menList.filter( (item)=> {
+        return !item.children
+      })
+    },
+    hasChildren () {
+      return this.menList.filter( (item)=> {
+        return item.children
+      })
+    }
   },
   methods: {
     handleSelect(val){
