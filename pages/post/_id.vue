@@ -68,7 +68,6 @@ export default {
   methods: {
     async search() {
       let [detail] = await Promise.all([getDetailApi2(this.$route.params.id)]);
-      console.log("detail==" + detail);
     },
   },
 };

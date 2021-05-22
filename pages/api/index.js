@@ -5,9 +5,7 @@ export async function getListApi (params, data) {
   if (!params.page) {
     params.page = 1
   }
-  // const url = baseUrl + '/pages/getList'
   let url = baseUrl + '/pages/getList/' + params.page
-  console.log('url', url)
   const options = {}
   return get(url, data, options)
 }
@@ -27,7 +25,6 @@ export async function getDetailApi2 (id, data) {
   return get(url, data, options)
 }
 export async function getShopListApi (params, data) {
-  console.log('page==', params.page)
   if (!params.page) {
     params.page = 1
   }

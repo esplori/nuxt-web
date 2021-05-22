@@ -46,9 +46,7 @@ export default {
     };
   },
   async asyncData({ $axios, route }) {
-    // this.page = route.params.id || 1
     let [res] = await Promise.all([getShopListApi({page: 1})]);
-    // console.log("res.data---------", res.data);
     return {
       list: res.data.result,
       total: res.data.total || 80,

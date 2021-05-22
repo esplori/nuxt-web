@@ -56,7 +56,6 @@ export default {
   },
   async asyncData({ $axios, route }) {
     let [res] = await Promise.all([getTbkDetailApi(route.params.id)]);
-    console.log("res---------", res);
     let jp = res.data.result;
     return {
       item: res.data.result,
