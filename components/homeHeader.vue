@@ -46,7 +46,6 @@ export default {
   },
   methods: {
     handleSelect(val){
-      debugger
       this.$router.push({path: val})
       this.activeIndex = val
     }
