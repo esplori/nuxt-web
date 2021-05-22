@@ -10,11 +10,11 @@
                 {{ deleteHtmlTag(item.content.slice(0, 120)) }} ...
               </div>
               <div class="home-post-info">
-                <span class="cate-name">{{ item.cateName || "" }} </span>
                 <span class="create-date el-icon-date">
                   {{ item.createDate }}
                 </span>
                 <span class="views el-icon-view"> {{ item.views }} </span>
+                <span class="cate-name">{{ item.cateName || "" }} </span>
               </div>
             </a>
           </li>

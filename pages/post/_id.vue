@@ -12,7 +12,7 @@
           <div v-html="detailData.htmlContent" class="detail-post-content"></div>
         </div>
         <div>
-          <div class="tags">标签：</div>
+          <div class="tags" v-if="detailData.tags">标签：</div>
           <div class="copy-desc">
             本站文章由javascript技术分享原创和收集，内容如有问题，请联系站长删除，如若转载请注明原文及出处：https://www.dsiab.com/post/{{detailData.copyDesc}}
           </div>
