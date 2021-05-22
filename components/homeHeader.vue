@@ -3,12 +3,12 @@
     <div class="site-info">
       <!-- <h1 class="site-name"><a href="/">javascript技术分享</a></h1> -->
       <div class="menu">
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
-          <el-menu-item :index="item.path" v-for="(item,index) in menList" :key="index" v-if="!item.children">{{item.name}}</el-menu-item>
-          <el-submenu index="2"  v-else>
-            <template slot="title">{{item.name}}</template>
-            <el-menu-item :index="it.path"  v-for="(it,idx) in item.children" :key="idx">{{it.name}}</el-menu-item>
-          </el-submenu>
+        <el-menu mode="horizontal" :default-active="activeIndex" @select="handleSelect" >
+            <el-menu-item :index="item.path" v-if="!item.children" v-for="(item,index) in menList" :key="index">{{item.name}}</el-menu-item>
+            <el-submenu :index="item.path"  v-if="item.children" v-for="(item,index) in menList" :key="index">
+              <template slot="title">{{item.name}}</template>
+              <el-menu-item :index="it.path"  v-for="(it,idx) in item.children" :key="idx">{{it.name}}</el-menu-item>
+            </el-submenu>
         </el-menu>
       </div>
     </div>
@@ -18,36 +18,45 @@
 export default {
   data() {
     return {
-      activeIndex: '/',
+      activeIndex: '',
       menList: [
         { name: "javascript技术分享", path: "/" },
-        { name: "淘宝优乐购", path: "/tbk" },
+        { name: "淘宝优乐购", path: "/tbk"},
         { name: "网站导航", path: "/navigation" },
         {
           name: "前端教程",
+          path: '/qd',
           children: [
-            { name: "w3school教程", path: "" },
-            { name: "less教程", path: "" },
-            { name: "reach教程", path: "" },
-            { name: "typescript教程", path: "" },
+            { name: "w3school教程", path: "/w3c" , },
+            { name: "less教程", path: "/less" },
+            { name: "react教程", path: "/react" },
+            { name: "typescript教程", path: "/typescript" },
           ],
         },
         {
           name: "后端教程",
+          path: '/hd',
           children: [
-            { name: "java教程", path: "" },
-            { name: "c语言教程", path: "" },
-            { name: "mysql教程", path: "" },
+            { name: "java教程", path: "/java" },
+            { name: "c语言教程", path: "/c" },
+            { name: "mysql教程", path: "/mysql" },
           ],
         },
         // {name: '关于', path: '/about'}
       ],
     };
   },
+  async asyncData({ query, store, $axios, route }) {
+    console.log('route',route)
+    // return {
+    //   activeIndex: route.path
+    // }
+  },
   methods: {
     handleSelect(val){
-      this.$router.push({path: val})
-      this.activeIndex = val
+      // this.$router.push({path: val})
+      location.href = val
+      // this.activeIndex = val
     }
   }
 };
