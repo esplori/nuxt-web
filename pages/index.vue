@@ -93,7 +93,7 @@ export default {
     .left-body {
       width: 100%;
       background: #fff;
-      box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
+      // box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
       ul {
         li {
           padding: 30px 20px;
@@ -120,7 +120,7 @@ export default {
               margin-right: 10px;
             }
             .cate-name {
-              background: #e6f1fb;
+              // background: #e6f1fb;
               color: #828a92;
               font-weight: 400;
               line-height: 18px;

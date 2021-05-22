@@ -29,7 +29,7 @@ export default {
 <style lang="less">
 .home-header {
   padding: 20px;
-  box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
+  // box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
   background: #fff;
   .site-info {
     max-width: 1200px;

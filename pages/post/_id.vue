@@ -72,7 +72,7 @@ export default {
     .left-body {
       width: 100%;
       background: #fff;
-      box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
+      // box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
       padding: 20px;
       .detail-post-title {
         color: #141414;
@@ -105,7 +105,7 @@ export default {
     .side-bar {
       padding: 20px;
       background: #fff;
-      box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
+      // box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
     }
   }
 }
