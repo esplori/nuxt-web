@@ -3,9 +3,21 @@
     <homeHeader></homeHeader>
     <div class="home-body">
       <div class="left-body">
-        <h1 class="detail-post-title">{{ detailData.title }}</h1>
-        <div class="detail-post-info">{{ detailData.createDate }}</div>
-        <div v-html="detailData.htmlContent" class="detail-post-content"></div>
+        <div>
+          <h1 class="detail-post-title">{{ detailData.title }}</h1>
+          <div class="post-info">
+            <span class="create-date">{{ detailData.createDate }}</span>
+            <span class="el-icon-view"> {{ detailData.views }}</span>
+            <span class="cate-name">{{ detailData.cateName }}</span>
+          </div>
+          <div v-html="detailData.htmlContent" class="detail-post-content"></div>
+        </div>
+        <div>
+          <div class="tags">标签：</div>
+          <div class="copy-desc">
+            本站文章由javascript技术分享原创和收集，内容如有问题，请联系站长删除，如若转载请注明原文及出处：https://www.dsiab.com/post/{{detailData.copyDesc}}
+          </div>
+        </div>
       </div>
       <div class="right-sidebar">
         <sideBar :list="recommandList"></sideBar>
@@ -48,6 +60,7 @@ export default {
       getDetailApi(route.params.id),
       getRecomListApi(),
     ]);
+    detail.data.result.copyDesc = route.params.id
     return {
       detailData: detail.data.result,
       recommandList: recommandList.data,
@@ -71,27 +84,42 @@ export default {
     justify-content: space-between;
     .left-body {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       background: #fff;
-      // box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
       padding: 20px;
       .detail-post-title {
         color: #141414;
         font-size: 26px;
       }
-      .detail-post-info {
+      .post-info{
         padding: 10px 0;
         font-size: 14px;
-        color: #a4a4a4;
+        color: #020202;
+        span{
+          margin-right: 10px;
+        }
       }
+      
       .detail-post-content {
         padding: 10px 0;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 32px;
         margin-bottom: 24px;
         text-align: justify;
         color: #4a4a4a;
         font-weight: 400;
         word-break: break-word;
+      }
+      .copy-desc{
+        padding: 20px 10px;
+        font-size: 12px;
+        background: #f5f5f5;
+        word-break:break-all;
+      }
+      .tags{
+        padding: 20px 0;
       }
     }
     .right-sidebar{
