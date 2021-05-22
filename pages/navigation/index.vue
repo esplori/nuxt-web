@@ -55,7 +55,7 @@ export default {
 <style lang="less" scoped>
 .container {
   .home-body{
-    width: 80%;
+    width: 100%;
     margin: 10px auto;
     .left-body{
       background: #fff;

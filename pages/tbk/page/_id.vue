@@ -3,11 +3,11 @@
     <div class="home-body">
       <goodsBody :list="list"></goodsBody>
     </div>
-    <div style="text-align: center">
+    <div style="text-align: center;background:#fff;padding:20px 0">
       <el-pagination
         @current-change="handleCurrentChange"
         :current-page.sync="page"
-        :page-size="10"
+        :page-size="20"
         layout="total, pager"
         :total="total"
       >
