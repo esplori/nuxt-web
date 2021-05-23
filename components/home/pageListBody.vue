@@ -65,8 +65,6 @@ export default {
           margin-right: 10px;
         }
         .cate-name {
-          background: #e6f1fb;
-          color: #06c;
           font-weight: 400;
           line-height: 18px;
         }
