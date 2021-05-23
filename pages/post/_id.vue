@@ -9,7 +9,7 @@
             <span class="el-icon-view"> {{ detailData.views }}</span>
             <span class="cate-name">{{ detailData.cateName }}</span>
           </div>
-          <div
+            <div
             v-html="detailData.content"
             class="detail-post-content"
           ></div>
@@ -113,6 +113,7 @@ export default {
         color: #4a4a4a;
         font-weight: 400;
         word-break: break-word;
+        white-space: break-spaces;
       }
       .copy-desc {
         padding: 20px 10px;
