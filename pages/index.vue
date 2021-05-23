@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
 import { getListApi, getRecomListApi } from "./api/index";
 export default {
   components: {
@@ -48,16 +47,11 @@ export default {
     };
   },
   computed: {
-    // ...mapState(["page"]),
   },
   methods: {
     handleCurrentChange(page) {
-      // 更新选择的页码到vuex
-      // this.changePage(page);
-      // window.location.href = "/?page=" + this.$store.state.page;
       window.location.href = "/page/" + page;
     },
-    ...mapMutations(["changePage"]),
     deleteHtmlTag(str) {
       let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
       return str1.replace(/ /g, ""); //dds为得到后的内容

@@ -22,14 +22,14 @@
       <li>
         <div class="_oi1z2s14bx"></div>
       </li>
-      <!--<li>-->
-        <!--<div class="category">-->
-          <!--<div>分类</div>-->
-          <!--<ul>-->
-            <!--<li>aaa</li>-->
-          <!--</ul>-->
-        <!--</div>-->
-      <!--</li>-->
+      <li>
+        <div class="category">
+          <div>分类</div>
+          <ul>
+            <li>aaa</li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
 
