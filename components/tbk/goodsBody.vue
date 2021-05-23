@@ -4,7 +4,7 @@
       class="tbk-item"
       v-for="(item, index) in list"
       :key="index"
-      :href="'/tbk/detail/' + item.id"
+      :href="'/tbk/detail/' + item.pid"
       target="_blank"
     >
       <div>
