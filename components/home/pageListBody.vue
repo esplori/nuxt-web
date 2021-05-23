@@ -78,6 +78,7 @@ export default {
     }
     li:hover {
       background: #f9fafb;
+      box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
     }
   }
 }
