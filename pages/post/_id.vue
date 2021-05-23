@@ -10,7 +10,7 @@
             <span class="cate-name">{{ detailData.cateName }}</span>
           </div>
           <div
-            v-html="detailData.htmlContent"
+            v-html="detailData.content"
             class="detail-post-content"
           ></div>
         </div>
