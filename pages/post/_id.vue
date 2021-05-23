@@ -9,10 +9,7 @@
             <span class="el-icon-view"> {{ detailData.views }}</span>
             <span class="cate-name">{{ detailData.cateName }}</span>
           </div>
-            <div
-            v-html="detailData.content"
-            class="detail-post-content"
-          ></div>
+          <div v-html="detailData.content" class="detail-post-content"></div>
         </div>
         <div>
           <div class="tags" v-if="detailData.tags">标签：</div>
@@ -24,14 +21,19 @@
         </div>
       </div>
       <div class="right-sidebar">
-        <sideBar :list="recommandList"></sideBar>
+        <sideBar :list="recommandList" :cateList="cateList"></sideBar>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { getDetailApi, getRecomListApi, getDetailApi2 } from "../api/index";
+import {
+  getDetailApi,
+  getRecomListApi,
+  getDetailApi2,
+  getCateApi,
+} from "../api/index";
 export default {
   components: {
     homeHeader: () => import("../../components/homeHeader.vue"),
@@ -60,14 +62,16 @@ export default {
     };
   },
   async asyncData({ $axios, route }) {
-    let [detail, recommandList] = await Promise.all([
+    let [detail, recommandList, cateList] = await Promise.all([
       getDetailApi(route.params.id),
       getRecomListApi(),
+      getCateApi({}),
     ]);
     detail.data.result.copyDesc = route.params.id;
     return {
       detailData: detail.data.result,
       recommandList: recommandList.data,
+      cateList: cateList.data.result,
     };
   },
   methods: {
