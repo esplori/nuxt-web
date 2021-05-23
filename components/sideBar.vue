@@ -26,7 +26,9 @@
         <div class="category">
           <div>分类</div>
           <ul>
-            <li v-for="(item,index) in cateList" :key="index">{{item.name}}</li>
+            <li v-for="(item,index) in cateList" :key="index">
+              <a :href="'/post/category/'+ item.id">{{item.name}}</a>
+            </li>
           </ul>
         </div>
       </li>
