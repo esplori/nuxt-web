@@ -8,7 +8,7 @@
             @current-change="handleCurrentChange"
             :current-page.sync="page"
             :page-size="10"
-            layout="total, pager"
+            layout="pager"
             :total="homeList.total"
           >
           </el-pagination>

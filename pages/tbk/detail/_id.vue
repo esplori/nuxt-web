@@ -44,12 +44,12 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "淘宝优乐购",
+          content: this.item.title || "淘宝优乐购",
         },
         {
           hid: "keywords",
           name: "keywords",
-          content: "淘宝优乐购",
+          content: this.item.title || "淘宝优乐购",
         },
       ],
     };
