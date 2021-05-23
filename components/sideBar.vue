@@ -7,7 +7,10 @@
         <!--</div>-->
       <!--</li>-->
       <li>
-        <div class="hot-views">
+        <div class="_oi1z2s14bx"></div>
+      </li>
+      <li>
+        <div class="module">
           <div class="cate">推荐阅读</div>
           <ul>
             <li v-for="(item,index) in list" :key="index">
@@ -20,18 +23,26 @@
         </div>
       </li>
       <li>
-        <div class="_oi1z2s14bx"></div>
-      </li>
-      <li>
-        <div class="category">
-          <div>分类</div>
+        <div class="module category">
+          <div class="cate">分类</div>
           <ul>
             <li v-for="(item,index) in cateList" :key="index">
-              <a :href="'/post/category/'+ item.id">{{item.name}}</a>
+              <!-- <a :href="'/post/category/'+ item.id">{{item.name}}</a> -->
+              {{item.name}}
             </li>
           </ul>
         </div>
       </li>
+      <!-- <li>
+        <div class="module category">
+          <div class="cate">友情链接</div>
+          <ul>
+            <li v-for="(item,index) in cateList" :key="index">
+              {{item.name}}
+            </li>
+          </ul>
+        </div>
+      </li> -->
     </ul>
   </div>
 
@@ -85,14 +96,14 @@ export default {
   }
   .side-bar>ul>li{
     padding: 15px 0;
-    .hot-views{
+    .module{
       .cate{
         padding: 10px 0;
         border-bottom: 1px solid #eaeeef;
         font-weight: 600;
       }
     }
-    .hot-views>ul>li{
+    .module>ul>li{
       padding: 10px 0;
       border-bottom: 1px solid #eaeeef;
       a:hover{
@@ -109,7 +120,8 @@ export default {
       }
     }
     .category>ul>li{
-      padding: 10px 0;
+      display: inline-block;
+      width: 50%;
     }
   }
 
