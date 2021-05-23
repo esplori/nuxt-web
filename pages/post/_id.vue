@@ -9,12 +9,17 @@
             <span class="el-icon-view"> {{ detailData.views }}</span>
             <span class="cate-name">{{ detailData.cateName }}</span>
           </div>
-          <div v-html="detailData.htmlContent" class="detail-post-content"></div>
+          <div
+            v-html="detailData.htmlContent"
+            class="detail-post-content"
+          ></div>
         </div>
         <div>
           <div class="tags" v-if="detailData.tags">标签：</div>
           <div class="copy-desc">
-            本站文章由javascript技术分享原创和收集，内容如有问题，请联系站长删除，如若转载请注明原文及出处：https://www.dsiab.com/post/{{detailData.copyDesc}}
+            本站文章由javascript技术分享原创和收集，内容如有问题，请联系站长删除，如若转载请注明原文及出处：https://www.dsiab.com/post/{{
+              detailData.copyDesc
+            }}
           </div>
         </div>
       </div>
@@ -51,7 +56,7 @@ export default {
           name: "keywords",
           content: this.detailData.keywords || this.detailData.title,
         },
-      ]
+      ],
     };
   },
   async asyncData({ $axios, route }) {
@@ -59,7 +64,7 @@ export default {
       getDetailApi(route.params.id),
       getRecomListApi(),
     ]);
-    detail.data.result.copyDesc = route.params.id
+    detail.data.result.copyDesc = route.params.id;
     return {
       detailData: detail.data.result,
       recommandList: recommandList.data,
@@ -89,40 +94,41 @@ export default {
         color: #141414;
         font-size: 26px;
       }
-      .post-info{
-        padding: 10px 0;
+      .post-info {
+        padding: 5px 0;
         font-size: 14px;
         color: #020202;
-        span{
+        span {
           margin-right: 10px;
         }
       }
-      
+
       .detail-post-content {
         padding: 10px 0;
         font-size: 14px;
         line-height: 32px;
         margin-bottom: 24px;
+        margin-top: 15px;
         text-align: justify;
         color: #4a4a4a;
         font-weight: 400;
         word-break: break-word;
       }
-      .copy-desc{
+      .copy-desc {
         padding: 20px 10px;
         font-size: 12px;
         background: #f5f5f5;
-        word-break:break-all;
+        word-break: break-all;
       }
-      .tags{
+      .tags {
         padding: 20px 0;
       }
     }
-    .right-sidebar{
+    .right-sidebar {
       max-width: 400px;
     }
     @media screen and(max-width: 1024px) {
-      .right-sidebar{
+      .right-sidebar {
         display: none;
       }
     }
