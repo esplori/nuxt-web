@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import { getListApi, getRecomListApi } from "../../../../api/index";
+import { getListApi, getRecomListApi } from "../../../api/index";
 export default {
   components: {
-    listBody: () => import("../../../../../components/home/pageListBody.vue"),
-    sideBar: () => import("../../../../../components/sideBar.vue"),
+    listBody: () => import("../../../../components/home/pageListBody.vue"),
+    sideBar: () => import("../../../../components/sideBar.vue"),
   },
   data() {
     return {};

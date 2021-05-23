@@ -35,7 +35,7 @@ export default {
   async asyncData({ query, store, $axios, route }) {
     // 将当前页页存到vuex
     // store.page = parseInt(query.page);
-    console.log(route)
+
     let [homeList, recommandList] = await Promise.all([
       getListApi({ cate: route.params.id,page: 1}),
       getRecomListApi({}),
