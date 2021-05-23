@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { getListApi, getRecomListApi } from "../../api/index";
+import { getListByCateApi, getRecomListApi } from "../../api/index";
 export default {
   components: {
     listBody: () => import("../../../components/home/pageListBody.vue"),
@@ -37,7 +37,7 @@ export default {
     // store.page = parseInt(query.page);
 
     let [homeList, recommandList] = await Promise.all([
-      getListApi({ cate: route.params.id,page: 1}),
+      getListByCateApi({ cate: route.params.id,page: 1}),
       getRecomListApi({}),
     ]);
     return {
