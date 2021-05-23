@@ -13,7 +13,7 @@ export async function getListByCateApi (params, data) {
   if (!params.page) {
     params.page = 1
   }
-  let url = baseUrl + '/pages/getList/cate/' + params.cate
+  let url = baseUrl + '/pages/getList/cate/' + params.cate + '/page/' + params.page || 1
   const options = {}
   return get(url, data, options)
 }

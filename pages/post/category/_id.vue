@@ -29,7 +29,9 @@ export default {
     sideBar: () => import("../../../components/sideBar.vue"),
   },
   data() {
-    return {};
+    return {
+      page: 1
+    };
   },
   // watchQuery: ["page"],
   async asyncData({ query, store, $axios, route }) {
@@ -43,7 +45,7 @@ export default {
     return {
       homeList: homeList.data,
       recommandList: recommandList.data,
-      page: parseInt(route.params.id ||1)
+      cate: parseInt(route.params.id ||1)
     };
   },
   computed: {
@@ -54,7 +56,8 @@ export default {
       // 更新选择的页码到vuex
       // this.changePage(page);
       // window.location.href = "/?page=" + this.$store.state.page;
-      window.location.href = "/page/" + page;
+      window.location.href = "/post/category/" + this.cate +  '/page/' + page;
+      this.page = page
     },
     // ...mapMutations(["changePage"]),
   },
