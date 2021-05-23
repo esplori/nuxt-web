@@ -26,7 +26,7 @@
         <div class="category">
           <div>分类</div>
           <ul>
-            <li>aaa</li>
+            <li v-for="(item,index) in cateList" :key="index">{{item.name}}</li>
           </ul>
         </div>
       </li>
@@ -41,6 +41,12 @@ export default {
   },
   props: {
     list: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    cateList: {
       type: Array,
       default() {
         return []

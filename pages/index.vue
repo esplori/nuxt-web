@@ -15,14 +15,14 @@
         </div>
       </div>
       <div class="right-sidebar">
-        <sideBar :list="recommandList"></sideBar>
+        <sideBar :list="recommandList" :cateList="cateList"></sideBar>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { getListApi, getRecomListApi } from "./api/index";
+import { getListApi, getRecomListApi,getCateApi } from "./api/index";
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
@@ -36,13 +36,15 @@ export default {
     // 将当前页页存到vuex
     // store.page = parseInt(query.page);
 
-    let [homeList, recommandList] = await Promise.all([
+    let [homeList, recommandList, cateList] = await Promise.all([
       getListApi({ page: 1 }),
       getRecomListApi({}),
+      getCateApi({})
     ]);
     return {
       homeList: homeList.data,
       recommandList: recommandList.data,
+      cateList: cateList.data.result,
       page: parseInt(route.params.id ||1)
     };
   },

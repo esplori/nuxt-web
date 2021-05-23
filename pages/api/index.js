@@ -37,3 +37,9 @@ export async function getTbkDetailApi (id, data) {
   const options = {}
   return get(url, data, options)
 }
+
+export async function getCateApi (id, data) {
+  const url = baseUrl +  '/pages/getCate'
+  const options = {}
+  return get(url, data, options)
+}
