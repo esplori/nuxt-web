@@ -8,7 +8,7 @@
             @current-change="handleCurrentChange"
             :current-page.sync="page"
             :page-size="10"
-            layout="total, pager"
+            layout=" pager"
             :total="homeList.total"
           >
           </el-pagination>
@@ -29,8 +29,7 @@ export default {
     sideBar: () => import("../../../components/sideBar.vue"),
   },
   data() {
-    return {
-    };
+    return {};
   },
   async asyncData({ query, store, $axios, route }) {
     let [homeList, recommandList] = await Promise.all([
@@ -51,7 +50,6 @@ export default {
     handleCurrentChange(page) {
       window.location.href =
         "/post/category/" + this.cate + "/page/" + this.page;
-      this.page = page;
     },
   },
 };
