@@ -30,22 +30,18 @@ export default {
   },
   data() {
     return {
-      page: 1
     };
   },
-  // watchQuery: ["page"],
   async asyncData({ query, store, $axios, route }) {
-    // 将当前页页存到vuex
-    // store.page = parseInt(query.page);
-
     let [homeList, recommandList] = await Promise.all([
-      getListByCateApi({ cate: route.params.id,page: 1}),
+      getListByCateApi({ cate: route.params.id, page: route.params.page || 1 }),
       getRecomListApi({}),
     ]);
     return {
       homeList: homeList.data,
       recommandList: recommandList.data,
-      cate: parseInt(route.params.id ||1)
+      cate: parseInt(route.params.id || 1),
+      page: parseInt(route.params.page || 1),
     };
   },
   computed: {
@@ -53,13 +49,10 @@ export default {
   },
   methods: {
     handleCurrentChange(page) {
-      // 更新选择的页码到vuex
-      // this.changePage(page);
-      // window.location.href = "/?page=" + this.$store.state.page;
-      window.location.href = "/post/category/" + this.cate +  '/page/' + page;
-      this.page = page
+      window.location.href =
+        "/post/category/" + this.cate + "/page/" + this.page;
+      this.page = page;
     },
-    // ...mapMutations(["changePage"]),
   },
 };
 </script>
@@ -80,7 +73,7 @@ export default {
       }
     }
     @media screen and (max-width: 1024px) {
-      .right-sidebar{
+      .right-sidebar {
         display: none;
       }
     }
