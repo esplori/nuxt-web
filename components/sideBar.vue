@@ -14,10 +14,9 @@
           <div class="cate">推荐阅读</div>
           <ul>
             <li v-for="(item,index) in list" :key="index">
-              <a :href="'/post/' + item.id" target="_blank">
-                <h4 class="title">{{item.title}}</h4>
-                <div class="excerpt">{{ deleteHtmlTag(item.content.slice(0, 40))}}</div>
-              </a>
+             
+                <div class="title"> <a :href="'/post/' + item.id" target="_blank">{{item.title.slice(0,40)}}   </a><span class="views"> {{item.views}}热度</span></div> 
+                <!-- <div class="excerpt">{{ (item.content.slice(0, 40))}}</div> -->
             </li>
           </ul>
         </div>
@@ -110,14 +109,20 @@ export default {
         color: #06c;
       }
       .title{
-        font-size: 15px;
-        padding-bottom: 10px;
+        font-size: 14px;
+        padding: 10px 0;
         font-weight: 400;
+        word-break:break-all
       }
       .excerpt{
         color: #828a92;
         font-size: 12px;
       }
+      .views{
+          font-size: 12px;
+          color: #999;
+          background: #f5f5f5;
+        }
     }
     .category>ul>li{
       display: inline-block;

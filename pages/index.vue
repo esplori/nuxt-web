@@ -121,7 +121,7 @@ export default {
       }
     }
     .right-sidebar{
-      max-width: 400px;
+      max-width: 385px;
     }
     @media screen and (max-width: 1024px) {
       .right-sidebar{

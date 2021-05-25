@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="post-id">
     <div class="home-body">
       <div class="left-body">
         <div>
@@ -14,9 +14,8 @@
         <div>
           <div class="tags" v-if="detailData.tags">标签：</div>
           <div class="copy-desc">
-            本站文章由javascript技术分享原创和收集，内容如有问题，请联系站长删除，如若转载请注明原文及出处：https://www.dsiab.com/post/{{
-              detailData.copyDesc
-            }}
+            <div>如若转载请注明原文及出处：https://www.dsiab.com/post/{{detailData.copyDesc}}</div>
+             <div>本站文章由javascript技术分享原创和收集，内容如有问题，请联系站长删除。</div>
           </div>
         </div>
       </div>
@@ -83,7 +82,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.container {
+#post-id {
   .home-body {
     display: flex;
     justify-content: space-between;
@@ -124,13 +123,14 @@ export default {
         font-size: 12px;
         background: #f5f5f5;
         word-break: break-all;
+        border-radius: 5px;
       }
       .tags {
         padding: 20px 0;
       }
     }
     .right-sidebar {
-      max-width: 400px;
+      max-width: 385px;
     }
     @media screen and(max-width: 1024px) {
       .right-sidebar {

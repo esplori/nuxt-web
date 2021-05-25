@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="post-page">
     <div class="home-body">
       <div class="left-body">
         <listBody :list="homeList.result"></listBody>
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.container {
+.post-page {
   .home-body {
     display: flex;
     justify-content: space-between;
@@ -77,6 +77,9 @@ export default {
         background: #fff;
         text-align: center;
       }
+    }
+    .right-sidebar{
+      max-width: 385px;
     }
     @media screen and (max-width: 1024px) {
       .right-sidebar{
