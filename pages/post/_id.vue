@@ -88,6 +88,7 @@ export default {
     justify-content: space-between;
     .left-body {
       width: 100%;
+      max-width: 800px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -117,6 +118,7 @@ export default {
         font-weight: 400;
         word-break: break-word;
         white-space: break-spaces;
+        overflow-x: auto;
       }
       .copy-desc {
         padding: 20px 10px;
@@ -127,6 +129,9 @@ export default {
       }
       .tags {
         padding: 20px 0;
+      }
+      img{
+        width: 100%;
       }
     }
     .right-sidebar {
