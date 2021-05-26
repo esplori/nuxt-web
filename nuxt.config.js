@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'javascript技术分享',
     meta: [
-      { charset: 'utf-8' },
+      // { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'javascript技术分享,本网站专注开发技术分享,定期分享一些最新的javascript技术，前端教程，后端教程，以及一些资源的分享,致力于书写心得,分享感悟。' },
       { hid: 'keywords', name: 'keywords', content: 'javascript技术分享,js技术,vuejs,web前端开发,前端面试,web开发,dsiab,个人博客' }
