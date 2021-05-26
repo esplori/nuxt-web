@@ -9,6 +9,7 @@
       <li>
         <div class="_oi1z2s14bx"></div>
       </li>
+        <div class="_clzacg58dkb"></div>
       <li>
         <div class="module">
           <div class="cate">推荐阅读</div>
@@ -77,9 +78,16 @@ export default {
     }
   },
   mounted() {
+    // side 1
     (window.slotbydup = window.slotbydup || []).push({
         id: "u6324348",
         container: "_oi1z2s14bx",
+        async: true
+    });
+    // side 2
+     (window.slotbydup = window.slotbydup || []).push({
+        id: "u6324827",
+        container: "_clzacg58dkb",
         async: true
     });
   }
@@ -87,6 +95,14 @@ export default {
 </script>
 
 <style lang="less">
+@media (max-width:575.98px) {
+    ._oi1z2s14bx {
+        display: none
+    }
+    ._clzacg58dkb{
+      display: none;
+    }
+}
   .side-bar{
     padding: 20px;
     margin-left: 10px;

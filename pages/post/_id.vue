@@ -9,7 +9,9 @@
             <span class="el-icon-view"> {{ detailData.views }}</span>
             <span class="cate-name">{{ detailData.cateName }}</span>
           </div>
+          <div class="_1q7vpoyk4v9"></div>
           <div v-html="detailData.content" class="detail-post-content"></div>
+          <div class="_qz8e2i307x"></div>
         </div>
         <div>
           <div class="tags" v-if="detailData.tags">标签：</div>
@@ -78,10 +80,33 @@ export default {
       let [detail] = await Promise.all([getDetailApi2(this.$route.params.id)]);
     },
   },
+  mounted(){
+    // 顶部
+    (window.slotbydup = window.slotbydup || []).push({
+        id: "u6324927",
+        container: "_1q7vpoyk4v9",
+        async: true
+    });
+    // 底部
+    (window.slotbydup = window.slotbydup || []).push({
+        id: "u6324930",
+        container: "_qz8e2i307x",
+        async: true
+    });
+  }
 };
 </script>
 
 <style lang="less" scoped>
+
+@media (max-width:575.98px) {
+    ._qz8e2i307x {
+        display: none
+    }
+    ._1q7vpoyk4v9{
+      display: none;
+    }
+}
 #post-id {
   .home-body {
     display: flex;
