@@ -27,19 +27,20 @@ export default {
           name: "前端教程",
           path: '/qd',
           children: [
-            { name: "w3school教程", path: "/w3c" , },
-            { name: "less教程", path: "/less" },
-            { name: "react教程", path: "/react" },
-            { name: "typescript教程", path: "/typescript" },
+            { name: "w3school教程", path: "/w3c/" , },
+            { name: "less教程", path: "/less/less.bootcss.com/index.html" },
+            { name: "react教程", path: "/react/react.docschina.org/index.html" },
+            { name: "typescript教程", path: "/course/tslang/www.tslang.cn/index.html" },
+            { name: "bootstrap中文教程", path: "/BootStrap/v3.bootcss.com/migration.html" },
           ],
         },
         {
           name: "后端教程",
           path: '/hd',
           children: [
-            { name: "java教程", path: "/java" },
-            { name: "c语言教程", path: "/c" },
-            { name: "mysql教程", path: "/mysql" },
+            { name: "java教程", path: "/how2j/default.html" },
+            { name: "c语言教程", path: "/C/" },
+            { name: "mysql教程", path: "/mysql/" },
           ],
         },
         // {name: '关于', path: '/about'}
@@ -66,7 +67,7 @@ export default {
   methods: {
     handleSelect(val){
       // this.$router.push({path: val})
-      location.href = val
+      window.open(val)
       // this.activeIndex = val
     }
   }
