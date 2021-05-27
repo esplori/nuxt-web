@@ -13,7 +13,7 @@ export default {
   head() {
     return {
       script: [
-        {src: 'http://cpro.baidustatic.com/cpro/ui/cm.js'}
+        {src: 'https://cpro.baidustatic.com/cpro/ui/cm.js'}
       ]
     }
   }
