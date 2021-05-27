@@ -27,7 +27,7 @@ export default {
           name: "前端教程",
           path: '/qd',
           children: [
-            { name: "w3school教程", path: "/w3c/" , },
+            { name: "w3school教程", path: "http://source.dsiab.com/w3c/" , },
             { name: "less教程", path: "/less/less.bootcss.com/index.html" },
             { name: "react教程", path: "/react/react.docschina.org/index.html" },
             { name: "typescript教程", path: "/course/tslang/www.tslang.cn/index.html" },
