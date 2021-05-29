@@ -16,8 +16,14 @@
         <div>
           <div class="tags" v-if="detailData.tags">标签：</div>
           <div class="copy-desc">
-            <div>如若转载请注明原文及出处：https://www.dsiab.com/post/{{detailData.copyDesc}}</div>
-             <div>本站文章由javascript技术分享原创和收集，内容如有问题，请联系站长删除。</div>
+            <div>
+              如若转载请注明原文及出处：https://www.dsiab.com/post/{{
+                currPage
+              }}
+            </div>
+            <div>
+              本站文章由javascript技术分享原创和收集，内容如有问题，请联系站长删除。
+            </div>
           </div>
         </div>
       </div>
@@ -42,7 +48,7 @@ export default {
   },
   data() {
     return {
-      data: 0,
+      data: 0
     };
   },
   head() {
@@ -68,11 +74,12 @@ export default {
       getRecomListApi(),
       getCateApi({}),
     ]);
-    detail.data.result.copyDesc = route.params.id;
+    
     return {
       detailData: detail.data.result,
       recommandList: recommandList.data,
       cateList: cateList.data.result,
+      currPage: route.params.id
     };
   },
   methods: {
@@ -80,32 +87,34 @@ export default {
       let [detail] = await Promise.all([getDetailApi2(this.$route.params.id)]);
     },
   },
-  mounted(){
+  mounted() {
     // 顶部
     (window.slotbydup = window.slotbydup || []).push({
-        id: "u6324927",
-        container: "_1q7vpoyk4v9",
-        async: true
+      id: "u6324927",
+      container: "_1q7vpoyk4v9",
+      async: true,
     });
     // 底部
     (window.slotbydup = window.slotbydup || []).push({
-        id: "u6324930",
-        container: "_qz8e2i307x",
-        async: true
+      id: "u6324930",
+      container: "_qz8e2i307x",
+      async: true,
     });
-  }
+  },
 };
 </script>
 
 <style lang="less" scoped>
-
-@media (max-width:575.98px) {
-    ._qz8e2i307x {
-        display: none
-    }
-    ._1q7vpoyk4v9{
-      display: none;
-    }
+._qz8e2i307x {
+  overflow-x: auto;
+}
+@media (max-width: 575.98px) {
+  ._qz8e2i307x {
+    display: none;
+  }
+  ._1q7vpoyk4v9 {
+    display: none;
+  }
 }
 #post-id {
   .home-body {
@@ -155,7 +164,7 @@ export default {
       .tags {
         padding: 20px 0;
       }
-      img{
+      img {
         width: 100%;
       }
     }
