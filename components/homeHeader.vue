@@ -3,11 +3,17 @@
     <div class="site-info">
       <!-- <h1 class="site-name"><a href="/">javascript技术分享</a></h1> -->
       <div class="menu">
-        <el-menu mode="horizontal" :default-active="activeIndex" @select="handleSelect" >
-            <el-menu-item :index="item.path" v-for="(item,index) in noChildren" :key="index">{{item.name}}</el-menu-item>
-            <el-submenu :index="item.path"  v-for="(item,index) in hasChildren" :key="index">
-              <template slot="title">{{item.name}}</template>
-              <el-menu-item :index="it.path"  v-for="(it,idx) in item.children" :key="idx">{{it.name}}</el-menu-item>
+        <el-menu mode="horizontal">
+            <el-menu-item v-for="(item,index) in noChildren" :key="index" :index="String(index)">
+              <a :href="item.path">{{item.name}}</a>
+            </el-menu-item>
+            <el-submenu  v-for="(item,id) in hasChildren" :key="id" :index="String(id)">
+              <template slot="title">
+                <a :href="item.path">{{item.name}}</a>
+                </template>
+              <el-menu-item v-for="(it,idx) in item.children" :key="String(idx)">
+                <a :href="it.path">{{it.name}}</a>
+              </el-menu-item>
             </el-submenu>
         </el-menu>
       </div>
@@ -25,7 +31,7 @@ export default {
         { name: "网站导航", path: "/navigation" },
         {
           name: "前端教程",
-          path: '/qd',
+          path: '',
           children: [
             { name: "w3school教程", path: "http://source.dsiab.com/w3c/" , },
             { name: "less教程", path: "/less/less.bootcss.com/index.html" },
@@ -36,7 +42,7 @@ export default {
         },
         {
           name: "后端教程",
-          path: '/hd',
+          path: '',
           children: [
             { name: "java教程", path: "/how2j/default.html" },
             { name: "c语言教程", path: "/C/" },
@@ -67,7 +73,7 @@ export default {
   methods: {
     handleSelect(val){
       // this.$router.push({path: val})
-      window.open(val)
+      // window.open(val)
       // this.activeIndex = val
     }
   }
