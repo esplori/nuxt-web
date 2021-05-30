@@ -17,6 +17,14 @@ export async function getListByCateApi (params, data) {
   const options = {}
   return get(url, data, options)
 }
+export async function getListByTagsApi (params, data) {
+  if (!params.page) {
+    params.page = 1
+  }
+  let url = baseUrl + '/pages/getList/tags/' + encodeURI(params.cate) + '/page/' + params.page || 1
+  const options = {}
+  return get(url, data, options)
+}
 export async function getRecomListApi (data) {
   const url = baseUrl + '/pages/getRecomList'
   const options = {}

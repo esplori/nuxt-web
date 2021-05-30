@@ -2,6 +2,7 @@
   <div class="home-header">
     <div class="site-info">
       <!-- <h1 class="site-name"><a href="/">javascript技术分享</a></h1> -->
+      <a :href="'/post/tags/' + encodeURI('物头像的“三庭”指的') + '/page/1'">dfadsf</a>
       <div class="menu">
         <el-menu mode="horizontal">
             <el-menu-item v-for="(item,index) in noChildren" :key="index" :index="String(index)">
