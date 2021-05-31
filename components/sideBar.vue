@@ -1,11 +1,13 @@
 <template>
   <div class="side-bar">
     <ul>
-      <!--<li>-->
-        <!--<div class="search">-->
-          <!--<el-input placeholder="请输入内容" v-model="searchWords"></el-input>-->
-        <!--</div>-->
-      <!--</li>-->
+      <li>
+        <div class="search">
+          <el-input placeholder="请输入内容" v-model="searchWords">
+             <el-button slot="append" icon="el-icon-search" @click="search"></el-button>
+          </el-input>
+        </div>
+      </li>
       <li>
         <div class="_oi1z2s14bx"></div>
       </li>
@@ -72,6 +74,9 @@ export default {
     }
   },
   methods: {
+    search(){
+      window.open("/post/tags/" + this.searchWords)
+    },
     deleteHtmlTag(str) {
       let str1=str.replace(/<\/?.+?>/g,"").replace(/&nbsp;/g,'');
       return str1.replace(/ /g,"");//dds为得到后的内容
