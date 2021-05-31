@@ -169,6 +169,10 @@ export default {
       }
       .tags {
         padding: 20px 0;
+        a{
+          margin-right: 10px;
+          text-decoration: underline;
+        }
       }
       img {
         width: 100%;
