@@ -4,14 +4,15 @@
       <div class="left-body">
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
-          <el-pagination
+          <!-- <el-pagination
             @current-change="handleCurrentChange"
             :current-page.sync="page"
             :page-size="10"
             layout="pager"
             :total="homeList.total"
           >
-          </el-pagination>
+          </el-pagination> -->
+          <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" @pageChange="handleCurrentChange"></nuxtPagination>
         </div>
       </div>
       <div class="right-sidebar">
@@ -27,6 +28,7 @@ export default {
   components: {
     listBody: () => import("../../components/home/pageListBody.vue"),
     sideBar: () => import("../../components/sideBar.vue"),
+    nuxtPagination: () => import("../../components/common/nuxtPagination.vue")
   },
   data() {
     return {};
