@@ -151,7 +151,7 @@ export default {
         color: #4a4a4a;
         font-weight: 400;
         word-break: break-word;
-        white-space: break-spaces;
+        white-space: normal;
         overflow-x: auto;
       }
       .copy-desc {
