@@ -14,7 +14,14 @@
           <div class="_qz8e2i307x"></div>
         </div>
         <div>
-          <div class="tags" v-if="detailData.tags">标签：</div>
+          <div class="tags" v-if="detailData.keywords">
+            标签：<a
+              :href="'/post/tags/' + item"
+              v-for="(item, index) in detailData.keywords.split(',')"
+              :key="index"
+              >{{ item }}</a
+            >
+          </div>
           <div class="copy-desc">
             <div>
               如若转载请注明原文及出处：https://www.dsiab.com/post/{{
@@ -48,7 +55,7 @@ export default {
   },
   data() {
     return {
-      data: 0
+      data: 0,
     };
   },
   head() {
@@ -74,12 +81,11 @@ export default {
       getRecomListApi(),
       getCateApi({}),
     ]);
-    
     return {
       detailData: detail.data.result,
       recommandList: recommandList.data,
       cateList: cateList.data.result,
-      currPage: route.params.id
+      currPage: route.params.id,
     };
   },
   methods: {
