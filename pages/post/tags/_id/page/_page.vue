@@ -28,6 +28,23 @@ export default {
     listBody: () => import("../../../../../components/home/pageListBody.vue"),
     sideBar: () => import("../../../../../components/sideBar.vue"),
   },
+  head() {
+    return {
+      title:  `${this.tags}-javascript技术分享`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `${this.tags}`,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: `${this.tags}`,
+        },
+      ],
+    };
+  },
   data() {
     return {};
   },
@@ -43,6 +60,7 @@ export default {
       cate: route.params.id,
       page: parseInt(route.params.page || 1),
       cateList: cateList.data.result,
+      tags: route.params.id
     };
   },
   computed: {
