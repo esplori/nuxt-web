@@ -14,6 +14,9 @@
                 <a :href="it.path">{{it.name}}</a>
               </el-menu-item>
             </el-submenu>
+            <el-menu-item>
+              <a href="/about">关于</a>
+            </el-menu-item>
         </el-menu>
       </div>
     </div>
@@ -47,8 +50,7 @@ export default {
             { name: "c语言教程", path: "/C/" },
             { name: "mysql教程", path: "/mysql/" },
           ],
-        },
-        // {name: '关于', path: '/about'}
+        }
       ],
     };
   },
