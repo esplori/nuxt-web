@@ -28,6 +28,23 @@ export default {
     listBody: () => import("../../../components/home/pageListBody.vue"),
     sideBar: () => import("../../../components/sideBar.vue"),
   },
+  head() {
+    return {
+      title:  `${this.title.length?this.title[0].name:''}-javascript技术分享`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `${this.title.length?this.title[0].name:''}`,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: `${this.title.length?this.title[0].name:''}`,
+        },
+      ],
+    };
+  },
   data() {
     return {};
   },
@@ -43,6 +60,9 @@ export default {
       cate: parseInt(route.params.id || 1),
       page: parseInt(route.params.page || 1),
       cateList: cateList.data.result,
+      title: cateList.data.result.filter((item) =>{
+        return item.id == route.params.id
+      })
     };
   },
   computed: {
