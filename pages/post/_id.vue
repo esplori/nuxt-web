@@ -60,7 +60,7 @@ export default {
   },
   head() {
     return {
-      title: this.detailData.title + "-javasrcipt技术分享",
+      title: this.detailData.title + "-javascript技术分享",
       meta: [
         {
           hid: "description",
