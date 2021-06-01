@@ -1,7 +1,7 @@
 <template>
   <div class="nuxt-pagination">
       <ul>
-        <li v-for="(item,index) in pageList" :key="index" @click="pageChange(item)">
+        <li v-for="(item,index) in pageList" :key="index" @click="pageChange(item)" :class="{'actived': currentPage === item}">
           <a :href="'/page/' + item">{{item}}</a>
         </li>
       </ul>
@@ -35,12 +35,12 @@ export default {
   },
   computed: {
     pageList () {
-      let totalPage = Math.ceil(this.total / this.pageSize)
+      // let totalPage = Math.ceil(this.total / this.pageSize)
       let left1 = this.currentPage-1 <= 1? 1 : this.currentPage-1 
       let left2 = this.currentPage-2 <= 1? '' : this.currentPage-2
       let list = [left2,left1,this.currentPage,this.currentPage +1, this.currentPage +2]
       return list
-    },
+    }
   },
   methods: {
     pageChange(item){
@@ -56,6 +56,11 @@ export default {
     li{
       display: inline-block;
       margin-left: 10px;
+      &.actived{
+        a{
+          color: #409EFF;
+        }
+      }
     }
   }
 }
