@@ -2,17 +2,26 @@
   <div class="pageListBody">
     <ul>
       <li v-for="(item, index) in list" :key="index">
-        <a :href="'/post/' + item.id" target="_blank">
-          <h1 class="home-post-title">{{ item.title }}</h1>
-          <div class="home-post-excerpt">
-            {{ deleteHtmlTag(item.content.slice(0, 120)) }} ...
-          </div>
-          <div class="home-post-info">
-            <span class="create-date el-icon-date">
-              {{ item.createDate }}
-            </span>
-            <span class="views el-icon-view"> {{ item.views }} </span>
-            <span class="cate-name">{{ item.cateName || "" }} </span>
+        <a :href="'/post/' + item.id" target="_blank" class="post-item">
+          <img
+            src="http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg"
+            alt=""
+            width="150px"
+            height="115px"
+            class="item-img"
+          />
+          <div class="item-info">
+            <h1 class="home-post-title">{{ item.title }}</h1>
+            <div class="home-post-excerpt">
+              {{ deleteHtmlTag(item.content.slice(0, 120)) }} ...
+            </div>
+            <div class="home-post-info">
+              <span class="create-date el-icon-date">
+                {{ item.createDate }}
+              </span>
+              <span class="views el-icon-view"> {{ item.views }} </span>
+              <span class="cate-name">{{ item.cateName || "" }} </span>
+            </div>
           </div>
         </a>
       </li>
@@ -73,6 +82,13 @@ export default {
         }
         .views {
           color: #828a92;
+        }
+      }
+      .post-item {
+        display: flex;
+        align-items: center;
+        .item-img{
+          margin-right: 20px;
         }
       }
     }
