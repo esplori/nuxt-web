@@ -11,7 +11,7 @@
           </div>
           <div class="_1q7vpoyk4v9"></div>
           <div v-html="detailData.content" class="detail-post-content"></div>
-          <div class="_qz8e2i307x"></div>
+          <div class="_0rqdt50opla"></div>
         </div>
         <div>
           <div class="tags" v-if="detailData.keywords">
@@ -101,10 +101,10 @@ export default {
       async: true,
     });
     // 底部
-    (window.slotbydup = window.slotbydup || []).push({
-      id: "u6324930",
-      container: "_qz8e2i307x",
-      async: true,
+     (window.slotbydup = window.slotbydup || []).push({
+        id: "u6324930",
+        container: "_0rqdt50opla",
+        async: true
     });
   },
 };
