@@ -47,6 +47,11 @@ export default {
 };
 </script>
 <style lang="less">
+@media (max-width:575.98px) {
+    .item-img {
+        display: none
+    }
+}
 .pageListBody {
   ul {
     li {

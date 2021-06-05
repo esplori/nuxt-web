@@ -111,11 +111,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-._qz8e2i307x {
-  overflow-x: auto;
-}
 @media (max-width: 575.98px) {
-  ._qz8e2i307x {
+  ._11ehbqqorbp {
     display: none;
   }
   ._1q7vpoyk4v9 {
