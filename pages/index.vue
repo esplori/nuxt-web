@@ -2,16 +2,28 @@
   <div class="container">
     <div class="home-body">
       <div class="left-body">
+        <div class="recommand">
+           <div class="left">
+             <div class="carousel">
+               <el-carousel height="280px">
+                <el-carousel-item v-for="(item,index) in carouselList" :key="index">
+                  <img :src="item.src" alt="" height="280px">
+                </el-carousel-item>
+              </el-carousel>
+             </div>
+             <div class="carousel-bottom-info">
+              <div class="bottom-info-title">{{recommandList[0].title}}</div>
+              <div class="bottom-info-content">{{deleteHtmlTag(recommandList[0].content.slice(0, 120))}}</div>
+             </div>
+           </div>
+           <div class="right">
+            <ul>
+              <li v-for="(it,idx) in recommandList.slice(0,5)" :key="idx">{{it.title}}</li>
+            </ul>
+           </div>
+        </div>
       <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
-          <!-- <el-pagination
-            @current-change="handleCurrentChange"
-            :current-page.sync="page"
-            :page-size="10"
-            layout="pager"
-            :total="homeList.total"
-          >
-          </el-pagination> -->
           <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" @pageChange="handleCurrentChange"></nuxtPagination>
         </div>
       </div>
@@ -31,7 +43,14 @@ export default {
     nuxtPagination: () => import("../components/common/nuxtPagination.vue")
   },
   data() {
-    return {};
+    return {
+      carouselList: [
+        {src: 'http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg',  name: '证书'},
+        {src: 'http://source.dsiab.com/upload/5b3e8856-d0aa-4130-8150-fface4bf3c3b.jpeg',  name: '证书2'},
+        {src: 'http://source.dsiab.com/upload/aa7f6f40-a451-4cb8-9a79-408d33488c84.jpeg',  name: '证书3'},
+        {src: 'http://source.dsiab.com/upload/7af643d9-8640-4dd1-8987-188012209bcb.jpeg',  name: '证书4'},
+      ]
+    };
   },
   // watchQuery: ["page"],
   async asyncData({ query, store, $axios, route }) {
@@ -72,7 +91,34 @@ export default {
     .left-body {
       width: 100%;
       background: #fff;
-      // box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
+      .recommand{
+        display: flex;
+        justify-content: space-between;
+        // border: 1px solid #aaa;
+        padding: 20px;
+        width: 100%;
+        .left{
+          width: 50%;
+          .carousel{
+            background: #ddd;
+          }
+          .carousel-bottom-info{
+            padding: 20px 0;
+            .bottom-info-title{
+              font-size: 22px;
+              word-break: break-all;
+            }
+            .bottom-info-content{
+              color: #828a92;
+              padding-top: 10px;
+              word-break: break-all;
+            }
+          }
+        }
+        .right{
+          width: 50%;
+        }
+      }
       ul {
         li {
           padding: 30px 20px;

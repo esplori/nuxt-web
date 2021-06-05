@@ -111,7 +111,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@media (max-width: 575.98px) {
+@media (max-width: 760px) {
   ._11ehbqqorbp {
     display: none;
   }
