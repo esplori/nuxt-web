@@ -55,7 +55,7 @@ export default {
   ul {
     li{
       display: inline-block;
-      margin-left: 10px;
+      margin-left: 20px;
       &.actived{
         a{
           color: #409EFF;

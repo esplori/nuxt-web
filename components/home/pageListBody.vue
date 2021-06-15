@@ -4,7 +4,7 @@
       <li v-for="(item, index) in list" :key="index">
         <a :href="'/post/' + item.id" target="_blank" class="post-item">
           <img
-            src="http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg"
+            :src="imgsList[index]"
             alt=""
             width="150px"
             height="115px"
@@ -37,6 +37,24 @@ export default {
         return [];
       },
     },
+  },
+  data() {
+    return {
+      imgsList: [
+        'http://source.dsiab.com/upload/e2ecd57b-cbfd-4533-8d47-9403cb22bd37.png',
+        'http://source.dsiab.com/upload/9a2bae64-f914-4678-a642-95972333e201.jpg',
+        'http://source.dsiab.com/upload/7aaba689-06ff-4621-a1d6-546d86239174.jpg',
+        'http://source.dsiab.com/upload/c0661416-31d9-4b57-9845-802ca01fa69c.jpg',
+        'http://source.dsiab.com/upload/88a60855-9768-4a0b-b202-d4c2e06e6ac8.jpg',
+        'http://source.dsiab.com/upload/08e52e67-b7c7-4de7-8c70-9a9f65d5ce65.jpg',
+        'http://source.dsiab.com/upload/fdf3eba1-5f16-4fdb-91c2-28c22fea7b74.jpg',
+        'http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg',
+        'http://source.dsiab.com/upload/5d1c60a0-7194-4c14-b3fe-c7f88d958a78.jpg',
+        'http://source.dsiab.com/upload/cd2a655e-0f6b-41d8-a424-b334dce6cb84.png'
+      ]
+    }
+  },
+  computed: {
   },
   methods: {
     deleteHtmlTag(str) {
