@@ -2,7 +2,7 @@
   <div class="container">
     <div class="home-body">
       <div class="left-body">
-        <div class="recommand">
+        <!-- <div class="recommand">
            <div class="left">
              <div class="carousel">
                <el-carousel height="280px">
@@ -21,7 +21,7 @@
               <li v-for="(it,idx) in recommandList.slice(0,5)" :key="idx">{{it.title}}</li>
             </ul>
            </div>
-        </div>
+        </div> -->
       <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
           <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" @pageChange="handleCurrentChange"></nuxtPagination>

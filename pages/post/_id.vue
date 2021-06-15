@@ -136,7 +136,7 @@ export default {
         font-size: 26px;
       }
       .post-info {
-        padding: 5px 0;
+        padding: 10px 0;
         font-size: 14px;
         color: #020202;
         span {
@@ -170,9 +170,6 @@ export default {
           margin-right: 10px;
           text-decoration: underline;
         }
-      }
-      img {
-        width: 100%;
       }
     }
     .right-sidebar {
