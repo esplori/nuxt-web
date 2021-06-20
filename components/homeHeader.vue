@@ -8,14 +8,14 @@
             </el-menu-item>
             <el-submenu  v-for="(item,id) in hasChildren" :key="id" :index="String(id)">
               <template slot="title">
-                <a :href="item.path">{{item.name}}</a>
+                {{item.name}}
                 </template>
               <el-menu-item v-for="(it,idx) in item.children" :key="String(idx)">
                 <a :href="it.path">{{it.name}}</a>
               </el-menu-item>
             </el-submenu>
             <el-menu-item>
-              <a href="/about">关于</a>
+              <a href="/post/13">关于</a>
             </el-menu-item>
         </el-menu>
       </div>
