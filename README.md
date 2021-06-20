@@ -6,7 +6,7 @@
 
 演示地址：www.dsiab.com
 
-![](https://gitee.com/wilkwo/nuxt-web/blob/master/assets/img/site.jpg)
+![img](https://gitee.com/wilkwo/nuxt-web/blob/master/assets/img/site.jpg)
 
 ## 选择nuxt的原因：
 
