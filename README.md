@@ -1,12 +1,12 @@
 # nuxt-web
 
+## 项目简洁：
 
-这是一个用nuxt开发的项目
+这是一个用nuxt开发的项目  
 
 演示效果：www.dsiab.com
 
-
-选择nuxt的原因：
+## 选择nuxt的原因：
 
 1.nuxt开发的项目能被搜索引擎收录
 
