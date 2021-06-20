@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       imgsList: [
-        'http://source.dsiab.com/upload/e2ecd57b-cbfd-4533-8d47-9403cb22bd37.png',
+        'http://source.dsiab.com/upload/7437e62a-1033-4a91-a357-10993de1a08f.jpg',
         'http://source.dsiab.com/upload/9a2bae64-f914-4678-a642-95972333e201.jpg',
         'http://source.dsiab.com/upload/7aaba689-06ff-4621-a1d6-546d86239174.jpg',
         'http://source.dsiab.com/upload/c0661416-31d9-4b57-9845-802ca01fa69c.jpg',
