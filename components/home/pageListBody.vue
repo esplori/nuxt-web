@@ -1,6 +1,6 @@
 <template>
   <div class="pageListBody">
-    <ul>
+    <ul v-show="list.length">
       <li v-for="(item, index) in list" :key="index">
         <a :href="'/post/' + item.id" target="_blank" class="post-item">
           <img
@@ -26,6 +26,9 @@
         </a>
       </li>
     </ul>
+    <div v-show="!list.length">
+        <h2 class="no-data">暂无数据</h2>
+    </div>
   </div>
 </template>
 <script>
@@ -71,6 +74,9 @@ export default {
     }
 }
 .pageListBody {
+  .no-data{
+    text-align: center;
+  }
   ul {
     li {
       padding: 20px;
