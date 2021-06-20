@@ -1,6 +1,6 @@
 # nuxt-web
 
-## 项目简洁：
+## 项目介绍：
 
 主要技术: nuxtjs + element-ui
 
