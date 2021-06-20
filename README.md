@@ -6,6 +6,8 @@
 
 演示效果：www.dsiab.com
 
+![avatar](/wilkwo/nuxt-web/assets/img/site.jpg)
+
 ## 选择nuxt的原因：
 
 1.nuxt开发的项目能被搜索引擎收录
