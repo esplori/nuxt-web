@@ -92,8 +92,50 @@ export default {
     async search() {
       let [detail] = await Promise.all([getDetailApi2(this.$route.params.id)]);
     },
+    /**
+     * 图片懒加载
+     */
+    lazyLoad() {
+      var imgs = document.querySelectorAll("img");
+
+      //用来判断bound.top<=clientHeight的函数，返回一个bool值
+
+      function isIn(el) {
+        var bound = el.getBoundingClientRect();
+
+        var clientHeight = window.innerHeight;
+
+        return bound.top <= clientHeight;
+      }
+
+      //检查图片是否在可视区内，如果不在，则加载
+
+      function check() {
+        Array.from(imgs).forEach(function (el) {
+          if (isIn(el)) {
+            loadImg(el);
+          }
+        });
+      }
+
+      function loadImg(el) {
+        if (!el.src) {
+          var source = el.dataset.originalSrc;
+          el.src = source;
+        }
+      }
+
+      window.onload = window.onscroll = function () {
+        //onscroll()在滚动条滚动的时候触发
+        check();
+      };
+    },
   },
   mounted() {
+    // 判断是否在服务端
+    if (!process.server) {
+      this.lazyLoad();
+    }
     // 顶部
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6324927",
@@ -104,12 +146,20 @@ export default {
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6324930",
       container: "_11ehbqqorbp",
-      async: true
+      async: true,
     });
   },
 };
 </script>
 
+<style lang="less">
+// 截图图片样式错乱问题
+#post-id{
+  .image-container-fill {
+    padding-bottom: 0!important;
+  }
+}
+</style>
 <style lang="less" scoped>
 @media (max-width: 760px) {
   ._11ehbqqorbp {
@@ -166,7 +216,7 @@ export default {
       }
       .tags {
         padding: 20px 0;
-        a{
+        a {
           margin-right: 10px;
           text-decoration: underline;
         }
