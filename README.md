@@ -6,6 +6,7 @@
 
 使用到的插件： axios  + less
 
+同另外两个项目springboot-admin、vue-admin一起组成了一个博客系统
 
 演示地址：[www.dsiab.com](https://www.dsiab.com)
 
