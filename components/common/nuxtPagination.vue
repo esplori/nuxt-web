@@ -41,11 +41,21 @@ export default {
   },
   computed: {
     pageList () {
-      // let totalPage = Math.ceil(this.total / this.pageSize)
-      let left1 = this.currentPage-1 <= 0 ? '' : this.currentPage-1 
-      let left2 = this.currentPage-2 <= 0? '' : this.currentPage-2
-      let list = [left2,left1,this.currentPage,this.currentPage +1, this.currentPage +2]
-      return list
+      let totalPage = Math.ceil(this.total / this.pageSize)
+      
+      if(totalPage > 5) {
+        let left1 = this.currentPage-1 <= 0 ? '' : this.currentPage-1 
+        let left2 = this.currentPage-2 <= 0? '' : this.currentPage-2
+        let list = [left2,left1,this.currentPage,this.currentPage +1, this.currentPage +2]
+        return list
+      } else {
+        let list = []
+        for (let index = 0; index < totalPage; index++) {
+          list.push(index + 1)
+        }
+        return list
+      }
+      
     }
   },
   methods: {
