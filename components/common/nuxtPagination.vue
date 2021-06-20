@@ -1,8 +1,8 @@
 <template>
   <div class="nuxt-pagination">
       <ul>
-        <li v-for="(item,index) in pageList" :key="index" @click="pageChange(item)" :class="{'actived': currentPage === item}">
-          <a :href="'/page/' + item">{{item}}</a>
+        <li v-for="(item,index) in pageList" :key="index" :class="{'actived': currentPage === item}">
+          <a :href="prePath + item">{{item}}</a>
         </li>
       </ul>
   </div>
@@ -27,6 +27,12 @@ export default {
       default() {
         return 10;
       }
+    },
+    prePath: {
+      type: String,
+      default() {
+        return '';
+      }
     }
   },
   data() {
@@ -43,9 +49,6 @@ export default {
     }
   },
   methods: {
-    pageChange(item){
-      this.$emit('pageChange', item)
-    }
   }
 };
 </script>

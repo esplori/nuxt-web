@@ -24,7 +24,7 @@
         </div> -->
       <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
-          <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" @pageChange="handleCurrentChange"></nuxtPagination>
+          <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" :prePath="'/page/'"></nuxtPagination>
         </div>
       </div>
       <div class="right-sidebar">
@@ -72,9 +72,6 @@ export default {
   computed: {
   },
   methods: {
-    handleCurrentChange(page) {
-      window.location.href = "/page/" + page;
-    },
     deleteHtmlTag(str) {
       let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
       return str1.replace(/ /g, ""); //dds为得到后的内容
