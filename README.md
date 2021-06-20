@@ -1,6 +1,8 @@
 # nuxt
 
-this is a nuxt project
+这是一个用nuxt开发的项目
+
+演示效果：www.dsiab.com
 
 ## 启动应用
 
@@ -19,4 +21,4 @@ $ npm run start
 $ npm run generate
 ```
 
-更新nuxt详情请转到 [Nuxt.js docs](https://nuxtjs.org).
+
