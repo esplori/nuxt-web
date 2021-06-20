@@ -4,9 +4,9 @@
 
 这是一个用nuxt开发的项目  
 
-演示效果：www.dsiab.com
+演示地址：www.dsiab.com
 
-![avatar](/wilkwo/nuxt-web/assets/img/site.jpg)
+![](https://gitee.com/wilkwo/nuxt-web/blob/master/assets/img/site.jpg)
 
 ## 选择nuxt的原因：
 
