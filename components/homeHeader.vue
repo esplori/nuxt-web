@@ -84,8 +84,10 @@ export default {
 <style lang="less">
 .home-header {
   padding: 20px 0 0 0;
-  // box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
   background: #fff;
+  .el-menu--horizontal.el-menu{
+    border-bottom: none
+  }
   .site-info {
     max-width: 1200px;
     margin: 0 auto;

@@ -122,6 +122,8 @@ export default {
         if (!el.src) {
           var source = el.dataset.originalSrc;
           el.src = source;
+           // 解决其他开启网站防盗链功能
+          el.referrerPolicy = 'no-referrer'
         }
       }
 
