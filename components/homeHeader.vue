@@ -39,14 +39,14 @@ export default {
             { name: "less教程", path: "/less/less.bootcss.com/index.html" },
             { name: "react教程", path: "/react/react.docschina.org/index.html" },
             { name: "typescript教程", path: "/course/tslang/www.tslang.cn/index.html" },
-            { name: "bootstrap中文教程", path: "/BootStrap/v3.bootcss.com/migration.html" },
+            { name: "bootstrap中文教程", path: "https://source.dsiab.com/bootstrap/v3.bootcss.com/migration.html" },
           ],
         },
         {
           name: "后端教程",
           path: '',
           children: [
-            { name: "java教程", path: "/how2j/default.html" },
+            { name: "java教程", path: "https://source.dsiab.com/how2j/default.html" },
             { name: "c语言教程", path: "/C/" },
             { name: "mysql教程", path: "/mysql/" },
           ],
