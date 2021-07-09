@@ -1,2 +1,2 @@
-const baseUrl = 'http://localhost:8091/bootService'
+const baseUrl = 'http://admin.dsiab.com/bootService'
 export default baseUrl
