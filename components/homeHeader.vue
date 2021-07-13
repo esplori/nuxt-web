@@ -29,7 +29,7 @@ export default {
       activeIndex: '',
       menList: [
         { name: "javascript技术分享", path: "/" },
-        { name: "淘宝优乐购", path: "/tbk"},
+        { name: "优乐购", path: "/tbk"},
         { name: "网站导航", path: "/navigation" },
         {
           name: "前端教程",
