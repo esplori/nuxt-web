@@ -35,16 +35,16 @@
           </ul>
         </div>
       </li>
-      <!-- <li>
+      <li>
         <div class="module category">
           <div class="cate">友情链接</div>
           <ul>
-            <li v-for="(item,index) in cateList" :key="index">
-              {{item.name}}
+            <li v-for="(item,index) in linkList" :key="index">
+              <a :href="item.path" target="_blank">{{item.name}}</a>
             </li>
           </ul>
         </div>
-      </li> -->
+      </li>
     </ul>
   </div>
 
@@ -70,7 +70,10 @@ export default {
   },
   data(){
     return {
-      searchWords: ''
+      searchWords: '',
+      linkList: [
+        {name: 'qhy的个人空间', path: 'https://quhuanyu.dsiab.com'}
+      ]
     }
   },
   methods: {
