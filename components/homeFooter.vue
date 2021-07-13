@@ -1,8 +1,8 @@
 <template>
   <div class="home-footer">
     <div class="site-info">
-      <h5><a href="/">@2020  Powered by javascript技术分享</a></h5>
-      <h5><a href="https://beian.miit.gov.cn/">粤ICP备20013202号</a></h5>
+      <h4><a href="/">@2021  powered by javascript技术分享</a></h4>
+      <h4><a href="https://beian.miit.gov.cn/">粤ICP备20013202号</a></h4>
     </div>
   </div>
 
