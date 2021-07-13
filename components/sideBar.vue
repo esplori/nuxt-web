@@ -3,7 +3,7 @@
     <ul>
       <li>
         <div class="search">
-          <el-input placeholder="请输入内容" v-model="searchWords">
+          <el-input placeholder="请输入关键字" v-model="searchWords">
              <el-button slot="append" icon="el-icon-search" @click="search"></el-button>
           </el-input>
         </div>
@@ -75,6 +75,10 @@ export default {
   },
   methods: {
     search(){
+      if (!this.searchWords) {
+        this.$message.warning("请输入关键字")
+        return
+      }
       window.open("/post/tags/" + this.searchWords)
     },
     deleteHtmlTag(str) {
@@ -95,6 +99,11 @@ export default {
         container: "_clzacg58dkb",
         async: true
     });
+    window.addEventListener("keypress",(key) =>{
+      if (key.code === 'Enter') {
+        this.search()
+      }
+    })
   }
 }
 </script>
