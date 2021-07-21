@@ -39,17 +39,17 @@ export default {
   },
   head() {
     return {
-      title: this.item.title || "淘宝优乐购",
+      title: this.item.title || "优乐购",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.item.title || "淘宝优乐购",
+          content: this.item.title || "优乐购",
         },
         {
           hid: "keywords",
           name: "keywords",
-          content: this.item.title || "淘宝优乐购",
+          content: this.item.title || "优乐购",
         },
       ],
     };

@@ -30,17 +30,17 @@ export default {
   },
   head() {
     return {
-      title: "淘宝优乐购",
+      title: "优乐购",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "淘宝优乐购",
+          content: "优乐购",
         },
         {
           hid: "keywords",
           name: "keywords",
-          content: "淘宝优乐购",
+          content: "优乐购",
         },
       ],
     };
