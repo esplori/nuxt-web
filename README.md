@@ -12,9 +12,14 @@
 
 ![avatar](https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/site.jpg)
 
+适配移动端
+
+![avatar](https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpg)
+
+
 ## 选择nuxt的原因：
 
-1.nuxt开发的项目能被搜索引擎收录
+1.nuxt开发的项目能被搜索引擎收录,需要将页面改为restful风格
 
 2.相比其他语言，nuxt更简单，跟vue开发一样简单，会前端就可以开发
 
@@ -22,13 +27,10 @@
 
 ## 不足
 
-采用element-ui部分功能对搜索引擎不够友好。
+1.采用element-ui部分功能对搜索引擎不够友好，因为element-ui组件需要跳转的链接都不是通过a链接，所以这些组件需要手写或者在element-ui的基础上做修改。比如 菜单部分、分页组件都需要进行修改。
 
-因为element-ui组件需要跳转的链接都不是通过a链接。
+2.性能上比起php要逊色一些。
 
-所以这些组件需要手写或者在element-ui的基础上做修改。
-
-比如 菜单部分、分页组件都需要进行修改。
 
 
 ## 如何启动应用
