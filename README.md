@@ -14,7 +14,7 @@
 
 适配移动端
 
-![avatar](https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpg)
+![avatar](https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg)
 
 
 ## 选择nuxt的原因：
