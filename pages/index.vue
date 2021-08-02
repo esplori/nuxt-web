@@ -54,8 +54,6 @@ export default {
   },
   // watchQuery: ["page"],
   async asyncData({ query, store, $axios, route }) {
-    // 将当前页页存到vuex
-    // store.page = parseInt(query.page);
 
     let [homeList, recommandList, cateList] = await Promise.all([
       getListApi({ page: 1 }),

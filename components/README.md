@@ -1,7 +1,6 @@
-# COMPONENTS
+# 目录说明
+common: 公共组件
+home: 首页公共组件
+tbk: 广告模块公共组件
+其他：公共头部、底部组件
 
-**This directory is not required, you can delete it if you don't want to use it.**
-
-The components directory contains your Vue.js Components.
-
-_Nuxt.js doesn't supercharge these components._
