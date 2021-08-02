@@ -58,6 +58,9 @@ export default {
       data: 0,
     };
   },
+  /**
+   * 设置标题及页面关键字
+   */
   head() {
     return {
       title: this.detailData.title + "-javascript技术分享",
@@ -75,6 +78,9 @@ export default {
       ],
     };
   },
+  /**
+   * 请求接口，可同时请求多个接口
+   */
   async asyncData({ $axios, route }) {
     let [detail, recommandList, cateList] = await Promise.all([
       getDetailApi(route.params.id),

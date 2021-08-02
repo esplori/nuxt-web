@@ -72,6 +72,9 @@ export default {
   computed: {
   },
   methods: {
+    /**
+     * 摘要，截取内容，删除内容中的Html标签
+     */
     deleteHtmlTag(str) {
       let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
       return str1.replace(/ /g, ""); //dds为得到后的内容

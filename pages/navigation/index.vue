@@ -33,6 +33,23 @@
 import {getListApi} from '../api/navigation'
 
 export default {
+  head() {
+    return {
+      title: "网站导航",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "网站导航",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "网站导航",
+        },
+      ],
+    };
+  },
   components: {
     homeHeader: () => import('../../components/homeHeader.vue'),
     sideBar: () => import('../../components/sideBar.vue'),

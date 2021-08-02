@@ -9,11 +9,6 @@ myaxios.defaults.headers.post['Content-Type'] = 'application/json'
 // 在请求或响应被 then 或 catch 处理前拦截它们。
 // 添加请求拦截器
 myaxios.interceptors.request.use(function (config) {
-  //   let userinfo = localStorage.getItem('userInfo')
-  //   if (userinfo) {
-  //     userinfo = JSON.parse(userinfo)
-  //     config.headers.common['Authorization'] = userinfo.token
-  //   }
   // 在发送请求之前做些什么
   return config
 }, function (error) {
