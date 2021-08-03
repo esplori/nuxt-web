@@ -64,3 +64,8 @@ export async function getCateApi (id, data) {
   const options = {}
   return get(url, data, options)
 }
+export async function getCateApi2 (id, data) {
+  const url = '/bootService/pages/getCate'
+  const options = {}
+  return get(url, data, options)
+}

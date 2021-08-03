@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { getListApi, getRecomListApi, getCateApi, getRecomListApi2 } from "./api/index";
+import { getListApi, getRecomListApi, getCateApi, getRecomListApi2, getCateApi2 } from "./api/index";
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
@@ -67,20 +67,19 @@ export default {
           name: "证书4",
         },
       ],
-      recommandList:[]
+      recommandList:[],
+      cateList: []
     };
   },
   // watchQuery: ["page"],
   async asyncData({ query, store, $axios, route }) {
-    let [homeList, recommandList, cateList] = await Promise.all([
-      getListApi({ page: 1 }),
-      getRecomListApi({}),
-      getCateApi({}),
+    let [homeList] = await Promise.all([
+      getListApi({ page: 1 })
     ]);
     return {
       homeList: homeList.data,
       recommandList2: recommandList.data,
-      cateList: cateList.data.result,
+      cateList2: cateList.data.result,
       page: parseInt(route.params.id || 1),
     };
   },
@@ -88,7 +87,11 @@ export default {
   mounted() {
     // 判断是否在服务端
     if (!process.server) {
+      // 在浏览器端调接口，需要服务端做反向代理
+      // 查推荐
       this.getRecomList()
+      // 查分类
+      this.getCate()
     }
   },
   methods: {
@@ -96,6 +99,12 @@ export default {
       let res = await getRecomListApi2({})
       if (res) {
         this.recommandList = res.data
+      }
+    },
+    async getCate() {
+      let res = await getCateApi2({})
+      if (res) {
+        this.cateList = res.data.result
       }
     },
     /**
