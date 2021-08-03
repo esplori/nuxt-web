@@ -22,9 +22,14 @@
             </ul>
            </div>
         </div> -->
-      <listBody :list="homeList.result"></listBody>
+        <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
-          <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" :prePath="'/page/'"></nuxtPagination>
+          <nuxtPagination
+            :pageSize="10"
+            :total="homeList.total"
+            :currentPage="page"
+            :prePath="'/page/'"
+          ></nuxtPagination>
         </div>
       </div>
       <div class="right-sidebar">
@@ -35,41 +40,64 @@
 </template>
 
 <script>
-import { getListApi, getRecomListApi,getCateApi } from "./api/index";
+import { getListApi, getRecomListApi, getCateApi } from "./api/index";
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
     sideBar: () => import("../components/sideBar.vue"),
-    nuxtPagination: () => import("../components/common/nuxtPagination.vue")
+    nuxtPagination: () => import("../components/common/nuxtPagination.vue"),
   },
   data() {
     return {
       carouselList: [
-        {src: 'http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg',  name: '证书'},
-        {src: 'http://source.dsiab.com/upload/5b3e8856-d0aa-4130-8150-fface4bf3c3b.jpeg',  name: '证书2'},
-        {src: 'http://source.dsiab.com/upload/aa7f6f40-a451-4cb8-9a79-408d33488c84.jpeg',  name: '证书3'},
-        {src: 'http://source.dsiab.com/upload/7af643d9-8640-4dd1-8987-188012209bcb.jpeg',  name: '证书4'},
-      ]
+        {
+          src: "http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg",
+          name: "证书",
+        },
+        {
+          src: "http://source.dsiab.com/upload/5b3e8856-d0aa-4130-8150-fface4bf3c3b.jpeg",
+          name: "证书2",
+        },
+        {
+          src: "http://source.dsiab.com/upload/aa7f6f40-a451-4cb8-9a79-408d33488c84.jpeg",
+          name: "证书3",
+        },
+        {
+          src: "http://source.dsiab.com/upload/7af643d9-8640-4dd1-8987-188012209bcb.jpeg",
+          name: "证书4",
+        },
+      ],
     };
   },
   // watchQuery: ["page"],
   async asyncData({ query, store, $axios, route }) {
-
     let [homeList, recommandList, cateList] = await Promise.all([
       getListApi({ page: 1 }),
       getRecomListApi({}),
-      getCateApi({})
+      getCateApi({}),
     ]);
     return {
       homeList: homeList.data,
       recommandList: recommandList.data,
       cateList: cateList.data.result,
-      page: parseInt(route.params.id ||1)
+      page: parseInt(route.params.id || 1),
     };
   },
-  computed: {
+  computed: {},
+  mounted() {
+    debugger
+    // 判断是否在服务端
+    if (!process.server) {
+      this.getRecomList()
+    }
   },
   methods: {
+    async getRecomList() {
+      let res = await getRecomListApi({})
+      if (res) {
+        console.log('res', res);
+      }
+    },
     /**
      * 摘要，截取内容，删除内容中的Html标签
      */
@@ -89,31 +117,31 @@ export default {
     .left-body {
       width: 100%;
       background: #fff;
-      .recommand{
+      .recommand {
         display: flex;
         justify-content: space-between;
         // border: 1px solid #aaa;
         padding: 20px;
         width: 100%;
-        .left{
+        .left {
           width: 50%;
-          .carousel{
+          .carousel {
             background: #ddd;
           }
-          .carousel-bottom-info{
+          .carousel-bottom-info {
             padding: 20px 0;
-            .bottom-info-title{
+            .bottom-info-title {
               font-size: 22px;
               word-break: break-all;
             }
-            .bottom-info-content{
+            .bottom-info-content {
               color: #828a92;
               padding-top: 10px;
               word-break: break-all;
             }
           }
         }
-        .right{
+        .right {
           width: 50%;
         }
       }
@@ -166,11 +194,11 @@ export default {
         text-align: center;
       }
     }
-    .right-sidebar{
+    .right-sidebar {
       max-width: 385px;
     }
     @media screen and (max-width: 1024px) {
-      .right-sidebar{
+      .right-sidebar {
         display: none;
       }
     }
