@@ -83,7 +83,6 @@ export default {
 
 <style lang="less">
 .home-header {
-  padding: 20px 0 0 0;
   background: #fff;
   .el-menu--horizontal.el-menu{
     border-bottom: none
@@ -99,7 +98,6 @@ export default {
       cursor: pointer;
     }
     .menu {
-      padding-left: 20px;
       width: 100%;
     }
   }
