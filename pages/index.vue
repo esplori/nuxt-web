@@ -67,6 +67,7 @@ export default {
           name: "证书4",
         },
       ],
+      recommandList:[]
     };
   },
   // watchQuery: ["page"],
@@ -78,7 +79,7 @@ export default {
     ]);
     return {
       homeList: homeList.data,
-      recommandList: recommandList.data,
+      recommandList2: recommandList.data,
       cateList: cateList.data.result,
       page: parseInt(route.params.id || 1),
     };
@@ -94,7 +95,7 @@ export default {
     async getRecomList() {
       let res = await getRecomListApi2({})
       if (res) {
-        console.log('res', res);
+        this.recommandList = res.data
       }
     },
     /**
