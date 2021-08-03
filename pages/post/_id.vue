@@ -44,9 +44,8 @@
 <script>
 import {
   getDetailApi,
-  getRecomListApi,
-  getDetailApi2,
-  getCateApi,
+  getRecomListApi2,
+  getCateApi2,
 } from "../api/index";
 export default {
   components: {
@@ -56,6 +55,8 @@ export default {
   data() {
     return {
       data: 0,
+      recommandList:[],
+      cateList: []
     };
   },
   /**
@@ -78,25 +79,46 @@ export default {
       ],
     };
   },
+  // /**
+  //  * 请求接口，可同时请求多个接口,所有请求在服务端完成
+  //  */
+  // async asyncData({ $axios, route }) {
+  //   let [detail, recommandList, cateList] = await Promise.all([
+  //     getDetailApi(route.params.id),
+  //     getRecomListApi(),
+  //     getCateApi({}),
+  //   ]);
+  //   return {
+  //     detailData: detail.data.result,
+  //     recommandList: recommandList.data,
+  //     cateList: cateList.data.result,
+  //     currPage: route.params.id,
+  //   };
+  // },
   /**
-   * 请求接口，可同时请求多个接口
+   * 请求接口，可同时请求多个接口，详情在服务端请求，分类跟推荐接口在浏览器调用
    */
   async asyncData({ $axios, route }) {
-    let [detail, recommandList, cateList] = await Promise.all([
-      getDetailApi(route.params.id),
-      getRecomListApi(),
-      getCateApi({}),
+    let [detail] = await Promise.all([
+      getDetailApi(route.params.id)
     ]);
     return {
       detailData: detail.data.result,
-      recommandList: recommandList.data,
-      cateList: cateList.data.result,
       currPage: route.params.id,
     };
   },
   methods: {
-    async search() {
-      let [detail] = await Promise.all([getDetailApi2(this.$route.params.id)]);
+    async getRecomList() {
+      let res = await getRecomListApi2({})
+      if (res) {
+        this.recommandList = res.data
+      }
+    },
+    async getCate() {
+      let res = await getCateApi2({})
+      if (res) {
+        this.cateList = res.data.result
+      }
     },
     /**
      * 图片懒加载
@@ -143,6 +165,11 @@ export default {
     // 判断是否在服务端
     if (!process.server) {
       this.lazyLoad();
+      // 在浏览器端调接口，需要服务端做反向代理
+      // 查推荐
+      this.getRecomList()
+      // 查分类
+      this.getCate()
     }
     // 顶部
     (window.slotbydup = window.slotbydup || []).push({

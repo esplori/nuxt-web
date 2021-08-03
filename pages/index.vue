@@ -87,7 +87,7 @@ export default {
   //   };
   // },
 
-  // 只要列表通过服务端调用渲染，分类跟推荐接口通过浏览器调用
+  // 只要列表通过服务端调用渲染，分类跟推荐接口在浏览器调用
   async asyncData({ query, store, $axios, route }) {
     let [homeList] = await Promise.all([
       getListApi({ page: 1 })
