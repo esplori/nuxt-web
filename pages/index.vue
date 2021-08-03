@@ -71,15 +71,29 @@ export default {
       cateList: []
     };
   },
-  // watchQuery: ["page"],
+  // 所有接口通过服务端调用渲染
+
+  // async asyncData({ query, store, $axios, route }) {
+  //   let [homeList, recommandList, cateList] = await Promise.all([
+  //     getListApi({ page: 1 }),
+  //     getRecomListApi({}),
+  //     getCateApi({}),
+  //   ]);
+  //   return {
+  //     homeList: homeList.data,
+  //     recommandList: recommandList.data,
+  //     cateList: cateList.data.result,
+  //     page: parseInt(route.params.id || 1),
+  //   };
+  // },
+
+  // 只要列表通过服务端调用渲染，分类跟推荐接口通过浏览器调用
   async asyncData({ query, store, $axios, route }) {
     let [homeList] = await Promise.all([
       getListApi({ page: 1 })
     ]);
     return {
       homeList: homeList.data,
-      recommandList2: recommandList.data,
-      cateList2: cateList.data.result,
       page: parseInt(route.params.id || 1),
     };
   },
