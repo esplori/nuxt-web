@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { getListApi, getRecomListApi, getCateApi } from "./api/index";
+import { getListApi, getRecomListApi, getCateApi, getRecomListApi2 } from "./api/index";
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
@@ -85,7 +85,6 @@ export default {
   },
   computed: {},
   mounted() {
-    debugger
     // 判断是否在服务端
     if (!process.server) {
       this.getRecomList()
@@ -93,7 +92,7 @@ export default {
   },
   methods: {
     async getRecomList() {
-      let res = await getRecomListApi({})
+      let res = await getRecomListApi2({})
       if (res) {
         console.log('res', res);
       }

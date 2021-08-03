@@ -30,6 +30,11 @@ export async function getRecomListApi (data) {
   const options = {}
   return post(url, data, options)
 }
+export async function getRecomListApi2 (data) {
+  const url = '/bootService/pages/getRecomList'
+  const options = {}
+  return post(url, data, options)
+}
 export async function getDetailApi (id, data) {
   const url = baseUrl +  '/pages/getDetail/' + id
   const options = {}
