@@ -44,6 +44,8 @@
 <script>
 import {
   getDetailApi,
+  getRecomListApi,
+  getCateApi,
   getRecomListApi2,
   getCateApi2,
 } from "../api/index";
