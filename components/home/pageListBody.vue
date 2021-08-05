@@ -98,7 +98,7 @@ export default {
       .home-post-excerpt {
         line-height: 24px;
         padding-top: 10px;
-        font-size: 14px;
+        font-size: 16px;
         color: #828a92;
         word-break: break-all;
       }
