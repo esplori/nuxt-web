@@ -64,9 +64,6 @@
 <script>
 import { getRecomListApi2 } from "../pages/api/index";
 export default {
-  components: {
-    homeFooter: () => import("./homeFooter.vue"),
-  },
   props: {
     list: {
       type: Array,
@@ -106,10 +103,6 @@ export default {
       }
       window.open("/post/tags/" + this.searchWords);
     },
-    deleteHtmlTag(str) {
-      let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
-      return str1.replace(/ /g, ""); //dds为得到后的内容
-    },
   },
   mounted() {
     // side 1
@@ -124,6 +117,7 @@ export default {
       container: "_clzacg58dkb",
       async: true,
     });
+    // 监听键盘enter键，回车就执行搜索
     window.addEventListener("keypress", (key) => {
       if (key.code === "Enter") {
         this.search();

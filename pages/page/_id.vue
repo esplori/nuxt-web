@@ -4,14 +4,6 @@
       <div class="left-body">
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
-          <!-- <el-pagination
-            @current-change="handleCurrentChange"
-            :current-page.sync="page"
-            :page-size="10"
-            layout="pager"
-            :total="homeList.total"
-          >
-          </el-pagination> -->
           <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" @pageChange="handleCurrentChange"></nuxtPagination>
         </div>
       </div>
@@ -30,13 +22,8 @@ export default {
     sideBar: () => import("../../components/sideBar.vue"),
     nuxtPagination: () => import("../../components/common/nuxtPagination.vue")
   },
-  data() {
-    return {};
-  },
   // watchQuery: ["page"],
   async asyncData({ query, store, $axios, route }) {
-    // 将当前页页存到vuex
-    // store.page = parseInt(query.page);
 
     let [homeList, recommandList, cateList] = await Promise.all([
       getListApi({ page: route.params.id || 1 }),
@@ -50,17 +37,10 @@ export default {
       page: parseInt(route.params.id ||1)
     };
   },
-  computed: {
-    // ...mapState(["page"]),
-  },
   methods: {
     handleCurrentChange(page) {
-      // 更新选择的页码到vuex
-      // this.changePage(page);
-      // window.location.href = "/?page=" + this.$store.state.page;
       window.location.href = "/page/" + page;
-    },
-    // ...mapMutations(["changePage"]),
+    }
   },
 };
 </script>

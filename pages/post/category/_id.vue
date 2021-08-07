@@ -39,9 +39,6 @@ export default {
       ],
     };
   },
-  data() {
-    return {};
-  },
   async asyncData({ query, store, $axios, route }) {
     let [homeList, recommandList, cateList] = await Promise.all([
       getListByCateApi({ cate: route.params.id, page: route.params.page || 1 }),
@@ -63,9 +60,7 @@ export default {
     prePath() {
       return "/post/category/" + this.cate + "/page/";
     }
-  },
-  methods: {
-  },
+  }
 };
 </script>
 

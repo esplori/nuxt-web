@@ -45,9 +45,6 @@ export default {
       ],
     };
   },
-  data() {
-    return {};
-  },
   async asyncData({ query, store, $axios, route }) {
     let [homeList, recommandList, cateList] = await Promise.all([
       getListByTagsApi({ cate: route.params.id, page: route.params.page || 1 }),
@@ -62,8 +59,6 @@ export default {
       cateList: cateList.data.result,
       tags: route.params.id
     };
-  },
-  computed: {
   },
   methods: {
     handleCurrentChange(page) {

@@ -35,10 +35,6 @@ export default {
       }
     }
   },
-  data() {
-    return {
-    };
-  },
   computed: {
     pageList () {
       let totalPage = Math.ceil(this.total / this.pageSize)
@@ -58,8 +54,6 @@ export default {
       
     }
   },
-  methods: {
-  }
 };
 </script>
 
