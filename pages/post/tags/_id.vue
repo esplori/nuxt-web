@@ -39,11 +39,7 @@ export default {
       ],
     };
   },
-  data() {
-    return {};
-  },
   async asyncData({ query, store, $axios, route }) {
-    console.log('keys', route.params.id)
     let [homeList, recommandList, cateList] = await Promise.all([
       getListByTagsApi({ cate: route.params.id, page: route.params.page || 1 }),
       getRecomListApi({}),
@@ -62,9 +58,7 @@ export default {
     prePath() {
       return "/post/tags/" + this.cate + "/page/";
     }
-  },
-  methods: {
-  },
+  }
 };
 </script>
 

@@ -54,11 +54,6 @@ export default {
       ],
     };
   },
-  async asyncData({ query, store, $axios, route }) {
-    // return {
-    //   activeIndex: route.path
-    // }
-  },
   computed: {
     noChildren () {
       return this.menList.filter( (item)=> {
@@ -69,13 +64,6 @@ export default {
       return this.menList.filter( (item)=> {
         return item.children
       })
-    }
-  },
-  methods: {
-    handleSelect(val){
-      // this.$router.push({path: val})
-      // window.open(val)
-      // this.activeIndex = val
     }
   }
 };

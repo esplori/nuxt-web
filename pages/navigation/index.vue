@@ -29,7 +29,7 @@
 </template>
 
 <script>
-// import {mapState,mapMutations}from 'vuex'
+
 import {getListApi} from '../api/navigation'
 
 export default {

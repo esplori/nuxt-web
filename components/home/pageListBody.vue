@@ -65,7 +65,6 @@ export default {
       ],
     };
   },
-  computed: {},
   methods: {
     deleteHtmlTag(str) {
       let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
