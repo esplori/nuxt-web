@@ -73,30 +73,30 @@ export default {
   },
   // 所有接口通过服务端调用渲染
 
-  // async asyncData({ query, store, $axios, route }) {
-  //   let [homeList, recommandList, cateList] = await Promise.all([
-  //     getListApi({ page: 1 }),
-  //     getRecomListApi({}),
-  //     getCateApi({}),
-  //   ]);
-  //   return {
-  //     homeList: homeList.data,
-  //     recommandList: recommandList.data,
-  //     cateList: cateList.data.result,
-  //     page: parseInt(route.params.id || 1),
-  //   };
-  // },
-
-  // 只要列表通过服务端调用渲染，分类跟推荐接口在浏览器调用
   async asyncData({ query, store, $axios, route }) {
-    let [homeList] = await Promise.all([
-      getListApi({ page: 1 })
+    let [homeList, recommandList, cateList] = await Promise.all([
+      getListApi({ page: 1 }),
+      getRecomListApi({}),
+      getCateApi({}),
     ]);
     return {
       homeList: homeList.data,
+      recommandList: recommandList.data,
+      cateList: cateList.data.result,
       page: parseInt(route.params.id || 1),
     };
   },
+
+  // 只要列表通过服务端调用渲染，分类跟推荐接口在浏览器调用
+  // async asyncData({ query, store, $axios, route }) {
+  //   let [homeList] = await Promise.all([
+  //     getListApi({ page: 1 })
+  //   ]);
+  //   return {
+  //     homeList: homeList.data,
+  //     page: parseInt(route.params.id || 1),
+  //   };
+  // },
   computed: {},
   mounted() {
     // 判断是否在服务端

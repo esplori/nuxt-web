@@ -19,20 +19,17 @@
       <li>
         <div class="module">
           <div class="cate">推荐阅读</div>
+          <el-tabs v-model="activeName" @tab-click="handleClick">
+            <el-tab-pane label="最近30天" name="30"></el-tab-pane>
+            <el-tab-pane label="本年度" name="365"></el-tab-pane>
+            <el-tab-pane label="总排行" name="all"></el-tab-pane>
+          </el-tabs>
           <ul>
             <li v-for="(item, index) in list" :key="index">
               <div class="title">
-                <el-tooltip
-                  class="item"
-                  effect="dark"
-                  :content="item.title.slice(0, 120)"
-                  placement="top-start"
-                >
-                  <a :href="'/post/' + item.id" target="_blank">
-                    {{ item.title.slice(0, 28) }}
-                  </a>
-                </el-tooltip>
-
+                <a :href="'/post/' + item.id" target="_blank">
+                  {{ item.title}}
+                </a>
                 <span class="views el-icon-view"> {{ item.views }}</span>
               </div>
               <!-- <div class="excerpt">{{ (item.content.slice(0, 40))}}</div> -->
@@ -65,6 +62,7 @@
   </div>
 </template>
 <script>
+import { getRecomListApi2 } from "../pages/api/index";
 export default {
   components: {
     homeFooter: () => import("./homeFooter.vue"),
@@ -87,9 +85,20 @@ export default {
     return {
       searchWords: "",
       linkList: [{ name: "qhy的个人空间", path: "https://quhuanyu.dsiab.com" }],
+      activeName:'all',
+      recommandList: []
     };
   },
   methods: {
+    async getRecomList() {
+      let res = await getRecomListApi2({})
+      if (res) {
+        this.recommandList = res.data
+      }
+    },
+    handleClick(tab, event){
+      this.getRecomList(tab.name)
+    },
     search() {
       if (!this.searchWords) {
         this.$message.warning("请输入关键字");

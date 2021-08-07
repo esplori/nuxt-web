@@ -81,34 +81,34 @@ export default {
       ],
     };
   },
-  // /**
-  //  * 请求接口，可同时请求多个接口,所有请求在服务端完成
-  //  */
-  // async asyncData({ $axios, route }) {
-  //   let [detail, recommandList, cateList] = await Promise.all([
-  //     getDetailApi(route.params.id),
-  //     getRecomListApi(),
-  //     getCateApi({}),
-  //   ]);
-  //   return {
-  //     detailData: detail.data.result,
-  //     recommandList: recommandList.data,
-  //     cateList: cateList.data.result,
-  //     currPage: route.params.id,
-  //   };
-  // },
   /**
-   * 请求接口，可同时请求多个接口，详情在服务端请求，分类跟推荐接口在浏览器调用
+   * 请求接口，可同时请求多个接口,所有请求在服务端完成
    */
   async asyncData({ $axios, route }) {
-    let [detail] = await Promise.all([
-      getDetailApi(route.params.id)
+    let [detail, recommandList, cateList] = await Promise.all([
+      getDetailApi(route.params.id),
+      getRecomListApi(),
+      getCateApi({}),
     ]);
     return {
       detailData: detail.data.result,
+      recommandList: recommandList.data,
+      cateList: cateList.data.result,
       currPage: route.params.id,
     };
   },
+  /**
+   * 请求接口，可同时请求多个接口，详情在服务端请求，分类跟推荐接口在浏览器调用
+   */
+  // async asyncData({ $axios, route }) {
+  //   let [detail] = await Promise.all([
+  //     getDetailApi(route.params.id)
+  //   ]);
+  //   return {
+  //     detailData: detail.data.result,
+  //     currPage: route.params.id,
+  //   };
+  // },
   methods: {
     async getRecomList() {
       let res = await getRecomListApi2({})
