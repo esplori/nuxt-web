@@ -10,26 +10,32 @@
 
 演示地址：[www.dsiab.com](https://www.dsiab.com)
 
-![avatar](https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/site.jpg)
+
+欢迎fork，欢迎提问题。
+
+
+<img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/site.jpg" style="width:400px">
+
 
 适配移动端
 
-![avatar](https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg)
+<img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg">
 
 
 ## 选择nuxt的原因：
 
-1.nuxt开发的项目能被搜索引擎收录,需要将页面改为restful风格
+1.nuxt开发的项目能被搜索引擎收录,能进行seo，需要将页面改为restful风格
 
-2.相比其他语言，nuxt更简单，跟vue开发一样简单，会前端就可以开发
+2.相比其他语言，nuxt更简单，跟vue开发一样简单，会前端就可以开发，比vue更简单，只需要将文件按目录新建好，nuxt会自动生成对应路由。
 
 3.能正常接入统计跟广告代码
 
 ## 不足
+1.由于Nuxt采用服务端渲染，所以影响页面打开速度很多，包括页面内容大小，服务器性能，网络带宽等。所有nuxt项目可以页面的主要内容进行服务端渲染，其他内容还是可以在浏览器端进行ajax请求，这样可以大大减少服务器压力。
 
-1.采用element-ui部分功能对搜索引擎不够友好，因为element-ui组件需要跳转的链接都不是通过a链接，所以这些组件需要手写或者在element-ui的基础上做修改。比如 菜单部分、分页组件都需要进行修改。
+2.采用element-ui部分功能对搜索引擎不够友好，因为element-ui组件需要跳转的链接都不是通过a链接，所以这些组件需要手写或者在element-ui的基础上做修改。比如 菜单部分、分页组件都需要进行修改。
 
-2.性能上比起php要逊色一些。
+3.性能上比起php要逊色一些。
 
 ## 提升性能
 
