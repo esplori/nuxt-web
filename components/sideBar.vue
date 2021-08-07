@@ -149,6 +149,8 @@ export default {
       padding: 10px 0;
       border-bottom: 1px solid #eaeeef;
       font-weight: 600;
+      font-size: 20px;
+      color: #2c2e3b;
     }
   }
   .module > ul > li {

@@ -11,9 +11,9 @@
             class="item-img"
           />
           <div class="item-info">
-            <h1 class="home-post-title">
+            <div class="home-post-title">
               <a :href="'/post/' + item.id" target="_blank">{{ item.title }}</a>
-            </h1>
+            </div>
             <div class="home-post-excerpt">
               <a :href="'/post/' + item.id" target="_blank"
                 >{{ deleteHtmlTag(item.content.slice(0, 120)) }} ...</a
@@ -87,6 +87,9 @@ export default {
     li {
       padding: 20px;
       border-bottom: 1px solid #f5f5f5;
+      .home-post-title{
+        padding-bottom: 10px;
+      }
       .home-post-title a {
         font-size: 20px;
         text-overflow: ellipsis;
@@ -95,11 +98,13 @@ export default {
         color: #06c;
       }
       .home-post-excerpt {
-        line-height: 24px;
-        padding-top: 10px;
-        font-size: 16px;
-        color: #828a92;
+        line-height: 22px;
+        font-size: 14px;
+        color: #888;
         word-break: break-all;
+      }
+      .home-post-excerpt a {
+        color: #888;
       }
       .home-post-info {
         padding-top: 10px;
@@ -125,6 +130,7 @@ export default {
         align-items: center;
         .item-img {
           margin-right: 20px;
+          border-radius: 5px;
         }
       }
     }
