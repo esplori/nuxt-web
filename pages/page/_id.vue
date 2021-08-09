@@ -27,7 +27,7 @@ export default {
 
     let [homeList, recommandList, cateList] = await Promise.all([
       getListApi({ page: route.params.id || 1 }),
-      getRecomListApi({}),
+      getRecomListApi({type: 'all'}),
       getCateApi({})
     ]);
     return {

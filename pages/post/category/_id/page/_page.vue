@@ -48,7 +48,7 @@ export default {
   async asyncData({ query, store, $axios, route }) {
     let [homeList, recommandList, cateList] = await Promise.all([
       getListByCateApi({ cate: route.params.id, page: route.params.page || 1 }),
-      getRecomListApi({}),
+      getRecomListApi({type: 'all'}),
       getCateApi({})
     ]);
     return {

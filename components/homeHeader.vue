@@ -15,7 +15,13 @@
               </el-menu-item>
             </el-submenu>
             <el-menu-item>
+              <a href="/tbk" target="_blank">优乐购</a>
+            </el-menu-item>
+            <el-menu-item>
               <a href="/post/13">关于</a>
+            </el-menu-item>
+            <el-menu-item>
+              <a href="https://gitee.com/wilkwo/nuxt-web/releases" target="_blank">更新日志</a>
             </el-menu-item>
         </el-menu>
       </div>
@@ -29,7 +35,6 @@ export default {
       activeIndex: '',
       menList: [
         { name: "javascript技术分享", path: "/" },
-        { name: "优乐购", path: "/tbk"},
         { name: "网站导航", path: "/navigation" },
         {
           name: "前端教程",
@@ -50,7 +55,7 @@ export default {
             { name: "c语言教程", path: "http://source.dsiab.com/course/C/" },
             { name: "mysql教程", path: "http://source.dsiab.com/course/mysql/" },
           ],
-        }
+        },
       ],
     };
   },
