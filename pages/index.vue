@@ -76,7 +76,7 @@ export default {
   async asyncData({ query, store, $axios, route }) {
     let [homeList, recommandList, cateList] = await Promise.all([
       getListApi({ page: 1 }),
-      getRecomListApi({}),
+      getRecomListApi({type: 'all'}),
       getCateApi({}),
     ]);
     return {
@@ -103,14 +103,14 @@ export default {
     if (!process.server) {
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
-      this.getRecomList()
+      // this.getRecomList()
       // 查分类
-      this.getCate()
+      // this.getCate()
     }
   },
   methods: {
     async getRecomList() {
-      let res = await getRecomListApi2({})
+      let res = await getRecomListApi2({type: 'all'})
       if (res) {
         this.recommandList = res.data
       }

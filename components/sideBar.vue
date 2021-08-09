@@ -24,7 +24,7 @@
             <el-tab-pane label="本年度" name="365"></el-tab-pane>
             <el-tab-pane label="总排行" name="all"></el-tab-pane>
           </el-tabs>
-          <ul>
+          <ul v-if="!isBrowser">
             <li v-for="(item, index) in list" :key="index">
               <div class="title">
                 <a :href="'/post/' + item.id" target="_blank">
@@ -33,6 +33,17 @@
                 <span class="views el-icon-view"> {{ item.views }}</span>
               </div>
               <!-- <div class="excerpt">{{ (item.content.slice(0, 40))}}</div> -->
+            </li>
+          </ul>
+          <!-- 在浏览器端点击查询就显示该列表 -->
+          <ul v-if="isBrowser">
+            <li v-for="(item, index) in recommandList" :key="index">
+              <div class="title">
+                <a :href="'/post/' + item.id" target="_blank">
+                  {{ item.title}}
+                </a>
+                <span class="views el-icon-view"> {{ item.views }}</span>
+              </div>
             </li>
           </ul>
         </div>
@@ -83,13 +94,16 @@ export default {
       searchWords: "",
       linkList: [{ name: "qhy的个人空间", path: "https://quhuanyu.dsiab.com" }],
       activeName:'all',
-      recommandList: []
+      recommandList: [],
+      isBrowser: false
     };
   },
   methods: {
-    async getRecomList() {
-      let res = await getRecomListApi2({})
+    async getRecomList(type) {
+      let res = await getRecomListApi2({type})
       if (res) {
+        // 如果是浏览器端就取另一个字段
+        this.isBrowser = true
         this.recommandList = res.data
       }
     },
