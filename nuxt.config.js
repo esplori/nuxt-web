@@ -40,7 +40,14 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+
+    '@nuxtjs/component-cache',
+    // 缓存配置选项
+    ['@nuxtjs/component-cache', {
+      max: 10000,
+      maxAge: 1000 * 60 * 60
+    }]
   ],
   axios: {
     proxy: true
