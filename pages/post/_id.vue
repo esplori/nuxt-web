@@ -111,7 +111,7 @@ export default {
   },
   methods: {
     async getRecomList() {
-      let res = await getRecomListApi2({})
+      let res = await getRecomListApi2({type: 'all'})
       if (res) {
         this.recommandList = res.data
       }
