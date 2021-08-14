@@ -4,14 +4,14 @@
       <div class="menu">
         <el-menu mode="horizontal">
             <el-menu-item v-for="(item,index) in noChildren" :key="index" :index="String(index)">
-              <a :href="item.path">{{item.name}}</a>
+              <a :href="item.path" target="_blank">{{item.name}}</a>
             </el-menu-item>
             <el-submenu  v-for="(item,id) in hasChildren" :key="id" :index="String(id)">
               <template slot="title">
                 {{item.name}}
                 </template>
               <el-menu-item v-for="(it,idx) in item.children" :key="String(idx)">
-                <a :href="it.path">{{it.name}}</a>
+                <a :href="it.path" target="_blank">{{it.name}}</a>
               </el-menu-item>
             </el-submenu>
             <el-menu-item>
@@ -41,19 +41,19 @@ export default {
           path: '',
           children: [
             { name: "w3school教程", path: "http://source.dsiab.com/course/w3c/" , },
-            { name: "less教程", path: "http://source.dsiab.com/course/less/less.bootcss.com/index.html" },
-            { name: "react教程", path: "http://source.dsiab.com/course//react/react.docschina.org/index.html" },
-            { name: "typescript教程", path: "http://source.dsiab.com/course/tslang/www.tslang.cn/index.html" },
-            { name: "bootstrap中文教程", path: "http://source.dsiab.com/course//bootstrap/v3.bootcss.com/migration.html" },
+            { name: "less教程", path: "http://www.dsiab.com/course/less/less.bootcss.com/index.html" },
+            { name: "react教程", path: "http://www.dsiab.com/course//react/react.docschina.org/index.html" },
+            { name: "typescript教程", path: "http://www.dsiab.com/course/tslang/www.tslang.cn/index.html" },
+            { name: "bootstrap中文教程", path: "http://www.dsiab.com/course//bootstrap/v3.bootcss.com/migration.html" },
           ],
         },
         {
           name: "后端教程",
           path: '',
           children: [
-            { name: "java教程", path: "http://source.dsiab.com/course/how2j/default.html" },
-            { name: "c语言教程", path: "http://source.dsiab.com/course/C/" },
-            { name: "mysql教程", path: "http://source.dsiab.com/course/mysql/" },
+            { name: "java教程", path: "http://www.dsiab.com/course/how2j/default.html" },
+            { name: "c语言教程", path: "http://www.dsiab.com/course/C/" },
+            { name: "mysql教程", path: "http://www.dsiab.com/course/mysql/" },
           ],
         },
       ],
