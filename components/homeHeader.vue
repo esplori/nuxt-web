@@ -42,9 +42,9 @@ export default {
           children: [
             { name: "w3school教程", path: "http://source.dsiab.com/course/w3c/" , },
             { name: "less教程", path: "http://www.dsiab.com/course/less/less.bootcss.com/index.html" },
-            { name: "react教程", path: "http://www.dsiab.com/course//react/react.docschina.org/index.html" },
+            { name: "react教程", path: "http://www.dsiab.com/course/react/react.docschina.org/index.html" },
             { name: "typescript教程", path: "http://www.dsiab.com/course/tslang/www.tslang.cn/index.html" },
-            { name: "bootstrap中文教程", path: "http://www.dsiab.com/course//bootstrap/v3.bootcss.com/migration.html" },
+            { name: "bootstrap中文教程", path: "http://www.dsiab.com/course/bootstrap/v3.bootcss.com/migration.html" },
           ],
         },
         {
