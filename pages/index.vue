@@ -2,6 +2,7 @@
   <div class="container">
     <div class="home-body">
       <div class="left-body">
+        <div class="_yiashlj3sgk"></div>
         <div class="recommand">
           <div class="carousel">
             <div class="carousel-item">
@@ -135,6 +136,11 @@ export default {
       // 查分类
       this.getCate();
     }
+    (window.slotbydup = window.slotbydup || []).push({
+      id: "u6611132",
+      container: "_yiashlj3sgk",
+      async: true,
+    });
   },
   methods: {
     async getRecomList() {
