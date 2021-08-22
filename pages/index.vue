@@ -4,26 +4,48 @@
       <div class="left-body">
         <div class="recommand">
           <div class="carousel">
-            <el-row :gutter="20">
-              <el-col
-                :span="6"
-                v-for="(item, index) in recommandList.slice(0,4)"
-                :key="index"
-              >
-                <el-card style="border:none" shadow="never" :body-style="{ padding: '0px', width: '100%', height: '200px' }">
-                  <img
-                    style="width:100%;height:130px"
-                    :src="carouselList[index].src"
-                    class="image"
-                  />
-                  <div class="card-title">
-                    <span>{{item.title}}}</span>
-                  </div>
-                </el-card>
-              </el-col>
-            </el-row>
+            <div class="carousel-item">
+              <el-carousel indicator-position="outside">
+                <el-carousel-item
+                  v-for="(item, index) in carouselList"
+                  :key="index"
+                >
+                  <img :src="item.src" alt="" style="width: 100%" />
+                </el-carousel-item>
+              </el-carousel>
+            </div>
+            <h2 class="big-title">推荐图文</h2>
+            <div class="card">
+              <el-row :gutter="20">
+                <el-col
+                  :span="6"
+                  v-for="(item, index) in recommandList.slice(0, 4)"
+                  :key="index"
+                >
+                  <el-card
+                    style="border: none"
+                    shadow="never"
+                    :body-style="{
+                      padding: '0px',
+                      width: '100%',
+                      height: '200px',
+                    }"
+                  >
+                    <img
+                      style="width: 100%; height: 130px"
+                      :src="carouselList[index].src"
+                      class="image"
+                    />
+                    <div class="card-title">
+                      <span>{{ item.title }}}</span>
+                    </div>
+                  </el-card>
+                </el-col>
+              </el-row>
+            </div>
           </div>
         </div>
+        <h2 class="big-title common-big-title">综合资讯</h2>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
           <nuxtPagination
@@ -60,23 +82,23 @@ export default {
       carouselList: [
         {
           src: "http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg",
-          name: "证书",
+          name: "",
         },
         {
           src: "http://source.dsiab.com/upload/5b3e8856-d0aa-4130-8150-fface4bf3c3b.jpeg",
-          name: "证书2",
+          name: "",
         },
         {
           src: "http://source.dsiab.com/upload/aa7f6f40-a451-4cb8-9a79-408d33488c84.jpeg",
-          name: "证书3",
+          name: "",
         },
         {
           src: "http://source.dsiab.com/upload/7af643d9-8640-4dd1-8987-188012209bcb.jpeg",
-          name: "证书4",
+          name: "",
         },
       ],
-      recommandList:[],
-      cateList: []
+      recommandList: [],
+      cateList: [],
     };
   },
   // 所有接口通过服务端调用渲染
@@ -97,9 +119,7 @@ export default {
 
   // 只要列表通过服务端调用渲染，分类跟推荐接口在浏览器调用
   async asyncData({ query, store, $axios, route }) {
-    let [homeList] = await Promise.all([
-      getListApi({ page: 1 })
-    ]);
+    let [homeList] = await Promise.all([getListApi({ page: 1 })]);
     return {
       homeList: homeList.data,
       page: parseInt(route.params.id || 1),
@@ -145,6 +165,13 @@ export default {
   .home-body {
     display: flex;
     justify-content: space-between;
+    .big-title {
+      padding: 5px 0;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .common-big-title {
+      padding: 5px 20px;
+    }
     .left-body {
       width: 100%;
       background: #fff;
@@ -154,16 +181,20 @@ export default {
         // border: 1px solid #aaa;
         padding: 20px;
         width: 100%;
-          .carousel {
-            background: #fff;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #f5f5f5;
-            .card-title{
+        .carousel {
+          background: #fff;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #f5f5f5;
+          .carousel-item {
+            margin-bottom: 10px;
+          }
+          .card {
+            .card-title {
               padding: 5px 0;
               font-size: 14px;
             }
           }
-
+        }
       }
       ul {
         li {
