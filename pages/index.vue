@@ -2,26 +2,28 @@
   <div class="container">
     <div class="home-body">
       <div class="left-body">
-        <!-- <div class="recommand">
-           <div class="left">
-             <div class="carousel">
-               <el-carousel height="280px">
-                <el-carousel-item v-for="(item,index) in carouselList" :key="index">
-                  <img :src="item.src" alt="" height="280px">
-                </el-carousel-item>
-              </el-carousel>
-             </div>
-             <div class="carousel-bottom-info">
-              <div class="bottom-info-title">{{recommandList[0].title}}</div>
-              <div class="bottom-info-content">{{deleteHtmlTag(recommandList[0].content.slice(0, 120))}}</div>
-             </div>
-           </div>
-           <div class="right">
-            <ul>
-              <li v-for="(it,idx) in recommandList.slice(0,5)" :key="idx">{{it.title}}</li>
-            </ul>
-           </div>
-        </div> -->
+        <div class="recommand">
+          <div class="carousel">
+            <el-row :gutter="20">
+              <el-col
+                :span="6"
+                v-for="(item, index) in recommandList.slice(0,4)"
+                :key="index"
+              >
+                <el-card style="border:none" shadow="never" :body-style="{ padding: '0px', width: '100%', height: '200px' }">
+                  <img
+                    style="width:100%;height:130px"
+                    :src="carouselList[index].src"
+                    class="image"
+                  />
+                  <div class="card-title">
+                    <span>{{item.title}}}</span>
+                  </div>
+                </el-card>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
           <nuxtPagination
@@ -40,7 +42,13 @@
 </template>
 
 <script>
-import { getListApi, getRecomListApi, getCateApi, getRecomListApi2, getCateApi2 } from "./api/index";
+import {
+  getListApi,
+  getRecomListApi,
+  getCateApi,
+  getRecomListApi2,
+  getCateApi2,
+} from "./api/index";
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
@@ -76,7 +84,7 @@ export default {
   // async asyncData({ query, store, $axios, route }) {
   //   let [homeList, recommandList, cateList] = await Promise.all([
   //     getListApi({ page: 1 }),
-  //     getRecomListApi({type: 'all'}),
+  //     getRecomListApi({ type: "all" }),
   //     getCateApi({}),
   //   ]);
   //   return {
@@ -103,22 +111,22 @@ export default {
     if (!process.server) {
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
-      this.getRecomList()
+      this.getRecomList();
       // 查分类
-      this.getCate()
+      this.getCate();
     }
   },
   methods: {
     async getRecomList() {
-      let res = await getRecomListApi2({type: 'all'})
+      let res = await getRecomListApi2({ type: "all" });
       if (res) {
-        this.recommandList = res.data
+        this.recommandList = res.data;
       }
     },
     async getCate() {
-      let res = await getCateApi2({})
+      let res = await getCateApi2({});
       if (res) {
-        this.cateList = res.data.result
+        this.cateList = res.data.result;
       }
     },
     /**
@@ -146,27 +154,16 @@ export default {
         // border: 1px solid #aaa;
         padding: 20px;
         width: 100%;
-        .left {
-          width: 50%;
           .carousel {
-            background: #ddd;
-          }
-          .carousel-bottom-info {
-            padding: 20px 0;
-            .bottom-info-title {
-              font-size: 22px;
-              word-break: break-all;
-            }
-            .bottom-info-content {
-              color: #828a92;
-              padding-top: 10px;
-              word-break: break-all;
+            background: #fff;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f5f5f5;
+            .card-title{
+              padding: 5px 0;
+              font-size: 14px;
             }
           }
-        }
-        .right {
-          width: 50%;
-        }
+
       }
       ul {
         li {
