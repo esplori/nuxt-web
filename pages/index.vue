@@ -2,7 +2,6 @@
   <div class="container">
     <div class="home-body">
       <div class="left-body">
-        <div class="_yiashlj3sgk"></div>
         <div class="recommand">
           <div class="carousel">
             <div class="carousel-item">
@@ -38,7 +37,7 @@
                       class="image"
                     />
                     <div class="card-title">
-                      <span>{{ item.title }}}</span>
+                      <span><a :href="'/post/' + item.id">{{ item.title }}}</a></span>
                     </div>
                   </el-card>
                 </el-col>
@@ -46,6 +45,7 @@
             </div>
           </div>
         </div>
+        <div class="_yiashlj3sgk"></div>
         <h2 class="big-title common-big-title">综合资讯</h2>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
@@ -188,6 +188,7 @@ export default {
         padding: 20px;
         width: 100%;
         .carousel {
+          width: 100%;
           background: #fff;
           padding-bottom: 20px;
           border-bottom: 1px solid #f5f5f5;
