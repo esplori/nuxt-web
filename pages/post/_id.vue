@@ -9,9 +9,9 @@
             <span class="el-icon-view"> {{ detailData.views }}</span>
             <span class="cate-name">{{ detailData.cateName }}</span>
           </div>
-          <div class="_1q7vpoyk4v9"></div>
+          <div class="_fi4e2i4y7eo"></div>
           <div v-html="detailData.content" class="detail-post-content"></div>
-          <div class="_11ehbqqorbp"></div>
+          <div class="_utrtw8kq5so"></div>
         </div>
         <div>
           <div class="tags" v-if="detailData.keywords">
@@ -176,13 +176,13 @@ export default {
     // 顶部
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6324927",
-      container: "_1q7vpoyk4v9",
+      container: "_fi4e2i4y7eo",
       async: true,
     });
     // 底部
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6324930",
-      container: "_11ehbqqorbp",
+      container: "_utrtw8kq5so",
       async: true,
     });
   },
@@ -199,10 +199,10 @@ export default {
 </style>
 <style lang="less" scoped>
 @media (max-width: 760px) {
-  ._11ehbqqorbp {
+  ._fi4e2i4y7eo {
     display: none;
   }
-  ._1q7vpoyk4v9 {
+  ._utrtw8kq5so {
     display: none;
   }
 }
