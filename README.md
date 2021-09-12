@@ -6,14 +6,27 @@
 
 使用到的插件： axios  + less
 
-同另外两个项目springboot-admin、vue-admin一起组成了一个博客系统
+同另外两个项目springbootAdmin(https://gitee.com/wilkwo/springbootAdmin)、vue-admin(https://gitee.com/wilkwo/vue-admin)一起组成了一个博客系统
 
-演示地址：[www.dsiab.com](https://www.dsiab.com)
+## 演示地址
+
+官网：[www.dsiab.com](https://www.dsiab.com)
 
 拉取代码后运行可看到效果，不用跑后端服务，直接调用官网接口。
 
 欢迎fork，欢迎提问题。
 
+## 后台管理地址： 
+
+http://admin.dsiab.com
+
+测试账号： test
+
+测试密码: test
+
+
+
+## 截图
 
 <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/site.jpg" style="width:400px">
 
