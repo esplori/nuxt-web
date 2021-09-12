@@ -29,12 +29,12 @@ http://admin.dsiab.com
 
 
 
-## 演示截图
+## PC演示截图
 
 <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/site.jpg" style="width:400px">
 
 
-适配移动端
+## 适配移动端
 
 <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg">
 
