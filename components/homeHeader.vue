@@ -34,7 +34,7 @@ export default {
     return {
       activeIndex: '',
       menList: [
-        { name: "javascript技术分享", path: "/" },
+        { name: "首页", path: "/" },
         { name: "网站导航", path: "/navigation" },
         {
           name: "前端教程",
@@ -77,6 +77,7 @@ export default {
 <style lang="less">
 .home-header {
   background: #fff;
+  border-bottom: 1px solid #f5f5f5;
   .el-menu--horizontal.el-menu{
     border-bottom: none
   }
