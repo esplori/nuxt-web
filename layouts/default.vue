@@ -8,7 +8,6 @@
   </div>
 </template>
 <script>
-import HomeHeader from "../components/homeHeader.vue";
 export default {
   components: {
     commonFooter: () => import("..//components/homeFooter.vue"),
