@@ -4,18 +4,12 @@
       <el-row :gutter="10">
         <el-col :span="24">
           <div class="left-body">
-            <div class="nav-tabs">
-              <el-tabs v-model="activeName">
-                <el-tab-pane label="所有" name="all"></el-tab-pane>
-                <el-tab-pane label="开发" name="first"></el-tab-pane>
-                <el-tab-pane label="资讯" name="second"></el-tab-pane>
-                <el-tab-pane label="导航" name="third"></el-tab-pane>
-              </el-tabs>
-            </div>
             <ul>
               <li v-for="(item, index) in list" :key="index">
-                 <div><a :href="item.content" target="_blank">{{item.title}}</a></div>
-                 <!-- <div>{{item.title}}</div> -->
+                 <div>{{item.cateName}}</div>
+                 <div v-for="(it,ix) in item.children" :key="ix">
+                   <a :href="it.content">{{it.title}}</a>
+                 </div>
               </li>
             </ul>
           </div>
