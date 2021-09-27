@@ -7,7 +7,15 @@
 
 使用到的插件： axios  + less
 
-同另外两个项目springbootAdmin(https://gitee.com/wilkwo/springbootAdmin)、vue-admin(https://gitee.com/wilkwo/vue-admin) 一起组成了一个博客系统
+同另外两个项目：
+
+springbootAdmin(https://gitee.com/wilkwo/springbootAdmin)
+
+
+vueAdmin(https://gitee.com/wilkwo/vueAdmin) 
+
+
+一起组成了一个博客系统
 
 
 ## 演示地址
