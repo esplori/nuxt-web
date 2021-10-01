@@ -14,3 +14,9 @@ a{
 body{
   background: #fff;
 }
+/* 修改富文本编辑器添加代码后样式 */
+code xmp{
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f5f5f5!important;
+}
