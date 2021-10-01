@@ -3,13 +3,15 @@
     <ul v-show="list.length">
       <li v-for="(item, index) in list" :key="index">
         <div class="post-item">
-          <img
-            :src="imgsList[index]"
-            alt=""
-            width="150px"
-            height="115px"
-            class="item-img"
-          />
+          <div class="img-box">
+            <img
+              :src="imgsList[index]"
+              alt=""
+              width="150px"
+              height="115px"
+              class="item-img"
+            />
+          </div>
           <div class="item-info">
             <div class="home-post-title">
               <a :href="'/post/' + item.id" target="_blank">{{ item.title }}</a>
@@ -87,7 +89,7 @@ export default {
     li {
       padding: 20px;
       border-bottom: 1px solid #f5f5f5;
-      .home-post-title{
+      .home-post-title {
         padding-bottom: 10px;
       }
       .home-post-title a {
@@ -128,9 +130,13 @@ export default {
       .post-item {
         display: flex;
         align-items: center;
-        .item-img {
+        .img-box {
+          width: 150px;
+          height: 115px;
           margin-right: 20px;
-          border-radius: 5px;
+          .item-img {
+            border-radius: 5px;
+          }
         }
       }
     }
