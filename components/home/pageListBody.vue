@@ -77,7 +77,7 @@ export default {
 </script>
 <style lang="less">
 @media (max-width: 575.98px) {
-  .item-img {
+  .img-box {
     display: none;
   }
 }

@@ -37,7 +37,11 @@
                       class="image"
                     />
                     <div class="card-title">
-                      <span><a :href="'/post/' + item.id">{{ item.title }}}</a></span>
+                      <span
+                        ><a :href="'/post/' + item.id"
+                          >{{ item.title }}}</a
+                        ></span
+                      >
                     </div>
                   </el-card>
                 </el-col>
@@ -256,7 +260,15 @@ export default {
       max-width: 385px;
     }
     @media screen and (max-width: 1024px) {
-      .right-sidebar,._yiashlj3sgk {
+      .right-sidebar,
+      ._yiashlj3sgk {
+        display: none;
+      }
+    }
+    @media (max-width: 575.98px) {
+      .big-title,
+      .card,
+      .carousel {
         display: none;
       }
     }
