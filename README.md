@@ -39,12 +39,16 @@ http://admin.dsiab.com
 
 ## PC演示截图
 
-<img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/site.jpg" style="width:400px">
+<!-- <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/site.jpg" style="width:400px"> -->
+
+<img src="./assets/img/site.jpg" alt="支付宝" width="400px" />
 
 
 ## 适配移动端
 
-<img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg">
+<!-- <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg"> -->
+
+<img src="./assets/img/mobileSite.jpeg" alt="支付宝" width="400px" />
 
 
 ## 选择nuxt的原因：
