@@ -75,7 +75,7 @@ http://admin.dsiab.com
 注意浏览器调接口需要配置nginx反向代理，具体可参考：https://www.dsiab.com/post/4421
 
 
-## 如何启动应用
+### 如何启动应用
 
 ```bash
 
@@ -100,7 +100,7 @@ $ npm run generate
 ```
 
 
-## 感谢赞赏
+### 感谢赞赏
 
 您的支持是持续更新的动力！
 
