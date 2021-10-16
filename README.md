@@ -7,15 +7,14 @@
 
 使用到的插件： axios  + less
 
-同另外两个项目：
+
+## 关联项目
+
+同另外两个项目一起组成了一个博客系统：
 
 springbootAdmin(https://gitee.com/wilkwo/springbootAdmin)
 
-
 vueAdmin(https://gitee.com/wilkwo/vueAdmin) 
-
-
-一起组成了一个博客系统
 
 
 ## 演示地址
@@ -31,23 +30,23 @@ vueAdmin(https://gitee.com/wilkwo/vueAdmin)
 
 http://admin.dsiab.com
 
-测试账号： test
+测试账号：test
 
-测试密码: test
-
-
-
-## PC演示截图
-
-<img src="./assets/img/site.png" alt="PC演示截图" width="400px" />
+测试密码：test
 
 
 
-## 适配移动端
+## PC演示
+
+<img src="./assets/img/site.png" alt="PC演示" width="400px" />
+
+
+
+## 移动端演示
 
 <!-- <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg"> -->
 
-<img src="./assets/img/mobileSite.jpeg" alt="支付宝" width="400px" />
+<img src="./assets/img/mobileSite.jpeg" alt="移动端" width="400px" />
 
 
 
