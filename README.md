@@ -1,14 +1,14 @@
 # nuxt-web
 
 
-## 项目介绍：
+### 项目介绍：
 
 主要技术: nuxtjs + element-ui
 
 使用到的插件： axios  + less
 
 
-## 关联项目
+### 关联项目
 
 同另外两个项目一起组成了一个博客系统：
 
@@ -17,7 +17,7 @@ springbootAdmin(https://gitee.com/wilkwo/springbootAdmin)
 vueAdmin(https://gitee.com/wilkwo/vueAdmin) 
 
 
-## 演示地址
+### 演示地址
 
 官网：[www.dsiab.com](https://www.dsiab.com)
 
@@ -26,7 +26,7 @@ vueAdmin(https://gitee.com/wilkwo/vueAdmin)
 欢迎fork，欢迎提问题。
 
 
-## 后台管理地址： 
+### 后台管理地址： 
 
 http://admin.dsiab.com
 
@@ -36,13 +36,13 @@ http://admin.dsiab.com
 
 
 
-## PC演示
+### PC演示
 
 <img src="./assets/img/site.png" alt="PC演示" width="400px" />
 
 
 
-## 移动端演示
+### 移动端演示
 
 <!-- <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg"> -->
 
@@ -50,7 +50,7 @@ http://admin.dsiab.com
 
 
 
-## 选择nuxt的原因：
+### 选择nuxt的原因：
 
 1.nuxt开发的项目能被搜索引擎收录,能进行seo，需要将页面改为restful风格
 
@@ -59,7 +59,7 @@ http://admin.dsiab.com
 3.能正常接入统计跟广告代码
 
 
-## 不足
+### nuxt不足
 
 1.由于Nuxt采用服务端渲染，所以影响页面打开速度很多，包括页面内容大小，服务器性能，网络带宽等。所以nuxt项目可以将页面的主要内容进行服务端渲染，其他内容还是可以在浏览器端进行ajax请求，这样可以大大减少服务器压力。
 
@@ -67,7 +67,7 @@ http://admin.dsiab.com
 
 3.性能上比起php要逊色一些。
 
-## 提升性能
+### 提升加载性能
 
 某些时候某些接口并不需要都在服务端渲染，可以在浏览器渲染。
 比如目前首页列表是服务端调用渲染，右侧菜单的推荐跟分类是浏览器渲染，即跟正常的ajax调用一样
@@ -100,9 +100,11 @@ $ npm run generate
 ```
 
 
-## 你的支持是持续更新的动力
+## 感谢赞赏
 
-<img src="./assets/img/zanshan.jpeg" alt="PC演示截图" width="400px" />
+您的支持是持续更新的动力！
+
+<img src="./assets/img/zanshan.jpeg" alt="赞赏" width="400px" />
 
 
 
