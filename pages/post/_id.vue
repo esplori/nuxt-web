@@ -5,9 +5,10 @@
         <div>
           <h1 class="detail-post-title">{{ detailData.title }}</h1>
           <div class="post-info">
-            <span class="create-date">{{ detailData.createDate }}</span>
+            <span class="el-icon-user"> {{ detailData.createBy }}</span>
+            <span class="el-icon-date"> {{ detailData.createDate }}</span>
             <span class="el-icon-view"> {{ detailData.views }}</span>
-            <span class="cate-name">{{ detailData.cateName }}</span>
+            <span class="el-icon-tickets"> {{ detailData.cateName }}</span>
           </div>
           <div class="_fi4e2i4y7eo"></div>
           <div v-html="detailData.content" class="detail-post-content"></div>

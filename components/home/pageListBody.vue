@@ -26,8 +26,8 @@
                 {{ item.createDate }}
               </span>
               <span class="views el-icon-view"> {{ item.views }} </span>
-              <span class="cate-name"
-                ><a :href="'/post/category/' + item.cate">{{
+              <span class="cate-name el-icon-tickets">
+                <a :href="'/post/category/' + item.cate"> {{
                   item.cateName || ""
                 }}</a>
               </span>
