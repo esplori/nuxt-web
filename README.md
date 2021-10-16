@@ -39,9 +39,8 @@ http://admin.dsiab.com
 
 ## PC演示截图
 
-<!-- <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/site.jpg" style="width:400px"> -->
+<img src="./assets/img/site.png" alt="PC演示截图" width="400px" />
 
-<img src="./assets/img/site.jpg" alt="支付宝" width="400px" />
 
 
 ## 适配移动端
@@ -51,6 +50,7 @@ http://admin.dsiab.com
 <img src="./assets/img/mobileSite.jpeg" alt="支付宝" width="400px" />
 
 
+
 ## 选择nuxt的原因：
 
 1.nuxt开发的项目能被搜索引擎收录,能进行seo，需要将页面改为restful风格
@@ -58,6 +58,7 @@ http://admin.dsiab.com
 2.相比其他语言，nuxt更简单，跟vue开发一样简单，会前端就可以开发，比vue更简单，只需要将文件按目录新建好，nuxt会自动生成对应路由。
 
 3.能正常接入统计跟广告代码
+
 
 ## 不足
 
@@ -98,5 +99,11 @@ $ npm run start
 
 $ npm run generate
 ```
+
+
+## 你的支持是持续更新的动力
+
+<img src="./assets/img/zanshan.jpeg" alt="PC演示截图" width="400px" />
+
 
 
