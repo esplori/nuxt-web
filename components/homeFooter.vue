@@ -21,8 +21,9 @@ export default {
       // 添加统计
       this.initWebStat();
       window.addEventListener("click", (item) => {
-        this.getWegStats();
+        // this.getWegStats();
       });
+      this.getWegStats();
     }
   },
   methods: {
