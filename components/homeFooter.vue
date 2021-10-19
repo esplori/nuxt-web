@@ -12,7 +12,7 @@ export default {
     return {
       script: [
         { src: "https://cpro.baidustatic.com/cpro/ui/cm.js" },
-        { src: "http://admin.dsiab.com/static/js/WebStats.js" },
+        { src: "https://www.dsiab.com/js/WebStats.js" },
       ],
     };
   },
