@@ -12,7 +12,7 @@ export default {
     return {
       script: [
         { src: "https://cpro.baidustatic.com/cpro/ui/cm.js" },
-        { src: "http://admin.dsiab.com/static/js/tj.js" },
+        { src: "http://admin.dsiab.com/static/js/WebStats.js" },
       ],
     };
   },
@@ -34,7 +34,7 @@ export default {
       });
     },
     initWebStat() {
-      var hunter = new Hunter({
+      var hunter = new WebStats({
         baseUrl: "/bootService", // 基础接口地址url
         url: "/stats/getStats.gif", // 请求上报api的接口地址
         routeMode: "history", // 填写单页面应用中使用的路由模式。
