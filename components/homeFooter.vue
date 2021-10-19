@@ -12,7 +12,7 @@ export default {
     return {
       script: [
         { src: "https://cpro.baidustatic.com/cpro/ui/cm.js" },
-        { src: "https://www.dsiab.com/js/tj.js" },
+        { src: "http://admin.dsiab.com/static/js/tj.js" },
       ],
     };
   },
