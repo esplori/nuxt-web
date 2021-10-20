@@ -28,11 +28,13 @@
             <li v-for="(item, index) in list" :key="index">
               <div class="title">
                 <a :href="'/post/' + item.id" target="_blank">
-                  {{ item.title}}
+                  {{ item.title }}
                 </a>
+              </div>
+              <div class="excerpt">
+                <span class="views el-icon-date"> {{ item.createDate }}</span>
                 <span class="views el-icon-view"> {{ item.views }}</span>
               </div>
-              <!-- <div class="excerpt">{{ (item.content.slice(0, 40))}}</div> -->
             </li>
           </ul>
           <!-- 在浏览器端点击查询就显示该列表 -->
@@ -40,7 +42,7 @@
             <li v-for="(item, index) in recommandList" :key="index">
               <div class="title">
                 <a :href="'/post/' + item.id" target="_blank">
-                  {{ item.title}}
+                  {{ item.title }}
                 </a>
                 <span class="views el-icon-view"> {{ item.views }}</span>
               </div>
@@ -60,7 +62,7 @@
         </div>
       </li>
       <li>
-        <div class="module category">
+        <div class="module">
           <div class="cate">友情链接</div>
           <ul>
             <li v-for="(item, index) in linkList" :key="index">
@@ -93,22 +95,22 @@ export default {
     return {
       searchWords: "",
       linkList: [{ name: "qhy的个人空间", path: "https://quhuanyu.dsiab.com" }],
-      activeName:'all',
+      activeName: "all",
       recommandList: [],
-      isBrowser: false
+      isBrowser: false,
     };
   },
   methods: {
     async getRecomList(type) {
-      let res = await getRecomListApi2({type})
+      let res = await getRecomListApi2({ type });
       if (res) {
         // 如果是浏览器端就取另一个字段
-        this.isBrowser = true
-        this.recommandList = res.data
+        this.isBrowser = true;
+        this.recommandList = res.data;
       }
     },
-    handleClick(tab, event){
-      this.getRecomList(tab.name)
+    handleClick(tab, event) {
+      this.getRecomList(tab.name);
     },
     search() {
       if (!this.searchWords) {
@@ -153,8 +155,11 @@ export default {
 .side-bar {
   padding: 20px;
   margin-left: 10px;
-  box-shadow:0 0 20px rgba(210,211,216,.3);
+  box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
   background: #fff;
+  .el-tabs__nav-wrap::after{
+    height: 0;
+  }
 }
 .side-bar > ul > li {
   padding: 15px 0;
@@ -191,6 +196,7 @@ export default {
   .category > ul > li {
     display: inline-block;
     width: 50%;
+    border-bottom: 1px dotted #f5f5f5;
   }
 }
 </style>
