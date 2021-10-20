@@ -1,9 +1,12 @@
 <template>
   <div class="home-footer">
     <div class="site-info">
-      <h4><a href="/">@2021 powered by javascript技术分享</a></h4>
-      <h4><a href="https://beian.miit.gov.cn/">粤ICP备20013202号</a></h4>
+      <div><a href="/">@2021 powered by javascript技术分享</a></div>
+      <div><a href="https://beian.miit.gov.cn/">粤ICP备20013202号</a></div>
     </div>
+    <el-backtop :bottom="100">
+      
+    </el-backtop>
   </div>
 </template>
 <script>
