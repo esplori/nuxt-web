@@ -90,7 +90,7 @@ export default {
       padding: 20px;
       border-bottom: 1px solid #f5f5f5;
       .home-post-title {
-        padding-bottom: 10px;
+        padding-bottom: 15px;
       }
       .home-post-title a {
         font-size: 20px;

@@ -153,7 +153,7 @@ export default {
 .side-bar {
   padding: 20px;
   margin-left: 10px;
-  // box-shadow: 0 1px 3px rgba(27, 95, 160, .1);
+  box-shadow:0 0 20px rgba(210,211,216,.3);
   background: #fff;
 }
 .side-bar > ul > li {

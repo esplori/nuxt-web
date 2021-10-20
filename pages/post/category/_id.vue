@@ -72,7 +72,7 @@ export default {
     .left-body {
       width: 100%;
       background: #fff;
-      box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
+      box-shadow:0 0 20px rgba(210,211,216,.3);
       .home-pagination {
         padding: 20px;
         background: #fff;

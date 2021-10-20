@@ -219,6 +219,7 @@ export default {
       justify-content: space-between;
       background: #fff;
       padding: 20px;
+      box-shadow:0 0 20px rgba(210,211,216,.3);
       .detail-post-title {
         color: #141414;
         font-size: 26px;

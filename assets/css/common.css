@@ -12,7 +12,7 @@ a{
   text-decoration: none;
 }
 body{
-  background: #fff;
+  background-image: linear-gradient(#f9f9f9 50%, #fff);
 }
 /* 修改富文本编辑器添加代码后样式 */
 code xmp{

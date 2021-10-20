@@ -78,6 +78,7 @@ export default {
 .home-header {
   background: #fff;
   border-bottom: 1px solid #f5f5f5;
+  box-shadow:0 0 20px rgba(210,211,216,.3);
   .el-menu--horizontal.el-menu{
     border-bottom: none
   }

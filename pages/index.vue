@@ -185,6 +185,7 @@ export default {
     .left-body {
       width: 100%;
       background: #fff;
+      box-shadow:0 0 20px rgba(210,211,216,.3);
       .recommand {
         display: flex;
         justify-content: space-between;
