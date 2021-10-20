@@ -157,7 +157,7 @@ export default {
       // return `rgb(${r},${g},${b})`; //返回rgb(r,g,b)格式颜色
       let colorList = ["#409eff", "#67c23a", "#909399", "#e6a23c", "#f56c6c"];
       //随机生成5种颜色中的其中一种
-      var max = 5;
+      var max = 4;
       var min = 0;
       return colorList[Math.floor(Math.random() * (max - min + 1) + min)];
     },
