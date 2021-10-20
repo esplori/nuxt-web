@@ -70,3 +70,14 @@ export async function getCateApi2 (id, data) {
   const options = {}
   return get(url, data, options)
 }
+
+export async function getTagsApi (id, data) {
+  const url = baseUrl +  '/pages/getTags'
+  const options = {}
+  return get(url, data, options)
+}
+export async function getTagsApi2 (id, data) {
+  const url = '/bootService/pages/getTags'
+  const options = {}
+  return get(url, data, options)
+}

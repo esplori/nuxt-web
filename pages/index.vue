@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="right-sidebar">
-        <sideBar :list="recommandList" :cateList="cateList"></sideBar>
+        <sideBar :list="recommandList" :cateList="cateList" :tagsList="tagsList"></sideBar>
       </div>
     </div>
   </div>
@@ -75,6 +75,8 @@ import {
   getCateApi,
   getRecomListApi2,
   getCateApi2,
+  getTagsApi,
+  getTagsApi2
 } from "./api/index";
 export default {
   components: {
@@ -104,21 +106,24 @@ export default {
       ],
       recommandList: [],
       cateList: [],
+      tagsList: []
     };
   },
   // 所有接口通过服务端调用渲染
 
   // async asyncData({ query, store, $axios, route }) {
-  //   let [homeList, recommandList, cateList] = await Promise.all([
+  //   let [homeList, recommandList, cateList,tagsList] = await Promise.all([
   //     getListApi({ page: 1 }),
   //     getRecomListApi({ type: "all" }),
   //     getCateApi({}),
+  //     getTagsApi({})
   //   ]);
   //   return {
   //     homeList: homeList.data,
   //     recommandList: recommandList.data,
   //     cateList: cateList.data.result,
   //     page: parseInt(route.params.id || 1),
+  //     tagsList: tagsList.data.result
   //   };
   // },
 
@@ -139,6 +144,8 @@ export default {
       this.getRecomList();
       // 查分类
       this.getCate();
+      // 查标签
+      this.getTags()
     }
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6611132",
@@ -157,6 +164,12 @@ export default {
       let res = await getCateApi2({});
       if (res) {
         this.cateList = res.data.result;
+      }
+    },
+    async getTags() {
+      let res = await getTagsApi2({});
+      if (res) {
+        this.tagsList = res.data.result;
       }
     },
     /**

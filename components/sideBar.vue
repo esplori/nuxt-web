@@ -62,6 +62,27 @@
         </div>
       </li>
       <li>
+        <div class="module tags">
+          <div class="cate">标签云</div>
+          <ul>
+            <li
+              v-for="(item, index) in tagsList"
+              :key="index"
+              style="display: inline-block"
+            >
+              <a :href="'/post/tabs/' + item.keywords"
+                ><span
+                  class="tag-item"
+                  :style="{ background: randomRgbColor() }"
+                  >{{ item.keywords }}</span
+                ></a
+              >
+              <!-- {{item.name}} -->
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
         <div class="module">
           <div class="cate">友情链接</div>
           <ul>
@@ -85,6 +106,12 @@ export default {
       },
     },
     cateList: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
+    tagsList: {
       type: Array,
       default() {
         return [];
@@ -118,6 +145,18 @@ export default {
         return;
       }
       window.open("/post/tags/" + this.searchWords);
+    },
+    randomRgbColor() {
+      //随机生成RGB颜色
+      // var r = Math.floor(Math.random() * 256); //随机生成256以内r值
+      // var g = Math.floor(Math.random() * 256); //随机生成256以内g值
+      // var b = Math.floor(Math.random() * 256); //随机生成256以内b值
+      // return `rgb(${r},${g},${b})`; //返回rgb(r,g,b)格式颜色
+      let colorList = ["#409eff", "#67c23a", "#909399", "#e6a23c", "#f56c6c"];
+      //随机生成5种颜色中的其中一种
+      var max = 5
+      var min = 0
+      return colorList[Math.floor(Math.random() * (max - min + 1) + min)];
     },
   },
   mounted() {
@@ -157,7 +196,7 @@ export default {
   margin-left: 10px;
   box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
   background: #fff;
-  .el-tabs__nav-wrap::after{
+  .el-tabs__nav-wrap::after {
     height: 0;
   }
 }
@@ -197,6 +236,15 @@ export default {
     display: inline-block;
     width: 50%;
     border-bottom: 1px dotted #f5f5f5;
+  }
+  .module.tags {
+    .tag-item {
+      display: inline-block;
+      padding: 2px 15px;
+      color: #fff;
+      margin-right: 10px;
+      border-radius: 3px;
+    }
   }
 }
 </style>
