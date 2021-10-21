@@ -31,13 +31,12 @@ export default {
   },
   methods: {
     getWegStats() {
-      console.log(window.hunter.getDirectData());
-      window.hunter.track("/bootService/stats/getStats.gif", {
-        ...window.hunter.getDirectData(),
+      window.WebStats.track("/bootService/stats/getStats.gif", {
+        ...window.WebStats.getDirectData(),
       });
     },
     initWebStat() {
-      var hunter = new WebStats({
+      var WebStats = new WebStats({
         baseUrl: "/bootService", // 基础接口地址url
         url: "/stats/getStats.gif", // 请求上报api的接口地址
         routeMode: "history", // 填写单页面应用中使用的路由模式。
@@ -59,7 +58,7 @@ export default {
           device: "device",
         },
       });
-      window.hunter = hunter;
+      window.WebStats = WebStats;
     },
   },
 };
