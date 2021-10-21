@@ -146,7 +146,7 @@ export default {
     if (!process.server) {
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
-      this.getRecomList({ type: "all" });
+      this.getRecomList("all");
       // 查分类
       this.getCate();
       // 查标签

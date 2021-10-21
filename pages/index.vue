@@ -72,8 +72,8 @@
 import {
   getListApi,
   getRecomListApi,
-  getCateApi,
   getRecomListApi2,
+  getCateApi,
   getCateApi2,
   getTagsApi,
   getTagsApi2
