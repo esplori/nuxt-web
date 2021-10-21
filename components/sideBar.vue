@@ -60,7 +60,7 @@
               :key="index"
               style="display: inline-block"
             >
-              <a :href="'/post/tabs/' + item.keywords"
+              <a :href="'/post/tags/' + item.keywords"
                 ><span
                   class="tag-item"
                   :style="{ background: randomRgbColor() }"
