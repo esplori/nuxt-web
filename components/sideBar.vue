@@ -24,21 +24,8 @@
             <el-tab-pane label="本年度" name="365"></el-tab-pane>
             <el-tab-pane label="总排行" name="all"></el-tab-pane>
           </el-tabs>
-          <ul v-if="!isBrowser">
-            <li v-for="(item, index) in list" :key="index">
-              <div class="title">
-                <a :href="'/post/' + item.id" target="_blank">
-                  {{ item.title }}
-                </a>
-              </div>
-              <div class="excerpt">
-                <span class="views el-icon-date"> {{ item.createDate }}</span>
-                <span class="views el-icon-view"> {{ item.views }}</span>
-              </div>
-            </li>
-          </ul>
           <!-- 在浏览器端点击查询就显示该列表 -->
-          <ul v-if="isBrowser">
+          <ul>
             <li v-for="(item, index) in recommandList" :key="index">
               <div class="title">
                 <a :href="'/post/' + item.id" target="_blank">
@@ -99,43 +86,23 @@
   </div>
 </template>
 <script>
-import { getRecomListApi2 } from "../pages/api/index";
+import { getRecomListApi2, getCateApi2, getTagsApi2 } from "../pages/api/index";
 export default {
-  props: {
-    list: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-    cateList: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-    tagsList: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-  },
+  props: {},
   data() {
     return {
       searchWords: "",
       linkList: [{ name: "qhy的个人空间", path: "https://quhuanyu.dsiab.com" }],
       activeName: "all",
       recommandList: [],
-      isBrowser: false,
+      cateList: [],
+      tagsList: [],
     };
   },
   methods: {
     async getRecomList(type) {
       let res = await getRecomListApi2({ type });
       if (res) {
-        // 如果是浏览器端就取另一个字段
-        this.isBrowser = true;
         this.recommandList = res.data;
       }
     },
@@ -161,8 +128,30 @@ export default {
       var min = 0;
       return colorList[Math.floor(Math.random() * (max - min + 1) + min)];
     },
+    async getCate() {
+      let res = await getCateApi2({});
+      if (res) {
+        this.cateList = res.data.result;
+      }
+    },
+    async getTags() {
+      let res = await getTagsApi2({});
+      if (res) {
+        this.tagsList = res.data.result;
+      }
+    },
   },
   mounted() {
+    // 判断是否在服务端
+    if (!process.server) {
+      // 在浏览器端调接口，需要服务端做反向代理
+      // 查推荐
+      this.getRecomList({ type: "all" });
+      // 查分类
+      this.getCate();
+      // 查标签
+      this.getTags();
+    }
     // side 1
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6324348",

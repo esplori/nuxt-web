@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="right-sidebar">
-        <sideBar :list="recommandList" :cateList="cateList" :tagsList="tagsList"></sideBar>
+        <sideBar></sideBar>
       </div>
     </div>
   </div>
@@ -142,10 +142,6 @@ export default {
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
       this.getRecomList();
-      // 查分类
-      this.getCate();
-      // 查标签
-      this.getTags()
     }
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6611132",
@@ -159,25 +155,6 @@ export default {
       if (res) {
         this.recommandList = res.data;
       }
-    },
-    async getCate() {
-      let res = await getCateApi2({});
-      if (res) {
-        this.cateList = res.data.result;
-      }
-    },
-    async getTags() {
-      let res = await getTagsApi2({});
-      if (res) {
-        this.tagsList = res.data.result;
-      }
-    },
-    /**
-     * 摘要，截取内容，删除内容中的Html标签
-     */
-    deleteHtmlTag(str) {
-      let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
-      return str1.replace(/ /g, ""); //dds为得到后的内容
     },
   },
 };
