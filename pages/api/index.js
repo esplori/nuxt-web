@@ -81,3 +81,8 @@ export async function getTagsApi2 (id, data) {
   const options = {}
   return get(url, data, options)
 }
+export async function insertCommentApi (data) {
+  const url = baseUrl + '/pages/insertComment'
+  const options = {}
+  return post(url, data, options)
+}

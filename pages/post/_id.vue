@@ -34,6 +34,7 @@
             </div>
           </div>
         </div>
+        <comments></comments>
       </div>
       <div class="right-sidebar">
         <sideBar :list="recommandList" :cateList="cateList"></sideBar>
@@ -54,6 +55,7 @@ export default {
   components: {
     homeHeader: () => import("../../components/homeHeader.vue"),
     sideBar: () => import("../../components/sideBar.vue"),
+    comments: () => import("../../components/comments.vue"),
   },
   data() {
     return {
