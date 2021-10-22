@@ -82,7 +82,7 @@ export async function getTagsApi2 (id, data) {
   return get(url, data, options)
 }
 export async function insertCommentApi (data) {
-  const url =  '/bootService/admin/insertComment'
+  const url =  '/bootService/admin/getInsertComment'
   const options = {}
   return post(url, data, options)
 }
