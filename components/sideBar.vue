@@ -56,15 +56,15 @@
           <div class="cate">标签云</div>
           <ul>
             <li
-              v-for="(item, index) in tagsList"
+              v-for="(item, index) in computedTagsList"
               :key="index"
               style="display: inline-block"
             >
-              <a :href="'/post/tags/' + item.keywords"
+              <a :href="'/post/tags/' + item"
                 ><span
                   class="tag-item"
                   :style="{ background: randomRgbColor() }"
-                  >{{ item.keywords }}</span
+                  >{{ item }}</span
                 ></a
               >
               <!-- {{item.name}} -->
@@ -98,6 +98,19 @@ export default {
       cateList: [],
       tagsList: [],
     };
+  },
+  computed: {
+    computedTagsList() {
+      let arr = []
+      this.tagsList.map(item =>{
+        if (item.keywords.indexOf(',')!== -1) {
+          arr = arr.concat(item.keywords.split(','))
+        } else {
+          arr.push(item.keywords)
+        }
+      })
+      return Array.from(new Set(arr))
+    }
   },
   methods: {
     async getRecomList(type) {

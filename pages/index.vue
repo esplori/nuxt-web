@@ -104,9 +104,7 @@ export default {
           name: "",
         },
       ],
-      recommandList: [],
-      cateList: [],
-      tagsList: []
+      recommandList: []
     };
   },
   // 所有接口通过服务端调用渲染
