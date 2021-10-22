@@ -41,7 +41,7 @@ export default {
       }
       const res = await insertCommentApi(this.form);
       if (res) {
-        this.$message.sussess("提交成功")
+        this.$message.success("提交成功")
       }
     },
   },
