@@ -1,7 +1,7 @@
 <template>
   <div class="comments">
-    网友评论：
-    <div class="commentsList">
+    <div class="commentsList" v-show="commentsList.length">
+      <h4>网友评论：</h4>
       <div v-for="(item,index) in commentsList" :key="index" class="comment-item">
       {{item.username}} : <span v-html="item.content"></span>
     </div>
@@ -31,7 +31,7 @@ export default {
         username: "",
         postId: this.$router.app.context.params.id // 获取当前文章id
       },
-      commentsList: [{content: 'sdf'}]
+      commentsList: []
     };
   },
   mounted() {
