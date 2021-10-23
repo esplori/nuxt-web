@@ -1,13 +1,20 @@
 <template>
   <div class="comments">
+    网友评论：
+    <div class="commentsList">
+      <div v-for="(item,index) in commentsList" :key="index" class="comment-item">
+      {{item.username}} : <span v-html="item.content"></span>
+    </div>
+    </div>
     <h4>评论：</h4>
     <el-form :model="form" label-width="40px">
-      <el-form-item label="内容">
-        <el-input v-model="form.content"></el-input>
-      </el-form-item>
       <el-form-item label="邮箱">
         <el-input v-model="form.username"></el-input>
       </el-form-item>
+      <el-form-item label="内容">
+        <el-input type="textarea" :rows="5" v-model="form.content"></el-input>
+      </el-form-item>
+      
       <el-form-item>
         <el-button @click="submit" type="primary">提交</el-button>
       </el-form-item>
@@ -15,21 +22,31 @@
   </div>
 </template>
 <script>
-import { insertCommentApi } from "../pages/api/index";
+import { insertCommentApi, getCommentApi } from "../pages/api/index";
 export default {
   data() {
     return {
       form: {
         content: "",
-        username: ""
+        username: "",
+        postId: this.$router.app.context.params.id // 获取当前文章id
       },
+      commentsList: [{content: 'sdf'}]
     };
   },
   mounted() {
     if (!process.server) {
+      this.getComments()
     }
   },
   methods: {
+    async getComments() {
+      debugger
+      let res = await getCommentApi({id: this.$router.app.context.params.id || ""})
+      if (res) {
+        this.commentsList = res.data.result || []
+      }
+    },
     async submit() {
       if (!this.form.content) {
         this.$message.warning("请输入内容")
@@ -42,6 +59,7 @@ export default {
       const res = await insertCommentApi(this.form);
       if (res) {
         this.$message.success("提交成功")
+        this.getComments(this.postId)
       }
     },
   },
@@ -53,5 +71,16 @@ export default {
   margin-top: 40px;
   padding: 20px;
   border: 1px solid #f5f5f5;
+  .commentsList{
+    margin-top: 20px;
+    // padding: 20px;
+    // border: 1px solid #f5f5f5;
+    .comment-item{
+      padding: 10px;
+      border: 1px solid #f5f5f5;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  }
 }
 </style>
