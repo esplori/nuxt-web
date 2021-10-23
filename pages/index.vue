@@ -57,7 +57,7 @@
             :pageSize="10"
             :total="homeList.total"
             :currentPage="page"
-            :prePath="'/page/'"
+            :prePath="'/post/page/'"
           ></nuxtPagination>
         </div>
       </div>

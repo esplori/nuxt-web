@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import { getListApi, getRecomListApi, getCateApi } from "../api/index";
+import { getListApi, getRecomListApi, getCateApi } from "../../api/index";
 export default {
   components: {
-    listBody: () => import("../../components/home/pageListBody.vue"),
-    sideBar: () => import("../../components/sideBar.vue"),
-    nuxtPagination: () => import("../../components/common/nuxtPagination.vue")
+    listBody: () => import("../../../components/home/pageListBody.vue"),
+    sideBar: () => import("../../../components/sideBar.vue"),
+    nuxtPagination: () => import("../../../components/common/nuxtPagination.vue")
   },
   // watchQuery: ["page"],
   async asyncData({ query, store, $axios, route }) {
