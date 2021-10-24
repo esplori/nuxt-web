@@ -10,8 +10,8 @@
 <script>
 export default {
   components: {
-    commonFooter: () => import("..//components/homeFooter.vue"),
-    HomeHeader: () => import("../components/homeHeader.vue"),
+    commonFooter: () => import("../components/common/homeFooter.vue"),
+    HomeHeader: () => import("../components/common/homeHeader.vue"),
   },
 };
 </script>

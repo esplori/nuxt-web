@@ -50,9 +50,9 @@ export default {
     };
   },
   components: {
-    homeHeader: () => import("../../components/homeHeader.vue"),
+    homeHeader: () => import("../../components/common/homeHeader.vue"),
     sideBar: () => import("../../components/sideBar/sideBar.vue"),
-    homeFooter: () => import("../../components/homeFooter.vue"),
+    homeFooter: () => import("../../components/common/homeFooter.vue"),
   },
   data() {
     return {

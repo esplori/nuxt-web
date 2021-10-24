@@ -53,7 +53,7 @@ import {
 } from "../api/index";
 export default {
   components: {
-    homeHeader: () => import("../../components/homeHeader.vue"),
+    homeHeader: () => import("../../components/common/homeHeader.vue"),
     sideBar: () => import("../../components/sideBar/sideBar.vue"),
     comments: () => import("../../components/sideBar/comments.vue"),
   },

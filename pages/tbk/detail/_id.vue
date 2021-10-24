@@ -30,7 +30,7 @@
 import { getTbkDetailApi } from "../../api/index";
 export default {
   components: {
-    homeHeader: () => import("../../../components/homeHeader.vue"),
+    homeHeader: () => import("../../../components/common/homeHeader.vue"),
   },
   data() {
     return {
