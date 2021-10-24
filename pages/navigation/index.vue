@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { getListApi } from "../api/navigation";
+import { getListApi } from "./navigation";
 
 export default {
   head() {
