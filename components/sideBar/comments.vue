@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-import { insertCommentApi, getCommentApi } from "../pages/api/index";
+import { insertCommentApi, getCommentApi } from "../../pages/api/index";
 export default {
   data() {
     return {
