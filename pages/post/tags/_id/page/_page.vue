@@ -26,7 +26,7 @@ import { getListByTagsApi, getRecomListApi,getCateApi } from "../../../../api/in
 export default {
   components: {
     listBody: () => import("../../../../../components/home/pageListBody.vue"),
-    sideBar: () => import("../../../../../components/sideBar.vue"),
+    sideBar: () => import("../../../../../components/sideBar/sideBar.vue"),
   },
   head() {
     return {

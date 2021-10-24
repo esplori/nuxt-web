@@ -81,7 +81,7 @@ import {
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
-    sideBar: () => import("../components/sideBar.vue"),
+    sideBar: () => import("../components/sideBar/sideBar.vue"),
     nuxtPagination: () => import("../components/common/nuxtPagination.vue"),
   },
   data() {

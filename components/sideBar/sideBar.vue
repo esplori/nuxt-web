@@ -86,7 +86,7 @@
   </div>
 </template>
 <script>
-import { getRecomListApi2, getCateApi2, getTagsApi2 } from "../pages/api/index";
+import { getRecomListApi2, getCateApi2, getTagsApi2 } from "../../pages/api/index";
 export default {
   props: {},
   data() {

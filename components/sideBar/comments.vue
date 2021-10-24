@@ -41,7 +41,6 @@ export default {
   },
   methods: {
     async getComments() {
-      debugger
       let res = await getCommentApi({id: this.$router.app.context.params.id || ""})
       if (res) {
         this.commentsList = res.data.result || []

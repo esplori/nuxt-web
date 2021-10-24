@@ -54,7 +54,7 @@ import {
 export default {
   components: {
     homeHeader: () => import("../../components/homeHeader.vue"),
-    sideBar: () => import("../../components/sideBar.vue"),
+    sideBar: () => import("../../components/sideBar/sideBar.vue"),
     comments: () => import("../../components/sideBar/comments.vue"),
   },
   data() {

@@ -51,7 +51,7 @@ export default {
   },
   components: {
     homeHeader: () => import("../../components/homeHeader.vue"),
-    sideBar: () => import("../../components/sideBar.vue"),
+    sideBar: () => import("../../components/sideBar/sideBar.vue"),
     homeFooter: () => import("../../components/homeFooter.vue"),
   },
   data() {
