@@ -86,7 +86,11 @@
   </div>
 </template>
 <script>
-import { getRecomListApi2, getCateApi2, getTagsApi2 } from "../../pages/api/index";
+import {
+  getRecomListApi2,
+  getCateApi2,
+  getTagsApi2,
+} from "../../pages/api/index";
 export default {
   props: {},
   data() {
@@ -101,16 +105,16 @@ export default {
   },
   computed: {
     computedTagsList() {
-      let arr = []
-      this.tagsList.map(item =>{
-        if (item.keywords.indexOf(',')!== -1) {
-          arr = arr.concat(item.keywords.split(','))
+      let arr = [];
+      this.tagsList.map((item) => {
+        if (item.keywords.indexOf(",") !== -1) {
+          arr = arr.concat(item.keywords.split(","));
         } else {
-          arr.push(item.keywords)
+          arr.push(item.keywords);
         }
-      })
-      return Array.from(new Set(arr))
-    }
+      });
+      return Array.from(new Set(arr));
+    },
   },
   methods: {
     async getRecomList(type) {
