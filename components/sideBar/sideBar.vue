@@ -107,10 +107,10 @@ export default {
     computedTagsList() {
       let arr = [];
       this.tagsList.map((item) => {
-        if (item.keywords.indexOf(",") !== -1) {
-          arr = arr.concat(item.keywords.split(","));
+        if (item.keywords2.indexOf(",") !== -1) {
+          arr = arr.concat(item.keywords2.split(","));
         } else {
-          arr.push(item.keywords);
+          arr.push(item.keywords2);
         }
       });
       return Array.from(new Set(arr));
