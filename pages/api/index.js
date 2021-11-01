@@ -17,6 +17,14 @@ export async function getListByCateApi (params, data) {
   const options = {}
   return get(url, data, options)
 }
+export async function getListByCateApi2 (params, data) {
+  if (!params.page) {
+    params.page = 1
+  }
+  let url = '/bootService/pages/getList/cate/' + params.cate + '/page/' + params.page || 1
+  const options = {}
+  return get(url, data, options)
+}
 export async function getListByTagsApi (params, data) {
   if (!params.page) {
     params.page = 1
