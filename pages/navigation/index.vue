@@ -75,7 +75,6 @@ export default {
 .container {
   .home-body {
     width: 100%;
-    margin: 10px auto;
     .left-body {
       background: #fff;
       box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
@@ -89,14 +88,15 @@ export default {
           .child-cate {
             width: 100%;
             .cate-item {
+              // line-height: 20px;
               display: inline-block;
-              width: 31%;
-              font-size: 18px;
-              padding: 10px 10px;
+              width: 32%;
+              font-size: 16px;
+              padding: 10px 0;
               border-radius: 5px;
               margin-right: 10px;
               .title{
-                font-size: 18px;
+                font-size: 16px;
               }
               .content a{
                 font-size: 14px;

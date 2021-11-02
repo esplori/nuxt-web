@@ -79,14 +79,14 @@ export default {
         text-align: center;
       }
     }
-    .right-sidebar{
-      max-width: 385px;
-    }
-    @media screen and (max-width: 1024px) {
-      .right-sidebar {
-        display: none;
-      }
-    }
+    // .right-sidebar{
+    //   max-width: 385px;
+    // }
+    // @media screen and (max-width: 1024px) {
+    //   .right-sidebar {
+    //     display: none;
+    //   }
+    // }
   }
 }
 </style>

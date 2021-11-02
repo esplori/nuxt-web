@@ -262,13 +262,13 @@ export default {
         }
       }
     }
-    .right-sidebar {
-      max-width: 385px;
-    }
+    // .right-sidebar {
+    //   max-width: 385px;
+    // }
     @media screen and(max-width: 1024px) {
-      .right-sidebar {
-        display: none;
-      }
+      // .right-sidebar {
+      //   display: none;
+      // }
     }
     .side-bar {
       padding: 20px;

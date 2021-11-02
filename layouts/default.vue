@@ -2,7 +2,7 @@
   <div class="nuxt-router">
     <HomeHeader></HomeHeader>
     <div class="router">
-      <Nuxt />
+      <Nuxt class="nuxt-router" />
       <siderBar class="layouts-sideBar"></siderBar>
     </div>
     <commonFooter></commonFooter>
@@ -24,9 +24,17 @@ export default {
     margin: 10px auto;
     display: flex;
     justify-content: space-between;
+    .nuxt-router{
+      width: 100%;
+    }
     .layouts-sideBar{
-      max-width: 385px;
+      width: 385px;
     }
   }
+  @media screen and (max-width: 1024px) {
+      .layouts-sideBar {
+        display: none;
+      }
+    }
 }
 </style>
