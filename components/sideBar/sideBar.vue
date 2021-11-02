@@ -72,16 +72,6 @@
           </ul>
         </div>
       </li>
-      <li>
-        <div class="module">
-          <div class="cate">友情链接</div>
-          <ul>
-            <li v-for="(item, index) in linkList" :key="index">
-              <a :href="item.path" target="_blank">{{ item.name }}</a>
-            </li>
-          </ul>
-        </div>
-      </li>
     </ul>
   </div>
 </template>
@@ -96,7 +86,6 @@ export default {
   data() {
     return {
       searchWords: "",
-      linkList: [{ name: "qhy的个人空间", path: "https://quhuanyu.dsiab.com" }],
       activeName: "all",
       recommandList: [],
       cateList: [],
