@@ -249,6 +249,7 @@ export default {
       color: #fff;
       margin-right: 10px;
       border-radius: 3px;
+      line-height: 20px;
     }
   }
 }
