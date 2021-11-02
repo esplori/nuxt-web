@@ -7,9 +7,9 @@
           <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" :prePath="prePath"></nuxtPagination>
         </div>
       </div>
-      <div class="right-sidebar">
+      <!-- <div class="right-sidebar">
         <sideBar :list="recommandList" :cateList="cateList"></sideBar>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ import { getListByCateApi, getRecomListApi,getCateApi } from "../../api/index";
 export default {
   components: {
     listBody: () => import("../../../components/home/pageListBody.vue"),
-    sideBar: () => import("../../../components/sideBar/sideBar.vue"),
+    // sideBar: () => import("../../../components/sideBar/sideBar.vue"),
     nuxtPagination: () => import("../../../components/common/nuxtPagination.vue")
   },
   head() {

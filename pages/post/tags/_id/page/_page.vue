@@ -14,9 +14,9 @@
           </el-pagination>
         </div>
       </div>
-      <div class="right-sidebar">
+      <!-- <div class="right-sidebar">
         <sideBar :list="recommandList" :cateList="cateList"></sideBar>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@ import { getListByTagsApi, getRecomListApi,getCateApi } from "../../../../api/in
 export default {
   components: {
     listBody: () => import("../../../../../components/home/pageListBody.vue"),
-    sideBar: () => import("../../../../../components/sideBar/sideBar.vue"),
+    // sideBar: () => import("../../../../../components/sideBar/sideBar.vue"),
   },
   head() {
     return {

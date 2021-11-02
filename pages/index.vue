@@ -61,9 +61,9 @@
           ></nuxtPagination>
         </div>
       </div>
-      <div class="right-sidebar">
+      <!-- <div class="right-sidebar">
         <sideBar></sideBar>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -81,7 +81,7 @@ import {
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
-    sideBar: () => import("../components/sideBar/sideBar.vue"),
+    // sideBar: () => import("../components/sideBar/sideBar.vue"),
     nuxtPagination: () => import("../components/common/nuxtPagination.vue"),
   },
   data() {
@@ -160,6 +160,7 @@ export default {
 
 <style lang="less" scoped>
 .container {
+  width: 100%;
   .home-body {
     display: flex;
     justify-content: space-between;

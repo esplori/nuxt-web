@@ -3,6 +3,7 @@
     <HomeHeader></HomeHeader>
     <div class="router">
       <Nuxt />
+      <siderBar class="layouts-sideBar"></siderBar>
     </div>
     <commonFooter></commonFooter>
   </div>
@@ -12,6 +13,7 @@ export default {
   components: {
     commonFooter: () => import("../components/common/homeFooter.vue"),
     HomeHeader: () => import("../components/common/homeHeader.vue"),
+    siderBar: () => import("../components/sideBar/sideBar.vue"),
   },
 };
 </script>
@@ -20,6 +22,11 @@ export default {
   .router {
     max-width: 1280px;
     margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    .layouts-sideBar{
+      max-width: 385px;
+    }
   }
 }
 </style>
