@@ -13,7 +13,10 @@
                     v-for="(it, ix) in item.children"
                     :key="ix"
                   >
-                    <a :href="it.content" target="_blank">{{ it.title }}</a>
+                    <el-card shadow="always">
+                      <div class="title">{{ it.title }}</div>
+                      <div class="content"><a :href="it.content">{{ it.content }}</a></div>
+                    </el-card>
                   </div>
                 </div>
               </li>
@@ -84,16 +87,22 @@ export default {
             padding: 10px 0;
           }
           .child-cate {
-            display: flex;
+            width: 100%;
             .cate-item {
+              display: inline-block;
+              width: 31%;
               font-size: 18px;
               padding: 10px 10px;
-              border: 1px solid #f5f5f5;
               border-radius: 5px;
               margin-right: 10px;
-            }
-            .cate-item:hover{
-              background: #f5f5f5;
+              .title{
+                font-size: 18px;
+              }
+              .content a{
+                font-size: 14px;
+                padding: 5px 0;
+                color: #3273dc;
+              }
             }
           }
           a {
