@@ -17,13 +17,14 @@ export default {
       script: [
         { src: "https://cpro.baidustatic.com/cpro/ui/cm.js" },
         { src: "https://source.dsiab.com/compress-js/dist/js/WebStats.js" },
+        { src: "https://source.dsiab.com/compress-js/dist/js/fp.min.js" },
       ],
     };
   },
   mounted() {
     if (!process.server) {
       // 添加统计
-      //  this.initFingerprint();
+       this.initFingerprint();
       this.initWebStat()
       window.addEventListener("click", (item) => {
         this.getWegStats();
