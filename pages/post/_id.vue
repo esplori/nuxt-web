@@ -40,6 +40,10 @@
         <sideBar :list="recommandList" :cateList="cateList"></sideBar>
       </div> -->
     </div>
+
+    <el-dialog title="提示" :visible.sync="dialogVisible" width="60%">
+      <img :src="imgUrl" alt="" id="bigImg" />
+    </el-dialog>
   </div>
 </template>
 
@@ -60,8 +64,10 @@ export default {
   data() {
     return {
       data: 0,
-      recommandList:[],
-      cateList: []
+      recommandList: [],
+      cateList: [],
+      dialogVisible: false,
+      imgUrl: "",
     };
   },
   /**
@@ -104,25 +110,32 @@ export default {
    * 请求接口，可同时请求多个接口，详情在服务端请求，分类跟推荐接口在浏览器调用
    */
   async asyncData({ $axios, route }) {
-    let [detail] = await Promise.all([
-      getDetailApi(route.params.id)
-    ]);
+    let [detail] = await Promise.all([getDetailApi(route.params.id)]);
     return {
       detailData: detail.data.result,
       currPage: route.params.id,
     };
   },
   methods: {
+    addImgEvent() {
+      window.addEventListener("click", (e) => {
+        let target = e.target;
+        if (target.tagName === "IMG") {
+          this.imgUrl = target.src;
+          this.dialogVisible = true;
+        }
+      });
+    },
     async getRecomList() {
-      let res = await getRecomListApi2({type: 'all'})
+      let res = await getRecomListApi2({ type: "all" });
       if (res) {
-        this.recommandList = res.data
+        this.recommandList = res.data;
       }
     },
     async getCate() {
-      let res = await getCateApi2({})
+      let res = await getCateApi2({});
       if (res) {
-        this.cateList = res.data.result
+        this.cateList = res.data.result;
       }
     },
     /**
@@ -155,8 +168,8 @@ export default {
         if (!el.src) {
           var source = el.dataset.originalSrc;
           el.src = source;
-           // 解决其他开启网站防盗链功能
-          el.referrerPolicy = 'no-referrer'
+          // 解决其他开启网站防盗链功能
+          el.referrerPolicy = "no-referrer";
         }
       }
 
@@ -172,9 +185,11 @@ export default {
       this.lazyLoad();
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
-      this.getRecomList()
+      this.getRecomList();
       // 查分类
-      this.getCate()
+      this.getCate();
+      // 添加图片放大功能
+      this.addImgEvent();
     }
     // 顶部
     (window.slotbydup = window.slotbydup || []).push({
@@ -194,9 +209,15 @@ export default {
 
 <style lang="less">
 // 截图图片样式错乱问题
-#post-id{
+#post-id {
   .image-container-fill {
-    padding-bottom: 0!important;
+    padding-bottom: 0 !important;
+  }
+  .detail-post-content img {
+    width: 70%;
+  }
+  #bigImg{
+    width: 100%;
   }
 }
 </style>
@@ -220,7 +241,7 @@ export default {
       justify-content: space-between;
       background: #fff;
       padding: 20px;
-      box-shadow:0 0 20px rgba(210,211,216,.3);
+      box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
       .detail-post-title {
         color: #141414;
         font-size: 26px;
