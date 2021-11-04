@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import FingerprintJS from "@fingerprintjs/fingerprintjs";
+// import FingerprintJS from "@fingerprintjs/fingerprintjs";
 export default {
   head() {
     return {
@@ -23,7 +23,7 @@ export default {
   mounted() {
     if (!process.server) {
       // 添加统计
-       this.initFingerprint();
+      //  this.initFingerprint();
       this.initWebStat()
       window.addEventListener("click", (item) => {
         this.getWegStats();
