@@ -1,15 +1,5 @@
 <template>
   <div class="comments">
-    <div class="commentsList" v-show="commentsList.length">
-      <h4>网友评论：</h4>
-      <div
-        v-for="(item, index) in commentsList"
-        :key="index"
-        class="comment-item"
-      >
-        {{ item.username }} : <span v-html="item.content"></span>
-      </div>
-    </div>
     <h4>评论：</h4>
     <el-form :model="form" label-width="40px">
       <el-form-item label="邮箱">
@@ -20,9 +10,22 @@
       </el-form-item>
 
       <el-form-item>
-        <el-button @click="submit" type="primary">提交</el-button>
+        <div style="text-align:right">
+          <el-button @click="submit" type="primary">发表评论</el-button>
+        </div>
       </el-form-item>
     </el-form>
+
+    <div class="commentsList" v-show="commentsList.length">
+      <h4>文章评论：</h4>
+      <div
+        v-for="(item, index) in commentsList"
+        :key="index"
+        class="comment-item"
+      >
+        {{ item.username }} : <span v-html="item.content"></span>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -35,7 +38,7 @@ export default {
         username: "",
         postId: this.$router.app.context.params.id, // 获取当前文章id
       },
-      commentsList: [],
+      commentsList: [{username: 'asdf',content: 'asdf'},{username: 'asdf',content: 'asdf'},{username: 'asdf',content: 'asdf'},],
     };
   },
   mounted() {
@@ -75,13 +78,13 @@ export default {
   width: 100%;
   margin-top: 40px;
   padding: 20px;
-  border: 1px solid #f5f5f5;
+  // border: 1px solid #f5f5f5;
   .commentsList {
-    margin-top: 20px;
+    margin-top: 40px;
     // padding: 20px;
-    // border: 1px solid #f5f5f5;
+    border-top: 1px solid #f5f5f5;
     .comment-item {
-      padding: 10px;
+      padding: 20px;
       border: 1px solid #f5f5f5;
       margin-bottom: 10px;
       border-radius: 5px;
