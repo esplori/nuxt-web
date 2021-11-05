@@ -7,7 +7,7 @@
           <div class="post-info">
             <span class="el-icon-user"> {{ detailData.createBy }}</span>
             <span class="el-icon-date"> {{ detailData.createDate }}</span>
-            <span class="el-icon-view"> {{ detailData.views }}</span>
+            <span class="el-icon-view"> 阅读({{ detailData.views }})</span>
             <span class="el-icon-tickets"> {{ detailData.cateName }}</span>
           </div>
           <div class="_fi4e2i4y7eo"></div>

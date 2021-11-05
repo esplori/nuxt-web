@@ -25,7 +25,7 @@
               <span class="create-date el-icon-date">
                 {{ item.createDate }}
               </span>
-              <span class="views el-icon-view"> {{ item.views }} </span>
+              <span class="views el-icon-view"> 阅读({{ item.views }}) </span>
               <span class="cate-name el-icon-tickets">
                 <a :href="'/post/category/' + item.cate"> {{
                   item.cateName || ""
