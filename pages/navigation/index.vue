@@ -6,7 +6,7 @@
           <div class="left-body">
             <ul>
               <li v-for="(item, index) in list" :key="index">
-                <div class="cateName">{{ item.cateName }}</div>
+                <div class="cateName">{{ item.name }}</div>
                 <div class="child-cate">
                   <div
                     class="cate-item"
