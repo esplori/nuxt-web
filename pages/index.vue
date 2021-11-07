@@ -5,12 +5,15 @@
         <div class="recommand">
           <div class="carousel">
             <div class="carousel-item">
-              <el-carousel indicator-position="outside">
+              <el-carousel indicator-position="outside" height="300px">
                 <el-carousel-item
                   v-for="(item, index) in carouselList"
                   :key="index"
                 >
-                  <img :src="item.imgUrl" alt="" style="width: 100%" />
+                  <div class="carousel-item-container">
+                    <a :href="item.url" target="_blank"><img :src="item.imgUrl" alt="" style="height:300px;width:100%" /></a>
+                    <div class="carousel-item-desc">{{ item.desc }}</div>
+                  </div>
                 </el-carousel-item>
               </el-carousel>
             </div>
@@ -77,7 +80,7 @@ import {
   getCateApi2,
   getTagsApi,
   getTagsApi2,
-  getSiteInfoApi
+  getSiteInfoApi,
 } from "./api/index";
 export default {
   components: {
@@ -149,7 +152,7 @@ export default {
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
       this.getRecomList();
-      this.getSiteInfo()
+      this.getSiteInfo();
     }
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6611132",
@@ -204,6 +207,21 @@ export default {
           border-bottom: 1px solid #f5f5f5;
           .carousel-item {
             margin-bottom: 10px;
+            .carousel-item-container {
+              position: relative;
+              cursor: pointer;
+              .carousel-item-desc {
+                width: 100%;
+                padding: 20px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: #000;
+                color: #fff;
+                opacity: 0.8;
+                text-align: center;
+              }
+            }
           }
           .card {
             .card-title {
