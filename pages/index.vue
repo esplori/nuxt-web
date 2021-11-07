@@ -10,7 +10,7 @@
                   v-for="(item, index) in carouselList"
                   :key="index"
                 >
-                  <img :src="item.src" alt="" style="width: 100%" />
+                  <img :src="item.imgUrl" alt="" style="width: 100%" />
                 </el-carousel-item>
               </el-carousel>
             </div>
@@ -33,7 +33,7 @@
                   >
                     <img
                       style="width: 100%; height: 130px"
-                      :src="carouselList[index].src"
+                      :src="carouselList[index].imgUrl"
                       class="image"
                     />
                     <div class="card-title">
@@ -76,7 +76,8 @@ import {
   getCateApi,
   getCateApi2,
   getTagsApi,
-  getTagsApi2
+  getTagsApi2,
+  getSiteInfoApi
 } from "./api/index";
 export default {
   components: {
@@ -88,23 +89,31 @@ export default {
     return {
       carouselList: [
         {
-          src: "http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg",
-          name: "",
+          imgUrl:
+            "http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg",
+          desc: "",
+          url: "",
         },
         {
-          src: "http://source.dsiab.com/upload/5b3e8856-d0aa-4130-8150-fface4bf3c3b.jpeg",
-          name: "",
+          imgUrl:
+            "http://source.dsiab.com/upload/5b3e8856-d0aa-4130-8150-fface4bf3c3b.jpeg",
+          desc: "",
+          url: "",
         },
         {
-          src: "http://source.dsiab.com/upload/aa7f6f40-a451-4cb8-9a79-408d33488c84.jpeg",
-          name: "",
+          imgUrl:
+            "http://source.dsiab.com/upload/aa7f6f40-a451-4cb8-9a79-408d33488c84.jpeg",
+          desc: "",
+          url: "",
         },
         {
-          src: "http://source.dsiab.com/upload/7af643d9-8640-4dd1-8987-188012209bcb.jpeg",
-          name: "",
+          imgUrl:
+            "http://source.dsiab.com/upload/7af643d9-8640-4dd1-8987-188012209bcb.jpeg",
+          desc: "",
+          url: "",
         },
       ],
-      recommandList: []
+      recommandList: [],
     };
   },
   // 所有接口通过服务端调用渲染
@@ -140,6 +149,7 @@ export default {
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
       this.getRecomList();
+      this.getSiteInfo()
     }
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6611132",
@@ -152,6 +162,12 @@ export default {
       let res = await getRecomListApi2({ type: "all" });
       if (res) {
         this.recommandList = res.data;
+      }
+    },
+    async getSiteInfo() {
+      let res = await getSiteInfoApi({});
+      if (res) {
+        this.carouselList = JSON.parse(res.data.carouselUrl);
       }
     },
   },
@@ -174,7 +190,7 @@ export default {
     .left-body {
       width: 100%;
       background: #fff;
-      box-shadow:0 0 20px rgba(210,211,216,.3);
+      box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
       .recommand {
         display: flex;
         justify-content: space-between;

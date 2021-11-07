@@ -102,3 +102,9 @@ export async function getCommentApi (data) {
   const options = {}
   return get(url, data, options)
 }
+export async function getSiteInfoApi (data) {
+  // const url = baseUrl + '/admin/getSiteInfo/'
+  const url = '/bootService/admin/getSiteInfo'
+  const options = {}
+  return post(url, data, options)
+}
