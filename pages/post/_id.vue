@@ -55,6 +55,7 @@ import {
   getRecomListApi2,
   getCateApi2,
 } from "../api/index";
+import 'highlight.js/styles/monokai-sublime.css'
 export default {
   components: {
     homeHeader: () => import("../../components/common/homeHeader.vue"),
