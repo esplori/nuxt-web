@@ -24,7 +24,6 @@
             <el-tab-pane label="本年度" name="365"></el-tab-pane>
             <el-tab-pane label="总排行" name="all"></el-tab-pane>
           </el-tabs>
-          <!-- 在浏览器端点击查询就显示该列表 -->
           <ul>
             <li v-for="(item, index) in recommandList" :key="index">
               <div class="title">
@@ -34,7 +33,7 @@
               </div>
               <div class="excerpt">
                 <span class="views el-icon-date"> {{ item.createDate }}</span>
-                <span class="views el-icon-view"> {{ item.views }}</span>
+                <span class="views el-icon-view"> 阅读({{ item.views }})</span>
               </div>
             </li>
           </ul>
@@ -46,7 +45,6 @@
           <ul>
             <li v-for="(item, index) in cateList" :key="index">
               <a :href="'/post/category/' + item.id">{{ item.name }}</a>
-              <!-- {{item.name}} -->
             </li>
           </ul>
         </div>
@@ -67,7 +65,6 @@
                   >{{ item }}</span
                 ></a
               >
-              <!-- {{item.name}} -->
             </li>
           </ul>
         </div>
@@ -234,11 +231,12 @@ export default {
   .module.tags {
     .tag-item {
       display: inline-block;
-      padding: 2px 15px;
+      padding: 2px 10px;
       color: #fff;
-      margin-right: 10px;
-      border-radius: 3px;
+      margin-right: 5px;
+      border-radius: 2px;
       line-height: 20px;
+      font-size: 14px;
     }
   }
 }
