@@ -23,7 +23,8 @@
         :key="index"
         class="comment-item"
       >
-        {{ item.username }} : <span v-html="item.content"></span>
+      <div>{{ item.username }}: </div>
+       <div v-html="item.content"></div>
       </div>
     </div>
   </div>
@@ -38,7 +39,7 @@ export default {
         username: "",
         postId: this.$router.app.context.params.id, // 获取当前文章id
       },
-      commentsList: [{username: 'asdf',content: 'asdf'},{username: 'asdf',content: 'asdf'},{username: 'asdf',content: 'asdf'},],
+      commentsList: [],
     };
   },
   mounted() {
@@ -84,10 +85,12 @@ export default {
     // padding: 20px;
     border-top: 1px solid #f5f5f5;
     .comment-item {
-      padding: 20px;
-      border: 1px solid #f5f5f5;
+      padding: 10px;
       margin-bottom: 10px;
       border-radius: 5px;
+      div{
+        padding: 10px 0;
+      }
     }
   }
 }
