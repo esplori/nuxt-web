@@ -93,6 +93,7 @@ export default {
           }
           .child-cate {
             width: 100%;
+            padding: 10px 0;
             .cate-item {
               font-size: 16px;
               padding: 5px 0;
