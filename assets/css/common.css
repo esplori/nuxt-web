@@ -21,4 +21,9 @@ pre{
   padding: 10px;
   color: rgb(231, 227, 227);
   background-color: #2d2d2d!important;
+  white-space: pre-wrap;
 }
+pre code {
+  white-space: pre-wrap;
+}
+
