@@ -87,7 +87,7 @@ export default {
         li {
           padding: 10px 20px;
           .cateName {
-            font-size: 18px;
+            font-size: 16px;
             padding: 10px 0;
             border-bottom: 1px solid #eaecef;
           }
@@ -96,18 +96,18 @@ export default {
             padding: 10px 0;
             .cate-item {
               font-size: 16px;
-              padding: 5px 0;
+              padding: 10px 0;
               border-radius: 5px;
               margin-right: 10px;
               .title {
-                font-size: 14px;
+                font-size: 16px;
                 a {
                   color: #0366d6;
                 }
               }
 
               .content {
-                font-size: 14px;
+                font-size: 12px;
                 padding: 5px 0;
               }
             }

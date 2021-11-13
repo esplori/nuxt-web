@@ -4,9 +4,7 @@
       <div><a href="/">@2021 powered by javascript技术分享</a></div>
       <div><a href="https://beian.miit.gov.cn/">粤ICP备20013202号</a></div>
     </div>
-    <el-backtop :bottom="100">
-      
-    </el-backtop>
+    <el-backtop :bottom="100"> </el-backtop>
   </div>
 </template>
 <script>
@@ -24,8 +22,8 @@ export default {
   mounted() {
     if (!process.server) {
       // 添加统计
-       this.initFingerprint();
-      this.initWebStat()
+      this.initFingerprint();
+      this.initWebStat();
       window.addEventListener("click", (item) => {
         this.getWegStats();
       });
@@ -49,7 +47,7 @@ export default {
       this.getWegStats();
     },
     initFingerprint() {
-      let _this =this
+      let _this = this;
       // Initialize an agent at application startup.
       const fpPromise = FingerprintJS.load();
       (async () => {
@@ -71,14 +69,18 @@ export default {
 </script>
 <style lang="less">
 .home-footer {
-  margin-top: 40px;
   padding: 20px;
-  margin: 0 auto;
+  margin: 40px auto 80px auto;
+  background: #fff;
   .site-info {
     text-align: center;
     color: #828a92;
-    a {
-      color: #828a92;
+    div {
+      padding: 5px;
+      a {
+        font-size: 14px;
+        color: #828a92;
+      }
     }
   }
 }
