@@ -26,7 +26,7 @@
                 {{ item.createDate }}
               </span>
               <span class="views el-icon-view"> 阅读({{ item.views }}) </span>
-              <span class="cate-name el-icon-tickets">
+              <span class="cate-name el-icon-tickets" v-show="item.cate">
                 <a :href="'/post/category/' + item.cate"> {{
                   item.cateName || ""
                 }}</a>
