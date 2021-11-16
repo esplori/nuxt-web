@@ -5,17 +5,44 @@
         <div class="recommand">
           <div class="carousel">
             <div class="carousel-item">
-              <el-carousel indicator-position="outside" height="300px">
+              <el-carousel
+                indicator-position="outside"
+                height="330px"
+                class="car-item"
+              >
                 <el-carousel-item
                   v-for="(item, index) in carouselList"
                   :key="index"
                 >
                   <div class="carousel-item-container">
-                    <a :href="item.url" target="_blank"><img :src="item.imgUrl" alt="" style="height:300px;width:100%" /></a>
+                    <a :href="item.url" target="_blank"
+                      ><img
+                        :src="item.imgUrl"
+                        alt=""
+                        style="height: 330px; width: 100%"
+                    /></a>
                     <div class="carousel-item-desc">{{ item.desc }}</div>
                   </div>
                 </el-carousel-item>
               </el-carousel>
+              <div class="small-carousel">
+                <div class="small-carousel-item">
+                  <img
+                    :src="carouselList[0].imgUrl"
+                    alt=""
+                    class="small-carousel-img"
+                  />
+                  <div class="sml-car-title">{{ carouselList[0].desc }}</div>
+                </div>
+                <div class="small-carousel-item">
+                  <img
+                    :src="carouselList[1].imgUrl"
+                    alt=""
+                    class="small-carousel-img"
+                  />
+                  <div class="sml-car-title">{{ carouselList[1].desc }}</div>
+                </div>
+              </div>
             </div>
             <h2 class="big-title">推荐图文</h2>
             <div class="card">
@@ -207,6 +234,11 @@ export default {
           border-bottom: 1px solid #f5f5f5;
           .carousel-item {
             margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            .car-item {
+              width: 100%;
+            }
             .carousel-item-container {
               position: relative;
               cursor: pointer;
@@ -220,6 +252,37 @@ export default {
                 color: #fff;
                 opacity: 0.8;
                 text-align: center;
+              }
+            }
+            .small-carousel {
+              margin-left: 10px;
+              width: 365px;
+              padding: 0 0 20px 10px;
+              display: flex;
+              justify-content: space-between;
+              flex-direction: column;
+              .small-carousel-item {
+                height: 160px;
+                margin-bottom: 10px;
+                background: #828a92;
+                position: relative;
+
+                .small-carousel-img {
+                  width: 245px;
+                  height: 160px;
+                }
+                .sml-car-title {
+                  width: 100%;
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  color: #fff;
+                  background: #000;
+                  text-align: center;
+                  opacity: 0.8;
+                  padding: 10px 0;
+                  font-size: 14px;
+                }
               }
             }
           }
