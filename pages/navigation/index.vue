@@ -88,19 +88,25 @@ export default {
           padding: 10px 20px;
           .cateName {
             font-size: 16px;
-            padding: 10px 0;
-            border-bottom: 1px solid #eaecef;
+            padding: 5px 0;
+            // border-bottom: 1px solid #eaecef;
           }
           .child-cate {
             width: 100%;
             padding: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
             .cate-item {
+              width: 22%;
               font-size: 16px;
-              padding: 10px 0;
+              padding: 10px;
               border-radius: 5px;
               margin-right: 10px;
+              margin-bottom: 10px;
+              border: 1px solid #f5f5f5;
+              
               .title {
-                font-size: 16px;
+                font-size: 14px;
                 a {
                   color: #0366d6;
                 }

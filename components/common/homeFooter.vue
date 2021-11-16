@@ -1,8 +1,10 @@
 <template>
   <div class="home-footer">
     <div class="site-info">
-      <div><a href="/">@2021 powered by javascript技术分享</a></div>
+      
+      <div><a href="https://www.nuxtjs.cn/">© 基于nuxtjs</a></div>
       <div><a href="https://beian.miit.gov.cn/">粤ICP备20013202号</a></div>
+      <div><a href="/">© 2020-2021    javascript技术分享</a></div>
     </div>
     <el-backtop :bottom="100"> </el-backtop>
   </div>
@@ -69,17 +71,19 @@ export default {
 </script>
 <style lang="less">
 .home-footer {
-  padding: 20px;
-  margin: 40px auto 80px auto;
-  background: #fff;
+  padding: 40px 0 80px 0;
+  color: #fff;
+  background: #222c3c;
   .site-info {
+    width: 400px;
+    margin: 0 auto;
     text-align: center;
     color: #828a92;
     div {
       padding: 5px;
       a {
         font-size: 14px;
-        color: #828a92;
+        color: #fff;
       }
     }
   }
