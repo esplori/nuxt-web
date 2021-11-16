@@ -41,7 +41,12 @@
       </div> -->
     </div>
 
-    <el-dialog :visible.sync="dialogVisible" width="60%">
+    <el-dialog
+      custom-class="custom-dialog-class"
+      :visible.sync="dialogVisible"
+      width="60%"
+      :show-close="false"
+    >
       <img :src="imgUrl" alt="" id="bigImg" />
     </el-dialog>
   </div>
@@ -55,7 +60,7 @@ import {
   getRecomListApi2,
   getCateApi2,
 } from "../api/index";
-import 'highlight.js/styles/monokai-sublime.css'
+import "highlight.js/styles/monokai-sublime.css";
 export default {
   components: {
     homeHeader: () => import("../../components/common/homeHeader.vue"),
@@ -217,8 +222,14 @@ export default {
   .detail-post-content img {
     width: 70%;
   }
-  #bigImg{
+  #bigImg {
     width: 100%;
+  }
+  .el-dialog.custom-dialog-class .el-dialog__body {
+    padding: 0;
+  }
+  .el-dialog.custom-dialog-class .el-dialog__header {
+    padding: 0;
   }
 }
 </style>
