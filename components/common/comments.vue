@@ -10,7 +10,7 @@
       </el-form-item>
 
       <el-form-item>
-        <div style="text-align:right">
+        <div style="text-align: right">
           <el-button @click="submit" type="primary">发表评论</el-button>
         </div>
       </el-form-item>
@@ -23,8 +23,14 @@
         :key="index"
         class="comment-item"
       >
-      <div>{{ item.username }}: </div>
-       <div v-html="item.content"></div>
+        <div>
+          <i class="avatar"></i>
+        </div>
+        <div class="info">
+          <div class="name">{{ item.username }}</div>
+          <div class="createDate">{{ item.createDate }}</div>
+          <div class="content">{{ item.content }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -79,17 +85,39 @@ export default {
   width: 100%;
   margin-top: 40px;
   padding: 20px;
-  // border: 1px solid #f5f5f5;
   .commentsList {
     margin-top: 40px;
-    // padding: 20px;
+    background: #fff;
     border-top: 1px solid #f5f5f5;
     .comment-item {
       padding: 10px;
       margin-bottom: 10px;
       border-radius: 5px;
-      div{
-        padding: 10px 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .info {
+        margin-left: 10px;
+        .name {
+          font-size: 16px;
+          padding-bottom: 5px;
+          font-weight: 600;
+        }
+        .createDate {
+          font-size: 12px;
+        }
+        .content {
+          padding: 10px 0;
+          font-size: 14px;
+        }
+      }
+
+      .avatar {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        background: url("@/assets/img/avatar.png") no-repeat;
+        background-size: contain;
       }
     }
   }
