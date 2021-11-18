@@ -1,7 +1,7 @@
 <template>
   <div class="comments">
     <h4>评论：</h4>
-    <el-form :model="form" label-width="40px">
+    <el-form :model="form" label-width="60px">
       <el-form-item label="用户名">
         <el-input v-model="form.username"></el-input>
       </el-form-item>

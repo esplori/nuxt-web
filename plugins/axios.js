@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { Loading } from "element-ui"
-
-var loading = null
+if (process.client) {
+  var loading = null
+}
 const myaxios = axios.create({})
 myaxios.defaults.timeout = 15000
 myaxios.defaults.headers.post['Content-Type'] = 'application/json'
@@ -59,7 +60,7 @@ export function get(url, params, options) {
 
 // post请求
 export function post(url, param, options) {
-  if (options.showLoading) {
+  if (options.showLoading && process.client) {
     startLoading()
   }
   return new Promise((resolve, reject) => {
@@ -76,8 +77,7 @@ export function post(url, param, options) {
 }
 
 function handleData(res, resolve, reject) {
-
-  if (!process.server) {
+  if (process.client) {
     loading && loading.close()
   }
   if (res.data.code === 0) {
