@@ -43,7 +43,9 @@ myaxios.interceptors.response.use(function (response) {
 // get请求
 export function get(url, params, options) {
   if (options.showLoading) {
-    startLoading()
+    this.$nextTick(() => {
+      startLoading()
+    })
   }
   return new Promise((resolve, reject) => {
     myaxios({
