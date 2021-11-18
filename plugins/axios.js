@@ -1,19 +1,9 @@
 import axios from 'axios'
-import { Loading } from "element-ui"
-if (process.client) {
-  var loading = null
-}
+
 const myaxios = axios.create({})
 myaxios.defaults.timeout = 15000
 myaxios.defaults.headers.post['Content-Type'] = 'application/json'
 
-function startLoading() {
-  loading = Loading.service({
-    lock: true,
-    text: '加载中……',
-    background: 'rgba(0, 0, 0, 0.7)'
-  })
-}
 
 // 在请求或响应被 then 或 catch 处理前拦截它们。
 // 添加请求拦截器
@@ -42,11 +32,7 @@ myaxios.interceptors.response.use(function (response) {
 
 // get请求
 export function get(url, params, options) {
-  if (options.showLoading) {
-    this.$nextTick(() => {
-      startLoading()
-    })
-  }
+
   return new Promise((resolve, reject) => {
     myaxios({
       method: 'get',
@@ -62,9 +48,6 @@ export function get(url, params, options) {
 
 // post请求
 export function post(url, param, options) {
-  if (options.showLoading && process.client) {
-    startLoading()
-  }
   return new Promise((resolve, reject) => {
     myaxios({
       method: 'post',
@@ -79,9 +62,6 @@ export function post(url, param, options) {
 }
 
 function handleData(res, resolve, reject) {
-  if (process.client) {
-    loading && loading.close()
-  }
   if (res.data.code === 0) {
     resolve(res.data)
   } else {

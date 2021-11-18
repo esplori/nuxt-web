@@ -63,6 +63,9 @@ export default {
       }
     },
     async submit() {
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start();
+      });
       if (!this.form.content) {
         this.$message.warning("请输入内容");
         return;
@@ -75,6 +78,7 @@ export default {
       if (res) {
         this.$message.success("提交成功");
         this.getComments(this.postId);
+        this.$nuxt.$loading.finish()
       }
     },
   },

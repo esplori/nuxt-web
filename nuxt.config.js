@@ -52,12 +52,13 @@ export default {
     proxy: true
   },
   proxy: {
-    '/bootService/': {
-      target: 'http://localhost:8091/bootService/'
+    '/bootService': {
+      target: 'http://localhost:8091/bootService'
     }
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
-  }
+  },
+  loading: '~/components/common/loading.vue'
 }
