@@ -10,7 +10,7 @@
             <span class="el-icon-view"> 阅读({{ detailData.views }})</span>
             <span class="el-icon-tickets"> {{ detailData.cateName }}</span>
           </div>
-          <div class="_fi4e2i4y7eo"></div>
+          <div class="_cwvxpd9dl8s"></div>
           <div v-html="detailData.content" class="detail-post-content"></div>
           <!-- <div class="_utrtw8kq5so"></div> -->
         </div>
@@ -199,9 +199,9 @@ export default {
     }
     // 顶部
     (window.slotbydup = window.slotbydup || []).push({
-      id: "u6324927",
-      container: "_fi4e2i4y7eo",
-      async: true,
+        id: "u6324927",
+        container: "_cwvxpd9dl8s",
+        async: true
     });
     // 底部
     (window.slotbydup = window.slotbydup || []).push({
@@ -235,7 +235,7 @@ export default {
 </style>
 <style lang="less" scoped>
 @media (max-width: 760px) {
-  ._fi4e2i4y7eo {
+  ._cwvxpd9dl8s {
     display: none;
   }
   ._utrtw8kq5so {
