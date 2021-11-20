@@ -11,7 +11,7 @@
                 class="car-item"
               >
                 <el-carousel-item
-                  v-for="(item, index) in carouselList"
+                  v-for="(item, index) in carouselList.slice(0,carouselList.length -2)"
                   :key="index"
                 >
                   <div class="carousel-item-container">
@@ -28,19 +28,19 @@
               <div class="small-carousel">
                 <div class="small-carousel-item">
                   <img
-                    :src="carouselList[0].imgUrl"
+                    :src="carouselList[carouselList.length - 2].imgUrl"
                     alt=""
                     class="small-carousel-img"
                   />
-                  <div class="sml-car-title">{{ carouselList[0].desc }}</div>
+                  <div class="sml-car-title">{{ carouselList[carouselList.length - 2].desc }}</div>
                 </div>
                 <div class="small-carousel-item">
                   <img
-                    :src="carouselList[1].imgUrl"
+                    :src="carouselList[carouselList.length - 1].imgUrl"
                     alt=""
                     class="small-carousel-img"
                   />
-                  <div class="sml-car-title">{{ carouselList[1].desc }}</div>
+                  <div class="sml-car-title">{{ carouselList[carouselList.length - 1].desc }}</div>
                 </div>
               </div>
             </div>
