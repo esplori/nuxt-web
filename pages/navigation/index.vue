@@ -40,7 +40,7 @@
 import { getListApi } from "./navigation";
 
 export default {
-  layout: 'nav',
+  layout: 'noNav',
   head() {
     return {
       title: "网站导航",
