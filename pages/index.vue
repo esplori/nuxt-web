@@ -79,7 +79,7 @@
             </div>
           </div>
         </div>
-        <div class="_yiashlj3sgk"></div>
+        <div class="_lrzdvi6yazm"></div>
         <h2 class="big-title common-big-title">综合资讯</h2>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
@@ -183,7 +183,7 @@ export default {
     }
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6611132",
-      container: "_yiashlj3sgk",
+      container: "_lrzdvi6yazm",
       async: true,
     });
   },
@@ -348,7 +348,7 @@ export default {
     // }
     @media screen and (max-width: 1024px) {
       // .right-sidebar,
-      ._yiashlj3sgk {
+      ._lrzdvi6yazm {
         display: none;
       }
     }
