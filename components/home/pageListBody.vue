@@ -56,7 +56,7 @@ export default {
       imgsList: [
         "http://source.dsiab.com/upload/7437e62a-1033-4a91-a357-10993de1a08f.jpg",
         "http://source.dsiab.com/upload/9a2bae64-f914-4678-a642-95972333e201.jpg",
-        "http://source.dsiab.com/upload/7aaba689-06ff-4621-a1d6-546d86239174.jpg",
+        "https://source.dsiab.com/upload/fdf3eba1-5f16-4fdb-91c2-28c22fea7b74.jpg",
         "http://source.dsiab.com/upload/c0661416-31d9-4b57-9845-802ca01fa69c.jpg",
         "http://source.dsiab.com/upload/88a60855-9768-4a0b-b202-d4c2e06e6ac8.jpg",
         "http://source.dsiab.com/upload/08e52e67-b7c7-4de7-8c70-9a9f65d5ce65.jpg",
@@ -70,7 +70,7 @@ export default {
   methods: {
     deleteHtmlTag(str) {
       let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
-      return str1.replace(/ /g, ""); //dds为得到后的内容
+      return str1.replace(/ /g, "");
     },
   },
 };
