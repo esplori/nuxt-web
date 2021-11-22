@@ -17,11 +17,12 @@
                       <div class="title">{{ it.title }}</div>
                       <div class="content"><a :href="it.content">{{ it.content }}</a></div>
                     </el-card> -->
-
-                    <div class="title">
-                      <a :href="it.url"> {{ it.title }}</a>
-                    </div>
-                    <div class="content">{{ it.content }}</div>
+                    <el-card shadow="always">
+                      <div class="title">
+                        <a :href="it.url"> {{ it.title }}</a>
+                      </div>
+                      <div class="content">{{ it.content }}</div>
+                    </el-card>
                   </div>
                 </div>
               </li>
@@ -40,7 +41,7 @@
 import { getListApi } from "./navigation";
 
 export default {
-  layout: 'noNav',
+  layout: "noNav",
   head() {
     return {
       title: "网站导航",
@@ -104,8 +105,8 @@ export default {
               border-radius: 5px;
               margin-right: 10px;
               margin-bottom: 10px;
-              border: 1px solid #f5f5f5;
-              
+              // border: 1px solid #f5f5f5;
+
               .title {
                 font-size: 14px;
                 a {
