@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { getShopListApi } from "../../api/index";
+import { getShopListApi } from "../api";
 export default {
   components: {
     homeHeader: () => import("../../../components/common/homeHeader.vue"),

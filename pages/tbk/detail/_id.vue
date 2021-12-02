@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { getTbkDetailApi } from "../../api/index";
+import { getTbkDetailApi } from "../api";
 export default {
   components: {
     homeHeader: () => import("../../../components/common/homeHeader.vue"),
