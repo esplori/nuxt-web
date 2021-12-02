@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { getListByTagsApi, getRecomListApi,getCateApi } from "../../api/index";
+import { getListByTagsApi, getRecomListApi,getCateApi } from "../index";
 export default {
   components: {
     listBody: () => import("../../../components/home/pageListBody.vue"),

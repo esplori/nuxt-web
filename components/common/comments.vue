@@ -36,7 +36,7 @@
   </div>
 </template>
 <script>
-import { insertCommentApi, getCommentApi } from "../../pages/api/index";
+import { insertCommentApi, getCommentApi } from "../../pages/post/index";
 export default {
   data() {
     return {

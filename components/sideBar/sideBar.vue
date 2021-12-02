@@ -77,7 +77,7 @@ import {
   getRecomListApi2,
   getCateApi2,
   getTagsApi2,
-} from "../../pages/api/index";
+} from "../../pages/post/index";
 export default {
   props: {},
   data() {

@@ -59,7 +59,7 @@ import {
   getCateApi,
   getRecomListApi2,
   getCateApi2,
-} from "../api/index";
+} from "./index";
 import "highlight.js/styles/monokai-sublime.css";
 export default {
   components: {

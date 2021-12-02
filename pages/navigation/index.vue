@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { getListApi } from "./navigation";
+import { getListApi } from "./api";
 
 export default {
   layout: "noNav",

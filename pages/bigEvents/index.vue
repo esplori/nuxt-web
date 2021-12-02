@@ -27,7 +27,7 @@
 
 
 <script>
-import { getListByCateApi2 } from "../api/index.js";
+import { getListByCateApi2 } from "../post/index.js";
 export default {
   name: "index",
 

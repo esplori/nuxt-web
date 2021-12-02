@@ -108,7 +108,7 @@ import {
   getTagsApi,
   getTagsApi2,
   getSiteInfoApi,
-} from "./api/index";
+} from "./post/index";
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
