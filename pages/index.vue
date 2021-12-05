@@ -69,7 +69,7 @@
                     <div class="card-title">
                       <span
                         ><a :href="'/post/' + item.id"
-                          >{{ item.title }}}</a
+                          >{{ item.title }}</a
                         ></span
                       >
                     </div>
