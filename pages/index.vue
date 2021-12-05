@@ -32,7 +32,7 @@
                     alt=""
                     class="small-carousel-img"
                   />
-                  <div class="sml-car-title"><a :href="carouselList[carouselList.length - 2].url">{{ carouselList[carouselList.length - 2].desc }}</a></div>
+                  <div class="sml-car-title"><a target="_blank" :href="carouselList[carouselList.length - 2].url">{{ carouselList[carouselList.length - 2].desc }}</a></div>
                 </div>
                 <div class="small-carousel-item">
                   <img
@@ -40,7 +40,7 @@
                     alt=""
                     class="small-carousel-img"
                   />
-                  <div class="sml-car-title"><a :href="carouselList[carouselList.length - 1].url">{{ carouselList[carouselList.length - 1].desc }}</a></div>
+                  <div class="sml-car-title"><a target="_blank" :href="carouselList[carouselList.length - 1].url">{{ carouselList[carouselList.length - 1].desc }}</a></div>
                 </div>
               </div>
             </div>
@@ -282,6 +282,9 @@ export default {
                   opacity: 0.8;
                   padding: 10px 0;
                   font-size: 14px;
+                  a{
+                    color: #fff;
+                  }
                 }
               }
             }
