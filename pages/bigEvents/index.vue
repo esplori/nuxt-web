@@ -24,10 +24,9 @@
   </div>
 </template>
 
-
-
 <script>
 import { getListByCateApi2 } from "../post/index.js";
+import { delHtmlTag } from "@/plugins/utils.js";
 export default {
   name: "index",
 
@@ -50,6 +49,11 @@ export default {
       this.getList();
     }
   },
+  computed: {
+    deleteHtmlTag() {
+      return delHtmlTag;
+    },
+  },
   methods: {
     async getList() {
       this.page = ++this.page;
@@ -62,10 +66,6 @@ export default {
 
         this.list = this.list.concat(res.data.result);
       }
-    },
-    deleteHtmlTag(str) {
-      let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
-      return str1.replace(/ /g, ""); //dds为得到后的内容
     },
   },
 };

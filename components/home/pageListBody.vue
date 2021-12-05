@@ -27,9 +27,9 @@
               </span>
               <span class="views el-icon-view"> 阅读({{ item.views }}) </span>
               <span class="cate-name el-icon-tickets" v-show="item.cateName">
-                <a :href="'/post/category/' + item.cate"> {{
-                  item.cateName || ""
-                }}</a>
+                <a :href="'/post/category/' + item.cate">
+                  {{ item.cateName || "" }}</a
+                >
               </span>
             </div>
           </div>
@@ -42,6 +42,7 @@
   </div>
 </template>
 <script>
+import { delHtmlTag } from "@/plugins/utils.js";
 export default {
   props: {
     list: {
@@ -67,11 +68,16 @@ export default {
       ],
     };
   },
-  methods: {
-    deleteHtmlTag(str) {
-      let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
-      return str1.replace(/ /g, "");
+  computed: {
+    deleteHtmlTag() {
+      return delHtmlTag;
     },
+  },
+  methods: {
+    // deleteHtmlTag(str) {
+    //   let str1 = str.replace(/<\/?.+?>/g, "").replace(/&nbsp;/g, "");
+    //   return str1.replace(/ /g, "");
+    // },
   },
 };
 </script>
