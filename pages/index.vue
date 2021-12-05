@@ -32,7 +32,7 @@
                     alt=""
                     class="small-carousel-img"
                   />
-                  <div class="sml-car-title">{{ carouselList[carouselList.length - 2].desc }}</div>
+                  <div class="sml-car-title"><a :href="carouselList[carouselList.length - 2].url">{{ carouselList[carouselList.length - 2].desc }}</a></div>
                 </div>
                 <div class="small-carousel-item">
                   <img
@@ -40,7 +40,7 @@
                     alt=""
                     class="small-carousel-img"
                   />
-                  <div class="sml-car-title">{{ carouselList[carouselList.length - 1].desc }}</div>
+                  <div class="sml-car-title"><a :href="carouselList[carouselList.length - 1].url">{{ carouselList[carouselList.length - 1].desc }}</a></div>
                 </div>
               </div>
             </div>
@@ -189,7 +189,7 @@ export default {
   },
   methods: {
     async getRecomList() {
-      let res = await getRecomListApi2({ type: "all" });
+      let res = await getRecomListApi2({ type: "30" });
       if (res) {
         this.recommandList = res.data;
       }

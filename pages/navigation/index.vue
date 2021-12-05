@@ -19,7 +19,7 @@
                     </el-card> -->
                     <el-card shadow="always">
                       <div class="title">
-                        <a :href="it.url"> {{ it.title }}</a>
+                        <a :href="it.url" target="_blank"> {{ it.title }}</a>
                       </div>
                       <div class="content">{{ it.content }}</div>
                     </el-card>
