@@ -68,7 +68,7 @@
                     />
                     <div class="card-title">
                       <span
-                        ><a :href="'/post/' + item.id"
+                        ><a :href="'/post/' + item.id" target="_blank"
                           >{{ item.title }}</a
                         ></span
                       >
