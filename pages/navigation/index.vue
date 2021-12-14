@@ -72,7 +72,7 @@ export default {
   async asyncData({ query, store, $axios }) {
     let res = await getListApi({});
     return {
-      list: res.data.result,
+      list: res.data,
     };
   },
 };
