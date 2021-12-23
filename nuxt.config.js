@@ -53,7 +53,7 @@ export default {
   },
   proxy: {
     '/bootService': {
-      target: 'http://localhost:8091/bootService'
+      target: 'http://localhost:8091/'
     }
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
