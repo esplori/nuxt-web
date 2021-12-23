@@ -3,9 +3,9 @@
 
 ### 项目介绍：
 
-- 主要技术: nuxtjs2.0 + element-ui2.0
+- 主要技术: nuxtjs2.0 、element-ui2.0
 
-- 使用到的插件： axios  + less
+- 使用到的插件： axios  、 less
 
 
 ### 关联项目
@@ -21,7 +21,7 @@
 
 官网：[www.dsiab.com](https://www.dsiab.com)
 
-拉取代码后运行可看到效果，不用跑后端服务，直接调用官网接口。
+拉取代码后运行可看到效果（如果报请配置跨域），不用跑后端服务，直接调用官网接口。
 
 欢迎fork，欢迎提问题。
 
@@ -36,25 +36,25 @@ http://admin.dsiab.com
 
 
 
-### PC演示
+<!-- ### PC演示 -->
 
-<img src="./assets/img/site.png" alt="PC演示" width="400px" />
+<!-- <img src="./assets/img/site.png" alt="PC演示" width="400px" /> -->
 
 
 
-### 移动端演示
+<!-- ### 移动端演示 -->
 
 <!-- <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg"> -->
 
-<img src="./assets/img/mobileSite.jpeg" alt="移动端" width="400px" />
+<!-- <img src="./assets/img/mobileSite.jpeg" alt="移动端" width="400px" /> -->
 
 
 
 ### 选择nuxt的原因：
 
-- nuxt开发的项目能被搜索引擎收录,能进行seo，需要将页面改为restful风格
+- nuxt开发的项目能被搜索引擎收录,能进行seo。
 
-- 相比其他语言，nuxt更简单，跟vue开发一样简单，会前端就可以开发，比vue更简单，只需要将文件按目录新建好，nuxt会自动生成对应路由。
+- 相比其他语言上手nuxt简单，会vue就会nuxtjs，写法跟vue基本一致，部分写法有差异，只需要将文件按目录新建好，nuxt会自动生成对应路由。
 
 - 能正常接入统计跟广告代码
 
