@@ -38,11 +38,20 @@ export default {
   computed: {
     pageList () {
       let totalPage = Math.ceil(this.total / this.pageSize)
-      
+
       if(totalPage > 5) {
         let left1 = this.currentPage-1 <= 0 ? '' : this.currentPage-1 
         let left2 = this.currentPage-2 <= 0? '' : this.currentPage-2
-        let list = [left2,left1,this.currentPage,this.currentPage +1, this.currentPage +2]
+        let list = [left2,left1,this.currentPage,this.currentPage +1, this.currentPage +2].filter(item =>{
+          return item
+        })
+        // 保持显示五个页码
+        if (list.length< 5) {
+          list.push(list[list.length -1]+ 1)
+        }
+        if (list.length< 5) {
+          list.push(list[list.length -1]+ 1)
+        }
         return list
       } else {
         let list = []
