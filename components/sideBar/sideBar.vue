@@ -93,7 +93,7 @@ export default {
     computedTagsList() {
       let arr = [];
       this.tagsList.map((item) => {
-        arr.push(item.keywords);
+        arr.push(item.keyword + `(${item.num})`);
       });
       return Array.from(new Set(arr));
     },
