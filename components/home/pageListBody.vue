@@ -14,7 +14,7 @@
           </div>
           <div class="item-info">
             <div class="home-post-title">
-              <a :href="'/post/' + item.id" target="_blank">{{ item.title }}</a>
+              <a :href="'/post/' + (item.uid || item.id)" target="_blank">{{ item.title }}</a>
             </div>
             <div class="home-post-excerpt">
               <a :href="'/post/' + item.id" target="_blank"
