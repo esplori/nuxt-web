@@ -1,4 +1,4 @@
-### nuxt-web
+[![star](https://gitee.com/wilkwo/nuxt-web/badge/star.svg?theme=dark)](https://gitee.com/wilkwo/nuxt-web/stargazers)
 
 
 ### 项目介绍：
