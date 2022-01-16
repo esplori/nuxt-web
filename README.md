@@ -1,4 +1,5 @@
 [![star](https://gitee.com/wilkwo/nuxt-web/badge/star.svg?theme=dark)](https://gitee.com/wilkwo/nuxt-web/stargazers)
+[![fork](https://gitee.com/wilkwo/nuxt-web/badge/fork.svg?theme=dark)](https://gitee.com/wilkwo/nuxt-web/members)
 
 
 ### 项目介绍：
