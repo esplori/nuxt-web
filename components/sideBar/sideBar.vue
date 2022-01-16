@@ -54,15 +54,15 @@
           <div class="cate">标签云</div>
           <ul>
             <li
-              v-for="(item, index) in computedTagsList"
+              v-for="(item, index) in tagsList"
               :key="index"
               style="display: inline-block"
             >
-              <a :href="'/post/tags/' + item"
+              <a :href="'/post/tags/' + item.keyword"
                 ><span
                   class="tag-item"
                   :style="{ background: randomRgbColor() }"
-                  >{{ item }}</span
+                  >{{ item.keyword }}({{item.num}})</span
                 ></a
               >
             </li>
