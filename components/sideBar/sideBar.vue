@@ -90,13 +90,6 @@ export default {
     };
   },
   computed: {
-    computedTagsList() {
-      let arr = [];
-      this.tagsList.map((item) => {
-        arr.push(item.keyword + `(${item.num})`);
-      });
-      return Array.from(new Set(arr));
-    },
   },
   methods: {
     async getRecomList(type) {
