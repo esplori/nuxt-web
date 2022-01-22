@@ -115,8 +115,13 @@ export default {
   /**
    * 请求接口，可同时请求多个接口，详情在服务端请求，分类跟推荐接口在浏览器调用
    */
-  async asyncData({ $axios, route }) {
-    let [detail] = await Promise.all([getDetailApi(route.params.id)]);
+  async asyncData({ $axios, route, error }) {
+    let [detail] = await Promise.all([getDetailApi(route.params.id)])
+
+    if (detail.code === 1) {
+      error({ statusCode: 500, message: 'server page' })
+      return false;
+    }
     return {
       detailData: detail.data.result,
       currPage: route.params.id,

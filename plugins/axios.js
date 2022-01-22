@@ -16,13 +16,13 @@ myaxios.interceptors.request.use(function (config) {
 })
 
 // 添加响应拦截器
-myaxios.interceptors.response.use(function (response) {
-  // 对响应数据做点什么
-  return response
-}, function (error) {
-  // 对响应错误做点什么
-  return Promise.reject(error)
-})
+// myaxios.interceptors.response.use(function (response) {
+//   // 对响应数据做点什么
+//   return response
+// }, function (error) {
+//   // 对响应错误做点什么
+//   return Promise.reject(error)
+// })
 
 /*
  *  axios 别名请求
@@ -41,7 +41,7 @@ export function get(url, params, options) {
     }).then(res => {
       handleData(res, resolve, reject)
     }).catch((err) =>
-      console.log(err),
+      console.log("err:" + err),
     ) // 捕获异常
   })
 }
@@ -65,6 +65,8 @@ function handleData(res, resolve, reject) {
   if (res.data.code === 0) {
     resolve(res.data)
   } else {
-    reject(res)
+    // reject(res)
+    // 此处不抛出错误，在页面通过不同code显示错误页面
+    resolve(res.data)
   }
 }
