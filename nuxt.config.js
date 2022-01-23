@@ -54,7 +54,8 @@ export default {
   },
   proxy: {
     '/bootService': {
-      target: 'http://localhost:8091/'
+      // target: 'http://localhost:8091/'
+      target: 'http://admin.dsiab.com/'
     }
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)

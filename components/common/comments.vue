@@ -63,18 +63,19 @@ export default {
       }
     },
     async submit() {
-      this.$nextTick(() => {
-        this.$nuxt.$loading.start();
-      });
+      if (!this.form.username) {
+        this.$message.warning("请输入用户名");
+        return;
+      }
       if (!this.form.content) {
         this.$message.warning("请输入内容");
         return;
       }
-      if (!this.form.username) {
-        this.$message.warning("请输入邮箱");
-        return;
-      }
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start();
+      });
       const res = await insertCommentApi(this.form);
+      debugger
       if (res) {
         this.$message.success("提交成功");
         this.getComments(this.postId);
