@@ -1,6 +1,6 @@
 <template>
   <div class="nuxt-pagination">
-      <ul>
+      <ul v-show="pageList.length >1">
         <li v-for="(item,index) in pageList" :key="index" :class="{'actived': currentPage === item}">
           <a :href="prePath + item">{{item}}</a>
         </li>
