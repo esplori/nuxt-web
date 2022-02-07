@@ -20,6 +20,7 @@
               :href="'/post/tags/' + item"
               v-for="(item, index) in detailData.keywords.split(',')"
               :key="index"
+              target="_blank"
               >{{ item }}</a
             >
           </div>
@@ -116,10 +117,10 @@ export default {
    * 请求接口，可同时请求多个接口，详情在服务端请求，分类跟推荐接口在浏览器调用
    */
   async asyncData({ $axios, route, error }) {
-    let [detail] = await Promise.all([getDetailApi(route.params.id)])
+    let [detail] = await Promise.all([getDetailApi(route.params.id)]);
 
     if (detail.code === 1) {
-      error({ statusCode: 500, message: 'server page' })
+      error({ statusCode: 500, message: "server page" });
       return false;
     }
     return {
@@ -204,9 +205,9 @@ export default {
     }
     // 顶部
     (window.slotbydup = window.slotbydup || []).push({
-        id: "u6324927",
-        container: "_cwvxpd9dl8s",
-        async: true
+      id: "u6324927",
+      container: "_cwvxpd9dl8s",
+      async: true,
     });
     // 底部
     (window.slotbydup = window.slotbydup || []).push({
