@@ -35,7 +35,7 @@ export default {
     getWegStats() {
       window.webStats.track("/bootService/stats/getStats.gif", {
         ...window.webStats.getDirectData(),
-        ...{ visitorId: window.visitorId },
+        ...{ visitorId: window.visitorId || '' },
       });
     },
     initWebStat() {
