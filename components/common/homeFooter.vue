@@ -25,7 +25,7 @@ export default {
     if (!process.server) {
       // 添加统计
       this.initFingerprint();
-      this.initWebStat();
+      // this.initWebStat();
       window.addEventListener("click", (item) => {
         this.getWegStats();
       });
