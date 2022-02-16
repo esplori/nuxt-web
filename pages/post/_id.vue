@@ -276,7 +276,7 @@ export default {
       .detail-post-content {
         padding: 10px 0;
         font-size: 14px;
-        line-height: 32px;
+        // line-height: 32px;
         margin-bottom: 24px;
         margin-top: 15px;
         text-align: justify;
