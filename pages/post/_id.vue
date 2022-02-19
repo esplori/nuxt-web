@@ -54,7 +54,6 @@ import "highlight.js/styles/monokai-sublime.css";
 export default {
   components: {
     homeHeader: () => import("../../components/common/homeHeader.vue"),
-    // sideBar: () => import("../../components/sideBar/sideBar.vue"),
     comments: () => import("../../components/common/comments.vue"),
   },
   data() {

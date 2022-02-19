@@ -28,17 +28,17 @@ export default {
   },
   head() {
     return {
-      title: `${this.tags}-javascript技术分享`,
+      title: `${this.tag}-javascript技术分享`,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: `${this.tags}`,
+          content: `${this.tag}`,
         },
         {
           hid: "keywords",
           name: "keywords",
-          content: `${this.tags}`,
+          content: `${this.tag}`,
         },
       ],
     };
