@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     prePath() {
-      return "/post/tags/" + this.cate + "/page/";
+      return "/post/tags/" + this.cate + "/";
     }
   }
 };

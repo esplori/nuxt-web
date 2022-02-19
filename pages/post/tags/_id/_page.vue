@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import { getListByTagsApi, getRecomListApi,getCateApi } from "../../../index";
+import { getListByTagsApi, getRecomListApi,getCateApi } from "../../index";
 export default {
   components: {
-    listBody: () => import("../../../../../components/home/pageListBody.vue"),
+    listBody: () => import("../../../../components/home/pageListBody.vue"),
     // sideBar: () => import("../../../../../components/sideBar/sideBar.vue"),
   },
   head() {
@@ -46,17 +46,13 @@ export default {
     };
   },
   async asyncData({ query, store, $axios, route }) {
-    let [homeList, recommandList, cateList] = await Promise.all([
-      getListByTagsApi({ cate: route.params.id, page: route.params.page || 1 }),
-      getRecomListApi({type: 'all'}),
-      getCateApi({})
+    let [homeList] = await Promise.all([
+      getListByTagsApi({ cate: route.params.id, page: route.params.page || 1 })
     ]);
     return {
       homeList: homeList.data,
-      recommandList: recommandList.data,
       cate: route.params.id,
       page: parseInt(route.params.page || 1),
-      cateList: cateList.data.result,
       tags: route.params.id
     };
   },
