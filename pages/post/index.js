@@ -31,7 +31,7 @@ export async function getListByTagsApi(params, data) {
   if (!params.page) {
     params.page = 1
   }
-  let url = baseUrl + '/pages/getList/tags/' + encodeURI(params.cate) + '/page/' + params.page || 1
+  let url = baseUrl + '/pages/getList/tags/' + encodeURI(params.tag) + '/page/' + params.page || 1
   const options = {}
   return get(url, data, options)
 }

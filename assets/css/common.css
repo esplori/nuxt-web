@@ -26,3 +26,11 @@ pre code {
   white-space: pre-wrap;
 }
 
+/* 分类、标签通用样式 */
+.result-title{
+  padding: 0 20px;
+}
+.devide{
+  background: #f9f9f9;
+  height: 10px;
+}

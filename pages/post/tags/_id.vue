@@ -2,7 +2,7 @@
   <div class="cate-id">
     <div class="home-body">
       <div class="left-body">
-        <h2 class="result-title">查询内容：{{tags}}</h2>
+        <h1 class="result-title">查询内容：{{tag}}</h1>
         <p class="devide"></p>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
@@ -18,7 +18,6 @@ import { getListByTagsApi, getRecomListApi,getCateApi } from "../index";
 export default {
   components: {
     listBody: () => import("../../../components/home/pageListBody.vue"),
-    // sideBar: () => import("../../../components/sideBar/sideBar.vue"),
     nuxtPagination: () => import("../../../components/common/nuxtPagination.vue")
   },
   head() {
@@ -38,22 +37,19 @@ export default {
       ],
     };
   },
-  async asyncData({ query, store, $axios, route }) {
+  async asyncData({route }) {
     let [homeList] = await Promise.all([
-      getListByTagsApi({ cate: route.params.id, page: route.params.page || 1 }),
-      getRecomListApi({type: 'all'}),
-      getCateApi({})
+      getListByTagsApi({ tag: route.params.id, page: route.params.page || 1 })
     ]);
     return {
       homeList: homeList.data,
-      cate: route.params.id || 1,
       page: parseInt(route.params.page || 1),
-      tags: route.params.id
+      tag: route.params.id
     };
   },
   computed: {
     prePath() {
-      return "/post/tags/" + this.cate + "/";
+      return "/post/tags/" + this.tag + "/";
     }
   }
 };
@@ -68,27 +64,12 @@ export default {
       width: 100%;
       background: #fff;
       box-shadow:0 0 20px rgba(210,211,216,.3);
-      .result-title{
-        padding: 0 20px;
-      }
-      .devide{
-        background: #f9f9f9;
-        height: 10px;
-      }
       .home-pagination {
         padding: 20px;
         background: #fff;
         text-align: center;
       }
     }
-    // .right-sidebar{
-    //   max-width: 385px;
-    // }
-    // @media screen and (max-width: 1024px) {
-    //   .right-sidebar {
-    //     display: none;
-    //   }
-    // }
   }
 }
 </style>

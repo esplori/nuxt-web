@@ -2,24 +2,22 @@
   <div class="cate-id">
     <div class="home-body">
       <div class="left-body">
+         <h1 class="result-title">分类：{{this.title.length?this.title[0].name:''}}</h1>
+         <p class="devide"></p>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
           <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" :prePath="prePath"></nuxtPagination>
         </div>
       </div>
-      <!-- <div class="right-sidebar">
-        <sideBar :list="recommandList" :cateList="cateList"></sideBar>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import { getListByCateApi, getRecomListApi,getCateApi } from "../index";
+import { getListByCateApi,getCateApi } from "../index";
 export default {
   components: {
     listBody: () => import("../../../components/home/pageListBody.vue"),
-    // sideBar: () => import("../../../components/sideBar/sideBar.vue"),
     nuxtPagination: () => import("../../../components/common/nuxtPagination.vue")
   },
   head() {
@@ -39,15 +37,13 @@ export default {
       ],
     };
   },
-  async asyncData({ query, store, $axios, route }) {
-    let [homeList, recommandList, cateList] = await Promise.all([
+  async asyncData({route }) {
+    let [homeList,cateList] = await Promise.all([
       getListByCateApi({ cate: route.params.id, page: route.params.page || 1 }),
-      getRecomListApi({type: 'all'}),
       getCateApi({})
     ]);
     return {
       homeList: homeList.data,
-      recommandList: recommandList.data,
       cate: parseInt(route.params.id || 1),
       page: parseInt(route.params.page || 1),
       cateList: cateList.data.result,
@@ -58,7 +54,7 @@ export default {
   },
   computed: {
     prePath() {
-      return "/post/category/" + this.cate + "/page/";
+      return "/post/category/" + this.cate + "/";
     }
   }
 };
@@ -79,14 +75,6 @@ export default {
         text-align: center;
       }
     }
-    // .right-sidebar{
-    //   max-width: 385px;
-    // }
-    // @media screen and (max-width: 1024px) {
-    //   .right-sidebar {
-    //     display: none;
-    //   }
-    // }
   }
 }
 </style>
