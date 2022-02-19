@@ -62,7 +62,7 @@
                 ><span
                   class="tag-item"
                   :style="{ background: randomRgbColor() }"
-                  >{{ item.keyword }}({{item.num}})</span
+                  >{{ item.keyword }}({{ item.num }})</span
                 ></a
               >
             </li>
@@ -89,8 +89,7 @@ export default {
       tagsList: [],
     };
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     async getRecomList(type) {
       let res = await getRecomListApi2({ type });

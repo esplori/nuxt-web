@@ -75,11 +75,11 @@ export default {
         this.$nuxt.$loading.start();
       });
       const res = await insertCommentApi(this.form);
-      debugger
+      debugger;
       if (res) {
         this.$message.success("提交成功");
         this.getComments(this.postId);
-        this.$nuxt.$loading.finish()
+        this.$nuxt.$loading.finish();
       }
     },
   },

@@ -4,43 +4,39 @@
       <div class="left-body">
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
-          <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" @pageChange="handleCurrentChange"></nuxtPagination>
+          <nuxtPagination
+            :pageSize="10"
+            :total="homeList.total"
+            :currentPage="page"
+            @pageChange="handleCurrentChange"
+          ></nuxtPagination>
         </div>
       </div>
-      <!-- <div class="right-sidebar">
-        <sideBar :list="recommandList" :cateList="cateList"></sideBar>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import { getListApi, getRecomListApi, getCateApi } from "../index";
+import { getListApi } from "../index";
 export default {
   components: {
     listBody: () => import("../../../components/home/pageListBody.vue"),
-    // sideBar: () => import("../../../components/sideBar/sideBar.vue"),
-    nuxtPagination: () => import("../../../components/common/nuxtPagination.vue")
+    nuxtPagination: () =>
+      import("../../../components/common/nuxtPagination.vue"),
   },
-  // watchQuery: ["page"],
-  async asyncData({ query, store, $axios, route }) {
-
-    let [homeList, recommandList, cateList] = await Promise.all([
+  async asyncData({ route }) {
+    let [homeList] = await Promise.all([
       getListApi({ page: route.params.id || 1 }),
-      getRecomListApi({type: 'all'}),
-      getCateApi({})
     ]);
     return {
       homeList: homeList.data,
-      cateList: cateList.data.result,
-      recommandList: recommandList.data,
-      page: parseInt(route.params.id ||1)
+      page: parseInt(route.params.id || 1),
     };
   },
   methods: {
     handleCurrentChange(page) {
       window.location.href = "/page/" + page;
-    }
+    },
   },
 };
 </script>
@@ -60,14 +56,6 @@ export default {
         text-align: center;
       }
     }
-    // .right-sidebar{
-    //   max-width: 385px;
-    // }
-    // @media screen and (max-width: 1024px) {
-    //   .right-sidebar{
-    //     display: none;
-    //   }
-    // }
   }
 }
 </style>

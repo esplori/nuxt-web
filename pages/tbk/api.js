@@ -1,7 +1,7 @@
-import {get, post} from '@/plugins/axios'
+import { get, post } from '@/plugins/axios'
 import baseUrl from '@/plugins/baseUrl'
 
-export async function getShopListApi (params, data) {
+export async function getShopListApi(params, data) {
   if (!params.page) {
     params.page = 1
   }
@@ -9,8 +9,8 @@ export async function getShopListApi (params, data) {
   const options = {}
   return get(url, data, options)
 }
-export async function getTbkDetailApi (id, data) {
-  const url = baseUrl +  '/tbk/getDetail/' + id
+export async function getTbkDetailApi(id, data) {
+  const url = baseUrl + '/tbk/getDetail/' + id
   const options = {}
   return get(url, data, options)
 }

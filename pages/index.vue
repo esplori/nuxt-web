@@ -11,7 +11,10 @@
                 class="car-item"
               >
                 <el-carousel-item
-                  v-for="(item, index) in carouselList.slice(0,carouselList.length -2)"
+                  v-for="(item, index) in carouselList.slice(
+                    0,
+                    carouselList.length - 2
+                  )"
                   :key="index"
                 >
                   <div class="carousel-item-container">
@@ -32,7 +35,13 @@
                     alt=""
                     class="small-carousel-img"
                   />
-                  <div class="sml-car-title"><a target="_blank" :href="carouselList[carouselList.length - 2].url">{{ carouselList[carouselList.length - 2].desc }}</a></div>
+                  <div class="sml-car-title">
+                    <a
+                      target="_blank"
+                      :href="carouselList[carouselList.length - 2].url"
+                      >{{ carouselList[carouselList.length - 2].desc }}</a
+                    >
+                  </div>
                 </div>
                 <div class="small-carousel-item">
                   <img
@@ -40,7 +49,13 @@
                     alt=""
                     class="small-carousel-img"
                   />
-                  <div class="sml-car-title"><a target="_blank" :href="carouselList[carouselList.length - 1].url">{{ carouselList[carouselList.length - 1].desc }}</a></div>
+                  <div class="sml-car-title">
+                    <a
+                      target="_blank"
+                      :href="carouselList[carouselList.length - 1].url"
+                      >{{ carouselList[carouselList.length - 1].desc }}</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,9 +83,9 @@
                     />
                     <div class="card-title">
                       <span
-                        ><a :href="'/post/' + item.id" target="_blank"
-                          >{{ item.title }}</a
-                        ></span
+                        ><a :href="'/post/' + item.id" target="_blank">{{
+                          item.title
+                        }}</a></span
                       >
                     </div>
                   </el-card>
@@ -147,23 +162,6 @@ export default {
     };
   },
   // 所有接口通过服务端调用渲染
-
-  // async asyncData({ query, store, $axios, route }) {
-  //   let [homeList, recommandList, cateList,tagsList] = await Promise.all([
-  //     getListApi({ page: 1 }),
-  //     getRecomListApi({ type: "all" }),
-  //     getCateApi({}),
-  //     getTagsApi({})
-  //   ]);
-  //   return {
-  //     homeList: homeList.data,
-  //     recommandList: recommandList.data,
-  //     cateList: cateList.data.result,
-  //     page: parseInt(route.params.id || 1),
-  //     tagsList: tagsList.data.result
-  //   };
-  // },
-
   // 只要列表通过服务端调用渲染，分类跟推荐接口在浏览器调用
   async asyncData({ query, store, $axios, route }) {
     let [homeList] = await Promise.all([getListApi({ page: 1 })]);
@@ -282,7 +280,7 @@ export default {
                   opacity: 0.8;
                   padding: 10px 0;
                   font-size: 14px;
-                  a{
+                  a {
                     color: #fff;
                   }
                 }

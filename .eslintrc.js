@@ -14,5 +14,8 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    // 0 关闭，1 警告， 2 报错
+    "quotes": 0
+  }
 }

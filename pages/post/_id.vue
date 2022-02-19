@@ -26,9 +26,7 @@
           </div>
           <div class="copy-desc">
             <div>
-              如若转载请注明原文及出处：https://www.dsiab.com/post/{{
-                currPage
-              }}
+              如若转载请注明原文及出处：https://www.dsiab.com/post/{{ postId }}
             </div>
             <div>
               本站文章由javascript技术分享原创和收集，内容如有问题，请联系站长删除。
@@ -37,15 +35,12 @@
         </div>
         <comments></comments>
       </div>
-      <!-- <div class="right-sidebar">
-        <sideBar :list="recommandList" :cateList="cateList"></sideBar>
-      </div> -->
     </div>
 
     <el-dialog
       custom-class="custom-dialog-class"
       :visible.sync="dialogVisible"
-      style="height:80%;"
+      style="height: 80%"
       :show-close="false"
     >
       <img :src="imgUrl" alt="" id="bigImg" />
@@ -54,13 +49,7 @@
 </template>
 
 <script>
-import {
-  getDetailApi,
-  getRecomListApi,
-  getCateApi,
-  getRecomListApi2,
-  getCateApi2,
-} from "./index";
+import { getDetailApi, getRecomListApi2, getCateApi2 } from "./index";
 import "highlight.js/styles/monokai-sublime.css";
 export default {
   components: {
@@ -98,22 +87,6 @@ export default {
     };
   },
   /**
-   * 请求接口，可同时请求多个接口,所有请求在服务端完成
-   */
-  // async asyncData({ $axios, route }) {
-  //   let [detail, recommandList, cateList] = await Promise.all([
-  //     getDetailApi(route.params.id),
-  //     getRecomListApi({type: 'all'}),
-  //     getCateApi({}),
-  //   ]);
-  //   return {
-  //     detailData: detail.data.result,
-  //     recommandList: recommandList.data,
-  //     cateList: cateList.data.result,
-  //     currPage: route.params.id,
-  //   };
-  // },
-  /**
    * 请求接口，可同时请求多个接口，详情在服务端请求，分类跟推荐接口在浏览器调用
    */
   async asyncData({ $axios, route, error }) {
@@ -125,7 +98,7 @@ export default {
     }
     return {
       detailData: detail.data.result,
-      currPage: route.params.id,
+      postId: route.params.id,
     };
   },
   methods: {

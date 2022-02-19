@@ -41,7 +41,6 @@ export async function getRecomListApi(data) {
   return post(url, data, options)
 }
 export async function getRecomListApi2(data) {
-  // const url = baseUrl + '/pages/getRecomList/' + data.type
   const url = '/bootService/pages/getRecomList/' + data.type
   const options = {}
   return post(url, data, options)

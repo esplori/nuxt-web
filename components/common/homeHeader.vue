@@ -65,7 +65,7 @@ export default {
             {
               name: "typescript教程",
               path: "http://www.dsiab.com/course/tslang/www.tslang.cn/index.html",
-            }
+            },
           ],
         },
         {

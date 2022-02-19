@@ -1,10 +1,9 @@
 <template>
   <div class="home-footer">
     <div class="site-info">
-      
       <div><a href="https://www.nuxtjs.cn/">© 基于nuxtjs</a></div>
       <div><a href="https://beian.miit.gov.cn/">粤ICP备20013202号</a></div>
-      <div><a href="/">© 2020-2021    javascript技术分享</a></div>
+      <div><a href="/">© 2020-2021 javascript技术分享</a></div>
     </div>
     <el-backtop :bottom="100"> </el-backtop>
   </div>
@@ -35,7 +34,7 @@ export default {
     getWegStats() {
       window.webStats.track("/bootService/stats/getStats.gif", {
         ...window.webStats.getDirectData(),
-        ...{ visitorId: window.visitorId || '' },
+        ...{ visitorId: window.visitorId || "" },
       });
     },
     initWebStat() {

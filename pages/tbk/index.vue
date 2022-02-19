@@ -3,7 +3,7 @@
     <div class="home-body">
       <goodsBody :list="list"></goodsBody>
     </div>
-    <div style="text-align: center;background:#fff;padding: 20px 0">
+    <div style="text-align: center; background: #fff; padding: 20px 0">
       <el-pagination
         @current-change="handleCurrentChange"
         :current-page.sync="page"
@@ -19,14 +19,14 @@
 <script>
 import { getShopListApi } from "./api";
 export default {
-  layout: 'noNav',
+  layout: "noNav",
   components: {
     homeHeader: () => import("../../components/common/homeHeader.vue"),
     goodsBody: () => import("../../components/tbk/goodsBody.vue"),
   },
   data() {
     return {
-      data: 0
+      data: 0,
     };
   },
   head() {
@@ -47,11 +47,11 @@ export default {
     };
   },
   async asyncData({ $axios, route }) {
-    let [res] = await Promise.all([getShopListApi({page: 1})]);
+    let [res] = await Promise.all([getShopListApi({ page: 1 })]);
     return {
       list: res.data.result,
       total: res.data.total || 80,
-      page: parseInt(route.params.id || 1)
+      page: parseInt(route.params.id || 1),
     };
   },
   methods: {

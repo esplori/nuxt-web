@@ -2,11 +2,16 @@
   <div class="cate-id">
     <div class="home-body">
       <div class="left-body">
-        <h1 class="result-title">查询内容：{{tag}}</h1>
+        <h1 class="result-title">关键字：{{ tag }}</h1>
         <p class="devide"></p>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
-          <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" :prePath="prePath"></nuxtPagination>
+          <nuxtPagination
+            :pageSize="10"
+            :total="homeList.total"
+            :currentPage="page"
+            :prePath="prePath"
+          ></nuxtPagination>
         </div>
       </div>
     </div>
@@ -14,15 +19,16 @@
 </template>
 
 <script>
-import { getListByTagsApi, getRecomListApi,getCateApi } from "../index";
+import { getListByTagsApi, getRecomListApi, getCateApi } from "../index";
 export default {
   components: {
     listBody: () => import("../../../components/home/pageListBody.vue"),
-    nuxtPagination: () => import("../../../components/common/nuxtPagination.vue")
+    nuxtPagination: () =>
+      import("../../../components/common/nuxtPagination.vue"),
   },
   head() {
     return {
-      title:  `${this.tags}-javascript技术分享`,
+      title: `${this.tags}-javascript技术分享`,
       meta: [
         {
           hid: "description",
@@ -37,21 +43,21 @@ export default {
       ],
     };
   },
-  async asyncData({route }) {
+  async asyncData({ route }) {
     let [homeList] = await Promise.all([
-      getListByTagsApi({ tag: route.params.id, page: route.params.page || 1 })
+      getListByTagsApi({ tag: route.params.id, page: route.params.page || 1 }),
     ]);
     return {
       homeList: homeList.data,
       page: parseInt(route.params.page || 1),
-      tag: route.params.id
+      tag: route.params.id,
     };
   },
   computed: {
     prePath() {
       return "/post/tags/" + this.tag + "/";
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -63,7 +69,7 @@ export default {
     .left-body {
       width: 100%;
       background: #fff;
-      box-shadow:0 0 20px rgba(210,211,216,.3);
+      box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
       .home-pagination {
         padding: 20px;
         background: #fff;
