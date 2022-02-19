@@ -2,14 +2,13 @@
   <div class="cate-id">
     <div class="home-body">
       <div class="left-body">
+        <h2 class="result-title">查询内容：{{tags}}</h2>
+        <p class="devide"></p>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
           <nuxtPagination :pageSize="10" :total="homeList.total" :currentPage="page" :prePath="prePath"></nuxtPagination>
         </div>
       </div>
-      <!-- <div class="right-sidebar">
-        <sideBar :list="recommandList" :cateList="cateList"></sideBar>
-      </div> -->
     </div>
   </div>
 </template>
@@ -40,17 +39,15 @@ export default {
     };
   },
   async asyncData({ query, store, $axios, route }) {
-    let [homeList, recommandList, cateList] = await Promise.all([
+    let [homeList] = await Promise.all([
       getListByTagsApi({ cate: route.params.id, page: route.params.page || 1 }),
       getRecomListApi({type: 'all'}),
       getCateApi({})
     ]);
     return {
       homeList: homeList.data,
-      recommandList: recommandList.data,
       cate: route.params.id || 1,
       page: parseInt(route.params.page || 1),
-      cateList: cateList.data.result,
       tags: route.params.id
     };
   },
@@ -71,6 +68,13 @@ export default {
       width: 100%;
       background: #fff;
       box-shadow:0 0 20px rgba(210,211,216,.3);
+      .result-title{
+        padding: 0 20px;
+      }
+      .devide{
+        background: #f9f9f9;
+        height: 10px;
+      }
       .home-pagination {
         padding: 20px;
         background: #fff;
