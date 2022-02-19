@@ -49,7 +49,7 @@ export default {
     };
   },
   mounted() {
-    if (!process.server) {
+    if (process.client) {
       this.getComments();
     }
   },

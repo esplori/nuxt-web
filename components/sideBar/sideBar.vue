@@ -134,7 +134,7 @@ export default {
   },
   mounted() {
     // 判断是否在服务端
-    if (!process.server) {
+    if (process.client) {
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
       this.getRecomList("all");

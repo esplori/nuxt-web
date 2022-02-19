@@ -106,9 +106,6 @@
           ></nuxtPagination>
         </div>
       </div>
-      <!-- <div class="right-sidebar">
-        <sideBar></sideBar>
-      </div> -->
     </div>
   </div>
 </template>
@@ -116,18 +113,12 @@
 <script>
 import {
   getListApi,
-  getRecomListApi,
   getRecomListApi2,
-  getCateApi,
-  getCateApi2,
-  getTagsApi,
-  getTagsApi2,
   getSiteInfoApi,
 } from "./post/index";
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
-    // sideBar: () => import("../components/sideBar/sideBar.vue"),
     nuxtPagination: () => import("../components/common/nuxtPagination.vue"),
   },
   data() {
@@ -162,8 +153,8 @@ export default {
     };
   },
   // 所有接口通过服务端调用渲染
-  // 只要列表通过服务端调用渲染，分类跟推荐接口在浏览器调用
-  async asyncData({ query, store, $axios, route }) {
+  // 只有列表通过服务端调用渲染，分类跟推荐接口在浏览器调用
+  async asyncData({route }) {
     let [homeList] = await Promise.all([getListApi({ page: 1 })]);
     return {
       homeList: homeList.data,
@@ -173,12 +164,13 @@ export default {
   computed: {},
   mounted() {
     // 判断是否在服务端
-    if (!process.server) {
+    if (process.client) {
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
       this.getRecomList();
       this.getSiteInfo();
     }
+    // 广告代码
     (window.slotbydup = window.slotbydup || []).push({
       id: "u6611132",
       container: "_lrzdvi6yazm",

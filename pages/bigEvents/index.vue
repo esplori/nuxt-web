@@ -41,7 +41,7 @@ export default {
   components: {},
 
   created() {
-    if (!process.server) {
+    if (process.client) {
       this.height =
         document.getElementsByClassName("bigEvents")[0].offsetHeight -
         80 +
