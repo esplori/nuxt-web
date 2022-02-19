@@ -108,15 +108,11 @@ export default {
       window.open("/post/tags/" + this.searchWords);
     },
     randomRgbColor() {
-      //随机生成RGB颜色
-      // var r = Math.floor(Math.random() * 256); //随机生成256以内r值
-      // var g = Math.floor(Math.random() * 256); //随机生成256以内g值
-      // var b = Math.floor(Math.random() * 256); //随机生成256以内b值
-      // return `rgb(${r},${g},${b})`; //返回rgb(r,g,b)格式颜色
+      // 随机生成RGB颜色
       let colorList = ["#409eff", "#67c23a", "#909399", "#e6a23c", "#f56c6c"];
       //随机生成5种颜色中的其中一种
-      var max = 4;
-      var min = 0;
+      let max = 4;
+      let min = 0;
       return colorList[Math.floor(Math.random() * (max - min + 1) + min)];
     },
     async getCate() {

@@ -75,7 +75,6 @@ export default {
         this.$nuxt.$loading.start();
       });
       const res = await insertCommentApi(this.form);
-      debugger;
       if (res) {
         this.$message.success("提交成功");
         this.getComments(this.postId);

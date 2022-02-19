@@ -127,14 +127,14 @@ export default {
      * 图片懒加载
      */
     lazyLoad() {
-      var imgs = document.querySelectorAll("img");
+      let imgs = document.querySelectorAll("img");
 
       //用来判断bound.top<=clientHeight的函数，返回一个bool值
 
       function isIn(el) {
-        var bound = el.getBoundingClientRect();
+        let bound = el.getBoundingClientRect();
 
-        var clientHeight = window.innerHeight;
+        let clientHeight = window.innerHeight;
 
         return bound.top <= clientHeight;
       }

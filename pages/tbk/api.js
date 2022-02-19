@@ -1,4 +1,4 @@
-import { get, post } from '@/plugins/axios'
+import { get } from '@/plugins/axios'
 import baseUrl from '@/plugins/baseUrl'
 
 export async function getShopListApi(params, data) {

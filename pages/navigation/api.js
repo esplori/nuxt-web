@@ -1,4 +1,4 @@
-import { get, post } from '@/plugins/axios'
+import { post } from '@/plugins/axios'
 import baseUrl from '@/plugins/baseUrl'
 
 export async function getListApi(data) {
