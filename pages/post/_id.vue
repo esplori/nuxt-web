@@ -5,10 +5,20 @@
         <div>
           <h1 class="detail-post-title">{{ detailData.title }}</h1>
           <div class="post-info">
-            <span class="el-icon-user"> {{ detailData.createBy }}</span>
-            <span class="el-icon-date"> {{ detailData.createDate }}</span>
-            <span class="el-icon-view"> 阅读({{ detailData.views }})</span>
-            <span class="el-icon-tickets"> {{ detailData.cateName }}</span>
+            <div>
+              <i class="profile-photo"></i>
+            </div>
+            <div class="head-info">
+              <div class="title">
+                <span class="userName"> {{ detailData.createBy }}</span>
+                
+              </div>
+              <div class="other-info">
+                <span class="createDate"> {{ detailData.createDate }}</span>
+                <span>阅读: {{ detailData.views}} </span>
+                <span>分类: {{ detailData.cateName}} </span>
+              </div>
+            </div>
           </div>
           <div class="_cwvxpd9dl8s"></div>
           <div v-html="detailData.content" class="detail-post-content"></div>
@@ -240,8 +250,34 @@ export default {
         padding: 10px 0;
         font-size: 14px;
         color: #020202;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
         span {
           margin-right: 10px;
+        }
+        .profile-photo {
+          display: inline-block;
+          width: 46px;  
+          height: 46px;
+          border-radius: 50%;
+          background-image: url("https://source.dsiab.com/upload/bb4f38bd-160a-4e89-9697-2733231a8f84.jpg");
+          background-size: contain;
+        }
+        .head-info {
+          padding: 0 10px;
+          .other-info{
+            font-size: 14px;
+            color: #969696;
+          }
+          .userName{
+            font-size: 18px;
+            font-weight: bold;
+          }
+          .createDate{
+            font-size: 14px;
+            color: #969696;
+          }
         }
       }
 
