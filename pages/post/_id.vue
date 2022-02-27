@@ -261,8 +261,8 @@ export default {
           width: 46px;  
           height: 46px;
           border-radius: 50%;
-          background-image: url("https://source.dsiab.com/upload/bb4f38bd-160a-4e89-9697-2733231a8f84.jpg") no-repeat;
-          background-size: contain;
+          background: url("https://source.dsiab.com/upload/bb4f38bd-160a-4e89-9697-2733231a8f84.jpg") no-repeat;
+          background-size: cover;
         }
         .head-info {
           padding: 0 10px;
