@@ -22,9 +22,9 @@
               <a :href="it.path" target="_blank">{{ it.name }}</a>
             </el-menu-item>
           </el-submenu>
-          <el-menu-item>
+          <!-- <el-menu-item>
             <a href="/tbk" target="_blank">优乐购</a>
-          </el-menu-item>
+          </el-menu-item> -->
           <el-menu-item>
             <a href="/post/13">关于</a>
           </el-menu-item>
