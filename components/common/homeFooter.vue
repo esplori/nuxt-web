@@ -26,7 +26,7 @@ export default {
       this.initFingerprint();
       // this.initWebStat();
       window.addEventListener("click", (item) => {
-        this.getWegStats();
+        // this.getWegStats();
       });
     }
   },
