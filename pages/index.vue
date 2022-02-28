@@ -59,6 +59,7 @@
                 </div>
               </div>
             </div>
+             <div class="_lrzdvi6yazm"></div>
             <h2 class="big-title">分类推荐</h2>
             <div class="card">
               <el-row :gutter="20">
@@ -91,7 +92,7 @@
             </div>
           </div>
         </div>
-        <div class="_lrzdvi6yazm"></div>
+       
         <h2 class="big-title common-big-title">综合资讯</h2>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
