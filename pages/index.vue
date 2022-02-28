@@ -59,34 +59,31 @@
                 </div>
               </div>
             </div>
-            <h2 class="big-title">推荐图文</h2>
+            <h2 class="big-title">分类推荐</h2>
             <div class="card">
               <el-row :gutter="20">
                 <el-col
                   :span="6"
-                  v-for="(item, index) in recommandList.slice(0, 4)"
+                  v-for="(item, index) in cateList"
                   :key="index"
                 >
                   <el-card
-                    style="border: none"
+                    class="elCard"
                     shadow="never"
                     :body-style="{
                       padding: '0px',
                       width: '100%',
-                      height: '200px',
+                      height: '80px',
                     }"
                   >
                     <img
-                      style="width: 100%; height: 130px"
-                      :src="carouselList[index].imgUrl"
+                      src="https://source.dsiab.com/upload/cf172b78-9a2b-4ed3-8ae8-18ecaf612d98.jpg"
                       class="image"
                     />
                     <div class="card-title">
-                      <span
-                        ><a :href="'/post/' + item.id" target="_blank">{{
-                          item.title
-                        }}</a></span
-                      >
+                      <a :href="'/post/category/' + item.id" target="_blank">{{
+                        item.name
+                      }}</a>
                     </div>
                   </el-card>
                 </el-col>
@@ -111,11 +108,7 @@
 </template>
 
 <script>
-import {
-  getListApi,
-  getRecomListApi2,
-  getSiteInfoApi,
-} from "./post/index";
+import { getListApi, getSiteInfoApi, getCateApi2 } from "./post/index";
 export default {
   components: {
     listBody: () => import("../components/home/pageListBody.vue"),
@@ -149,12 +142,12 @@ export default {
           url: "",
         },
       ],
-      recommandList: [],
+      cateList: [],
     };
   },
   // 所有接口通过服务端调用渲染
   // 只有列表通过服务端调用渲染，分类跟推荐接口在浏览器调用
-  async asyncData({route }) {
+  async asyncData({ route }) {
     let [homeList] = await Promise.all([getListApi({ page: 1 })]);
     return {
       homeList: homeList.data,
@@ -167,7 +160,7 @@ export default {
     if (process.client) {
       // 在浏览器端调接口，需要服务端做反向代理
       // 查推荐
-      this.getRecomList();
+      this.getCate();
       this.getSiteInfo();
     }
     // 广告代码
@@ -178,10 +171,10 @@ export default {
     });
   },
   methods: {
-    async getRecomList() {
-      let res = await getRecomListApi2({ type: "30" });
+    async getCate() {
+      let res = await getCateApi2({});
       if (res) {
-        this.recommandList = res.data;
+        this.cateList = res.data.result.slice(1, 9);
       }
     },
     async getSiteInfo() {
@@ -280,9 +273,28 @@ export default {
             }
           }
           .card {
+            .elCard {
+              border: none;
+              margin-bottom: 10px;
+              position: relative;
+              img {
+                width: 100%;
+                height: 80px;
+                // 降低透明度
+                filter: brightness(50%);
+              }
+            }
             .card-title {
+              width: 100%;
+              text-align: center;
               padding: 5px 0;
-              font-size: 14px;
+              font-size: 28px;
+              position: absolute;
+              bottom: 15px;
+              font-weight: bold;
+              a {
+                color: #fff;
+              }
             }
           }
         }
