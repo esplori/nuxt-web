@@ -95,12 +95,13 @@ export default {
   }
   ul {
     li {
-      padding: 20px;
+      padding: 30px 20px;
       border-bottom: 1px solid #f5f5f5;
       .home-post-title {
-        padding-bottom: 15px;
+        padding-bottom: 20px;
       }
       .home-post-title a {
+        font-weight: bold;
         font-size: 20px;
         text-overflow: ellipsis;
       }
