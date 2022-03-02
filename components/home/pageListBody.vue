@@ -20,7 +20,7 @@
             </div>
             <div class="home-post-excerpt">
               <a :href="'/post/' + item.id" target="_blank">{{
-                deleteHtmlTag(item.content.slice(0, 120))
+                deleteHtmlTag(item.content.slice(0, 220))
               }}</a>
             </div>
             <div class="home-post-info">
