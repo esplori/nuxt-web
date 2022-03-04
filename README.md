@@ -9,23 +9,23 @@
 
 ### 项目介绍：
 
-- 主要技术: nuxtjs2.0 、element-ui2.0
+- 主要技术: Nuxtjs 2.0 、ElementUI 2.0
 
-- 使用到的插件： axios  、 less
+- 主要使用插件： axios（请求）  、 less（css编译） 、 highlight.js（代码高亮） 、 @nuxtjs/component-cache （缓存）
 
 
 ### 关联项目
 
 同另外两个项目一起组成了一个博客系统：
 
-后端服务：springbootAdmin(https://gitee.com/wilkwo/springbootAdmin)
+后端服务：springbootAdmin ( https://gitee.com/wilkwo/springbootAdmin )
 
-后台管理：vueAdmin(https://gitee.com/wilkwo/vueAdmin) 
+后台管理：vueAdmin ( https://gitee.com/wilkwo/vueAdmin ) 
 
 
 ### 演示地址
 
-官网：[www.dsiab.com](https://www.dsiab.com)
+官网：[https: //www.dsiab.com](https://www.dsiab.com)
 
 拉取代码后运行可看到效果（如果报错请配置跨域），不用跑后端服务，直接调用官网接口。
 
@@ -38,21 +38,6 @@ http://admin.dsiab.com
 测试账号：test
 
 测试密码：test
-
-
-
-<!-- ### PC演示 -->
-
-<!-- <img src="./assets/img/site.png" alt="PC演示" width="400px" /> -->
-
-
-
-<!-- ### 移动端演示 -->
-
-<!-- <img src="https://gitee.com/wilkwo/nuxt-web/raw/master/assets/img/mobileSite.jpeg"> -->
-
-<!-- <img src="./assets/img/mobileSite.jpeg" alt="移动端" width="400px" /> -->
-
 
 
 ### 选择nuxt的原因：
