@@ -59,7 +59,7 @@
                 </div>
               </div>
             </div>
-             <div class="_lrzdvi6yazm"></div>
+            <div class="_lrzdvi6yazm"></div>
             <h2 class="big-title">分类推荐</h2>
             <div class="card">
               <el-row :gutter="20">
@@ -90,9 +90,39 @@
                 </el-col>
               </el-row>
             </div>
+            <h2 class="big-title">专题推荐</h2>
+            <div class="card">
+              <el-row :gutter="20">
+                <el-col
+                  :span="6"
+                  v-for="(item, index) in topicList"
+                  :key="index"
+                >
+                  <el-card
+                    class="elCard"
+                    shadow="never"
+                    :body-style="{
+                      padding: '0px',
+                      width: '100%',
+                      height: '80px',
+                    }"
+                  >
+                    <img
+                      src="https://source.dsiab.com/upload/cf172b78-9a2b-4ed3-8ae8-18ecaf612d98.jpg"
+                      class="image"
+                    />
+                    <div class="card-title">
+                      <a :href="'/topic/' + item.id" target="_blank">{{
+                        item.name
+                      }}</a>
+                    </div>
+                  </el-card>
+                </el-col>
+              </el-row>
+            </div>
           </div>
         </div>
-       
+
         <h2 class="big-title common-big-title">综合资讯</h2>
         <listBody :list="homeList.result"></listBody>
         <div class="home-pagination">
@@ -144,6 +174,20 @@ export default {
         },
       ],
       cateList: [],
+      topicList: [
+        {
+          name: "JAVASCRIPT",
+        },
+        {
+          name: "VUE",
+        },
+        {
+          name: "CSS",
+        },
+        {
+          name: "VUE + TS",
+        },
+      ],
     };
   },
   // 所有接口通过服务端调用渲染
