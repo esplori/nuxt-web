@@ -18,26 +18,24 @@
 
 同另外两个项目一起组成了一个博客系统：
 
-后端服务：springbootAdmin ( https://gitee.com/wilkwo/springbootAdmin )
+* 后端服务：springbootAdmin ( https://gitee.com/wilkwo/springbootAdmin )
 
-后台管理：vueAdmin ( https://gitee.com/wilkwo/vueAdmin ) 
+* 后台管理：vueAdmin ( https://gitee.com/wilkwo/vueAdmin ) 
 
 
 ### 演示地址
 
-官网：[https: //www.dsiab.com](https://www.dsiab.com)
+* 官网：[https: //www.dsiab.com](https://www.dsiab.com)
 
-拉取代码后运行可看到效果（如果报错请配置跨域），不用跑后端服务，直接调用官网接口。
+* 拉取代码后运行可看到效果（如果报错请配置跨域），不用跑后端服务，直接调用官网接口。
 
 
 
-### 后台管理地址： 
+### 后台管理： 
 
-http://admin.dsiab.com
+- 地址：http://admin.dsiab.com
 
-测试账号：test
-
-测试密码：test
+- 测试账号、密码：test / test
 
 
 ### 选择nuxt的原因：
