@@ -24,27 +24,23 @@ export default {
   },
   head() {
     return {
-      title: "优乐购",
+      title:  "专题推荐-javascript技术分享",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "优乐购",
+          content: "专题推荐",
         },
         {
           hid: "keywords",
           name: "keywords",
-          content: "优乐购",
+          content: "专题推荐",
         },
       ],
     };
   },
   async asyncData({ $axios, route }) {
-    debugger
-    console.log(route);
     let [res] = await Promise.all([getToppicListApi({ topicId: route.params.id})]);
-    debugger
-    console.log(res);
     return {
       list: res.data.result
     };
