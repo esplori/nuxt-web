@@ -177,6 +177,7 @@ export default {
       topicList: [
         {
           name: "JAVASCRIPT",
+          id: 4
         },
         {
           name: "VUE",
@@ -186,6 +187,7 @@ export default {
         },
         {
           name: "VUE + TS",
+          id: 1
         },
       ],
     };
@@ -333,9 +335,9 @@ export default {
               width: 100%;
               text-align: center;
               padding: 5px 0;
-              font-size: 28px;
+              font-size: 24px;
               position: absolute;
-              bottom: 15px;
+              bottom: 10px;
               font-weight: bold;
               a {
                 color: #fff;
