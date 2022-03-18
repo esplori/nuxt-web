@@ -14,7 +14,7 @@
       >
         <el-card>
           <div class="title">
-            <a :href="'/post/' + item.id" target="_blank">{{ item.title }}</a>
+            <a :href="'/post/' + (item.uid|| item.id)" target="_blank">{{ item.title }}</a>
           </div>
 
           <div class="content" v-html="item.content"></div>
