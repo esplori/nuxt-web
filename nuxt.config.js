@@ -16,7 +16,8 @@ export default {
     ]
   },
   server: {
-    port: 3000
+    port: 3000,
+    host: "0.0.0.0" // 默认为当前ip
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
@@ -49,15 +50,15 @@ export default {
       maxAge: 1000 * 60 * 60
     }]
   ],
-  axios: {
-    proxy: true
-  },
-  proxy: {
-    '/bootService': {
-      // target: 'http://localhost:8091/'
-      target: 'http://admin.dsiab.com/'
-    }
-  },
+  // axios: {
+  //   proxy: true
+  // },
+  // proxy: {
+  //   '/bootService': {
+  //     // target: 'http://localhost:8091/'
+  //     target: 'http://admin.dsiab.com/'
+  //   }
+  // },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
