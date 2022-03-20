@@ -18,9 +18,6 @@
 
 ### 关联项目
 
-同另外两个项目一起组成了一个博客系统：
-
-* 后端服务：springbootAdmin ( https://gitee.com/wilkwo/springbootAdmin )
 
 * 后台管理：vueAdmin ( https://gitee.com/wilkwo/vueAdmin ) 
 

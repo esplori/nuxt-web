@@ -2,7 +2,7 @@
   <div class="not-found">
     <img src="@/assets/img/404.png" alt="" width="100%" />
     <div class="msg">抱歉，你访问的页面不存在</div>
-    <div class="seconds">{{ seconds }}秒后将跳转改成首页</div>
+    <div class="seconds">{{ seconds }} 秒后将跳转改成首页</div>
   </div>
 </template>
 <script>
