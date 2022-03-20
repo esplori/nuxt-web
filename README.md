@@ -20,6 +20,10 @@
 
 
 * 后台管理：vueAdmin ( https://gitee.com/wilkwo/vueAdmin ) 
+  
+* 地址：http://admin.dsiab.com
+
+* 测试账号、密码：test / test
 
 
 ### 演示地址
@@ -28,13 +32,6 @@
 
 * 拉取代码后运行可看到效果（如果报错请配置跨域），不用跑后端服务，直接调用官网接口。
 
-
-
-### 后台管理： 
-
-- 地址：http://admin.dsiab.com
-
-- 测试账号、密码：test / test
 
 
 ### 选择nuxt的原因：
