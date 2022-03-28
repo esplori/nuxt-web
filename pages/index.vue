@@ -142,8 +142,8 @@
 import { getListApi, getSiteInfoApi, getCateApi2 } from "./post/index";
 export default {
   components: {
-    listBody: () => import("../components/home/pageListBody.vue"),
-    nuxtPagination: () => import("../components/common/nuxtPagination.vue"),
+    listBody: () => import("@/components/home/pageListBody.vue"),
+    nuxtPagination: () => import("@/components/common/nuxtPagination.vue"),
   },
   data() {
     return {
@@ -177,7 +177,7 @@ export default {
       topicList: [
         {
           name: "JAVASCRIPT",
-          id: 4
+          id: 4,
         },
         {
           name: "VUE",
@@ -187,7 +187,7 @@ export default {
         },
         {
           name: "VUE + TS",
-          id: 1
+          id: 1,
         },
       ],
     };
@@ -209,21 +209,27 @@ export default {
       // 查推荐
       this.getCate();
       this.getSiteInfo();
+      // 广告代码
+      (window.slotbydup = window.slotbydup || []).push({
+        id: "u6611132",
+        container: "_lrzdvi6yazm",
+        async: true,
+      });
     }
-    // 广告代码
-    (window.slotbydup = window.slotbydup || []).push({
-      id: "u6611132",
-      container: "_lrzdvi6yazm",
-      async: true,
-    });
   },
   methods: {
+    /**
+     * 查询分类
+     */
     async getCate() {
       let res = await getCateApi2({});
       if (res) {
         this.cateList = res.data.result.slice(1, 9);
       }
     },
+    /**
+     * 查询轮播图
+     */
     async getSiteInfo() {
       let res = await getSiteInfoApi({});
       if (res) {

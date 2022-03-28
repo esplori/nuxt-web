@@ -20,9 +20,8 @@
 import { getListApi } from "../index";
 export default {
   components: {
-    listBody: () => import("../../../components/home/pageListBody.vue"),
-    nuxtPagination: () =>
-      import("../../../components/common/nuxtPagination.vue"),
+    listBody: () => import("@/components/home/pageListBody.vue"),
+    nuxtPagination: () => import("@/components/common/nuxtPagination.vue"),
   },
   async asyncData({ route }) {
     let [homeList] = await Promise.all([

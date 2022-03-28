@@ -5,7 +5,7 @@
         <div>
           <h1 class="detail-post-title">{{ detailData.title }}</h1>
           <div class="post-info">
-            <div>
+            <div class="avatar">
               <i class="profile-photo"></i>
             </div>
             <div class="head-info">
@@ -15,7 +15,7 @@
               <div class="other-info">
                 <span class="createDate"> {{ detailData.createDate }}</span>
                 <span>阅读: {{ detailData.views }} </span>
-                <span>分类: {{ detailData.cateName }} </span>
+                <!-- <span>分类: {{ detailData.cateName }} </span> -->
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ export default {
       cateList: [],
       dialogVisible: false,
       imgUrl: "",
-      showAll: false
+      showAll: false,
     };
   },
   /**
@@ -113,19 +113,19 @@ export default {
     let result = {
       detailData: detail.data.result,
       postId: route.params.id,
-      contentAll: detail.data.result.content
+      contentAll: detail.data.result.content,
     };
     if (result.detailData.content.length > 2000) {
       // 大于2000字符显示查看更多按钮
-      result.detailData.content = result.detailData.content.slice(0,2500)
-      result.showAll = true
+      result.detailData.content = result.detailData.content.slice(0, 2500);
+      result.showAll = true;
     }
-    return result
+    return result;
   },
   methods: {
     getMore() {
-      this.showAll = false
-      this.detailData.content = this.contentAll
+      this.showAll = false;
+      this.detailData.content = this.contentAll;
     },
     addImgEvent() {
       window.addEventListener("click", (e) => {
@@ -201,13 +201,13 @@ export default {
       // 添加图片放大功能
       this.addImgEvent();
       // 底部
-    (window.slotbydup = window.slotbydup || []).push({
-      id: "u6324927",
-      container: "_cwvxpd9dl8s",
-      async: true,
-    });
+      (window.slotbydup = window.slotbydup || []).push({
+        id: "u6324927",
+        container: "_cwvxpd9dl8s",
+        async: true,
+      });
     }
-    
+
     // 底部
     // (window.slotbydup = window.slotbydup || []).push({
     //   id: "u6324930",
@@ -261,10 +261,11 @@ export default {
       box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
       .detail-post-title {
         color: #141414;
-        font-size: 26px;
+        font-size: 30px;
+        margin-bottom: 5px;
       }
       .post-info {
-        padding: 10px 0;
+        padding: 0;
         font-size: 14px;
         color: #020202;
         display: flex;
@@ -272,6 +273,9 @@ export default {
         align-items: center;
         span {
           margin-right: 10px;
+        }
+        .avatar {
+          display: flex;
         }
         .profile-photo {
           display: inline-block;

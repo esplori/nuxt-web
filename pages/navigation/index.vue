@@ -29,9 +29,6 @@
             </ul>
           </div>
         </el-col>
-        <!-- <el-col :span="7"> -->
-        <!-- <sideBar></sideBar> -->
-        <!-- </el-col> -->
       </el-row>
     </div>
   </div>
@@ -61,7 +58,6 @@ export default {
   },
   components: {
     homeHeader: () => import("../../components/common/homeHeader.vue"),
-    // sideBar: () => import("../../components/sideBar/sideBar.vue"),
     homeFooter: () => import("../../components/common/homeFooter.vue"),
   },
   data() {
