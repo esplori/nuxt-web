@@ -8,7 +8,7 @@
       target="_blank"
     >
       <div>
-        <a><img :src="item.pict_url" alt="" width="197px" height="197px" /></a>
+        <a><img :src="item.pict_url" alt="" width="160px" height="160px" /></a>
         <a class="item-title">{{ item.title }}</a>
         <div class="item-sale-info">
           <div>
@@ -39,13 +39,15 @@ export default {
 </script>
 <style lang="less">
 .goodBodyComp {
+  display: flex;
+  flex-wrap: wrap;
   .tbk-item:hover {
     border: 1px solid #ff5000;
   }
   .tbk-item {
     display: inline-block;
-    width: 235px;
-    padding: 20px;
+    width: 160.8px;
+    padding: 8px;
     border: 1px solid #f4f4f4;
     cursor: pointer;
     background: #fff;
@@ -56,16 +58,16 @@ export default {
       overflow: hidden;
       margin: 8px 0;
       color: #666;
-      font-size: 14px;
+      font-size: 12px;
     }
     .item-sale-info {
       color: #999;
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: baseline;
       .zk_final_price {
         color: #ff5000;
-        font-size: 22px;
+        font-size: 18px;
       }
       .reserve_price {
         color: #999;
@@ -73,6 +75,9 @@ export default {
         text-decoration: line-through;
       }
       .rmbicon {
+        font-size: 12px;
+      }
+      .volume{
         font-size: 12px;
       }
     }

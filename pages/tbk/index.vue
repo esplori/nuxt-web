@@ -19,7 +19,7 @@
 <script>
 import { getShopListApi } from "./api";
 export default {
-  layout: "noNav",
+  layout: "default",
   components: {
     homeHeader: () => import("../../components/common/homeHeader.vue"),
     goodsBody: () => import("../../components/tbk/goodsBody.vue"),
