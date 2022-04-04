@@ -4,14 +4,12 @@
       <goodsBody :list="list"></goodsBody>
     </div>
     <div style="text-align: center; background: #fff; padding: 20px 0">
-      <el-pagination
-        @current-change="handleCurrentChange"
-        :current-page.sync="page"
-        :page-size="20"
-        layout="pager"
-        :total="total"
-      >
-      </el-pagination>
+      <nuxtPagination
+            :pageSize="20"
+            :total="total"
+            :currentPage="page"
+            :prePath="'/tbk/page/'"
+          ></nuxtPagination>
     </div>
   </div>
 </template>
@@ -21,8 +19,9 @@ import { getShopListApi } from "./api";
 export default {
   layout: "default",
   components: {
-    homeHeader: () => import("../../components/common/homeHeader.vue"),
-    goodsBody: () => import("../../components/tbk/goodsBody.vue"),
+    nuxtPagination: () => import("@/components/common/nuxtPagination.vue"),
+    homeHeader: () => import("@/components/common/homeHeader.vue"),
+    goodsBody: () => import("@/components/tbk/goodsBody.vue"),
   },
   data() {
     return {
@@ -55,9 +54,6 @@ export default {
     };
   },
   methods: {
-    handleCurrentChange(page) {
-      window.location.href = "/tbk/page/" + page;
-    },
   },
 };
 </script>
