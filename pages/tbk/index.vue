@@ -1,21 +1,31 @@
 <template>
   <div class="container">
     <div class="home-body">
+      <div class="tabList">
+        <!-- <el-tabs v-model="activeName" @tab-click="handleClick">
+          <el-tab-pane
+            :label="item.name"
+            :name="String(item.id)"
+            v-for="(item, index) in tabList"
+            :key="index"
+          ></el-tab-pane>
+        </el-tabs> -->
+      </div>
       <goodsBody :list="list"></goodsBody>
     </div>
     <div style="text-align: center; background: #fff; padding: 20px 0">
       <nuxtPagination
-            :pageSize="20"
-            :total="total"
-            :currentPage="page"
-            :prePath="'/tbk/page/'"
-          ></nuxtPagination>
+        :pageSize="20"
+        :total="total"
+        :currentPage="page"
+        :prePath="'/tbk/page/'"
+      ></nuxtPagination>
     </div>
   </div>
 </template>
 
 <script>
-import { getShopListApi } from "./api";
+import { getShopListApi, getCateApi } from "./api";
 export default {
   layout: "default",
   components: {
@@ -25,7 +35,8 @@ export default {
   },
   data() {
     return {
-      data: 0,
+      // tabList: [{ label: "女装",name: "女装" }, { label: "女装" }, { label: "女装" }],
+      activeName: "",
     };
   },
   head() {
@@ -46,14 +57,19 @@ export default {
     };
   },
   async asyncData({ $axios, route }) {
-    let [res] = await Promise.all([getShopListApi({ page: 1 })]);
+    let [res, cateRes] = await Promise.all([
+      getShopListApi({ page: 1 }),
+      // getCateApi({ type: "" }),
+    ]);
     return {
       list: res.data.result,
       total: res.data.total || 80,
       page: parseInt(route.params.id || 1),
+      // tabList: cateRes.data,
     };
   },
   methods: {
+    handleClick(type) {},
   },
 };
 </script>
@@ -65,6 +81,9 @@ export default {
     display: flex;
     flex-wrap: wrap;
     background: #fff;
+    .tabList {
+      padding: 10px;
+    }
   }
 }
 </style>

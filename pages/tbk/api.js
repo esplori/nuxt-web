@@ -19,3 +19,9 @@ export async function getRecommendApi(params, data) {
   const options = {}
   return get(url, data, options)
 }
+
+export async function getCateApi(params, data) {
+  let url = baseUrl + '/tbk/getCate'
+  const options = {}
+  return get(url, data, options)
+}
