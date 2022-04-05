@@ -4,12 +4,13 @@
       class="tbk-item"
       v-for="(item, index) in list"
       :key="index"
-      :href="item.url"
+      :href="'/tbk/detail/' + item.pid"
       target="_blank"
     >
       <div>
         <a><img :src="item.pict_url" alt="" width="160px" height="160px" /></a>
-        <a class="item-title">{{ item.title }}</a>
+        <!-- <a><img :src="item.pict_url" alt="" width="160px" height="160px" /></a> -->
+        <div class="item-title">{{ item.title }}</div>
         <div class="item-sale-info">
           <div>
             <a class="zk_final_price"
@@ -19,7 +20,7 @@
               ><span class="rmbicon">¥</span>{{ item.reserve_price }}</a
             >
           </div>
-          <div class="volume">月销{{ item.volume }}笔</div>
+          <div class="volume">月销{{ item.volume }}+笔</div>
         </div>
       </div>
     </a>

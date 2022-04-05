@@ -14,3 +14,8 @@ export async function getTbkDetailApi(id, data) {
   const options = {}
   return get(url, data, options)
 }
+export async function getRecommendApi(params, data) {
+  let url = baseUrl + '/tbk/getRecommend'
+  const options = {}
+  return get(url, data, options)
+}

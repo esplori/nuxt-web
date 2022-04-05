@@ -48,7 +48,7 @@ export default {
     let [res] = await Promise.all([getShopListApi({page: route.params.id || 1})]);
     return {
       list: res.data.result,
-      total: res.data.total || 80,
+      total: res.data.total || 0,
       page: parseInt(route.params.id || 1)
     };
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="tbk-container">
     <div class="home-body">
       <div class="tbk-item">
         <div>
@@ -13,24 +13,29 @@
           <a class="item-title">{{ item.title }}</a>
         </div>
         <div class="reserve_price">
-          原价：<span class="rmbicon">¥</span>{{ item.reserve_price }}
+          原价：<span class="rmbicon">¥</span><span class="line-through">{{ item.reserve_price }}</span>
         </div>
         <div class="zk_final_price">
           现价：<span class="rmbicon">¥</span>{{ item.zk_final_price }}
         </div>
         <div>
-          <el-button type="danger" @click="order(item)">去下单</el-button>
+          <div class="order-btn"><a class="order" :href="item.url" target="_blank">去下单</a></div>
         </div>
       </div>
+    </div>
+    <div>
+      <h2 class="more">更多推荐</h2>
+      <goodsBody :list="list"></goodsBody>
     </div>
   </div>
 </template>
 
 <script>
-import { getTbkDetailApi } from "../api";
+import { getTbkDetailApi,getRecommendApi } from "../api";
 export default {
   components: {
-    homeHeader: () => import("../../../components/common/homeHeader.vue"),
+    homeHeader: () => import("@/components/common/homeHeader.vue"),
+    goodsBody: () => import("@/components/tbk/goodsBody.vue"),
   },
   data() {
     return {
@@ -55,28 +60,24 @@ export default {
     };
   },
   async asyncData({ $axios, route }) {
-    let [res] = await Promise.all([getTbkDetailApi(route.params.id)]);
-    let jp = res.data.result;
+    let [res,recommend] = await Promise.all([getTbkDetailApi(route.params.id),getRecommendApi({})]);
     return {
+      list: recommend.data.result,
       item: res.data.result,
     };
   },
   methods: {
-    order(item) {
-      window.open(item.url);
-    },
   },
 };
 </script>
 
 <style lang="less" scoped>
-.container {
+.tbk-container {
   background: #fff;
   min-height: 768px;
   .home-body {
-    padding: 50px 0;
     display: flex;
-    flex-wrap: wrap;
+    margin: 10px;
     .tbk-item:hover {
       border: 1px solid #ff5000;
     }
@@ -90,23 +91,41 @@ export default {
       padding: 0 20px;
       .item-title {
         display: block;
-        height: 40px;
-        line-height: 20px;
-        overflow: hidden;
-        margin: 8px 0;
-        color: #666;
+        // height: 40px;
+        // line-height: 40px;
+        // overflow: hidden;
+        // margin: 8px 0;
+        font-weight: bold;
+        // color: #666;
         font-size: 22px;
       }
       .reserve_price {
         font-size: 20px;
         color: #999;
+        .line-through{
+          text-decoration: line-through;
+        }
       }
       .zk_final_price {
-        line-height: 100px;
-        font-size: 50px;
+        line-height: 80px;
+        font-size: 28px;
         color: #ff5000;
       }
+      .order-btn{
+        background: #ff5000;
+        padding: 5px 70px;
+        border-radius: 2px;
+        display: inline-block;
+        .order{
+        color: #fff
+      }
+      }
+      
     }
+  }
+  .more{
+    margin: 10px;
+    border-bottom: 1px solid #f4f4f4;
   }
 }
 </style>
