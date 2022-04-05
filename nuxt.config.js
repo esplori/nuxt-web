@@ -15,10 +15,10 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  server: {
-    port: 3000,
-    host: "0.0.0.0" // 默认为当前ip
-  },
+  // server: {
+  //   port: 3000,
+  //   host: "0.0.0.0" // 默认为当前ip
+  // },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     './assets/css/common.css',
