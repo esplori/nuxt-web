@@ -57,8 +57,8 @@ export default {
     };
   },
   components: {
-    homeHeader: () => import("../../components/common/homeHeader.vue"),
-    homeFooter: () => import("../../components/common/homeFooter.vue"),
+    homeHeader: () => import("@/components/common/homeHeader.vue"),
+    homeFooter: () => import("@/components/common/homeFooter.vue"),
   },
   data() {
     return {

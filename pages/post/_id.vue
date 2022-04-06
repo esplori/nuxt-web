@@ -67,8 +67,8 @@ import { getDetailApi, getRecomListApi2, getCateApi2 } from "./index";
 import "highlight.js/styles/monokai-sublime.css";
 export default {
   components: {
-    homeHeader: () => import("../../components/common/homeHeader.vue"),
-    comments: () => import("../../components/common/comments.vue"),
+    homeHeader: () => import("@/components/common/homeHeader.vue"),
+    comments: () => import("@/components/common/comments.vue"),
   },
   data() {
     return {
@@ -323,6 +323,7 @@ export default {
         overflow-x: auto;
       }
       .getMore {
+        margin-bottom:20px;
         .getMoreBtn {
           width: 100%;
         }
