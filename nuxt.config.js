@@ -62,6 +62,8 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
+    cssSourceMap: false,
+    extractCSS: true, // 将页面css单独打包
   },
   loading: '~/components/common/loading.vue'
 }

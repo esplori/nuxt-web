@@ -136,12 +136,18 @@ export default {
         }
       });
     },
+    /**
+     * 查询推荐
+     */
     async getRecomList() {
       let res = await getRecomListApi2({ type: "all" });
       if (res) {
         this.recommandList = res.data;
       }
     },
+    /**
+     * 获取分类
+     */
     async getCate() {
       let res = await getCateApi2({});
       if (res) {
