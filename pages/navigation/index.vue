@@ -4,19 +4,20 @@
       <el-row :gutter="10">
         <el-col :span="24">
           <div class="left-body">
-            <ul>
-              <li v-for="(item, index) in list" :key="index">
-                <div class="cateName">{{ item.name }}</div>
+            <!-- <ul>
+              <li v-for="(item, index) in list" :key="index"> -->
+            <el-tabs :tab-position="tabPosition" style="height: 100%">
+              <el-tab-pane
+                :label="item.name"
+                v-for="(item, index) in list"
+                :key="index"
+              >
                 <div class="child-cate">
                   <div
                     class="cate-item"
                     v-for="(it, ix) in item.children"
                     :key="ix"
                   >
-                    <!-- <el-card shadow="always">
-                      <div class="title">{{ it.title }}</div>
-                      <div class="content"><a :href="it.content">{{ it.content }}</a></div>
-                    </el-card> -->
                     <el-card shadow="always">
                       <div class="title">
                         <a :href="it.url" target="_blank"> {{ it.title }}</a>
@@ -25,8 +26,24 @@
                     </el-card>
                   </div>
                 </div>
-              </li>
-            </ul>
+              </el-tab-pane>
+            </el-tabs>
+
+            <!-- <div class="cateName">{{ item.name }}</div> -->
+            <!-- <div class="child-cate">
+                  <div
+                    class="cate-item"
+                    v-for="(it, ix) in item.children"
+                    :key="ix"
+                  >
+                    <el-card shadow="always">
+                      <div class="title">
+                        <a :href="it.url" target="_blank"> {{ it.title }}</a>
+                      </div>
+                      <div class="content">{{ it.content }}</div>
+                    </el-card>
+                  </div>
+                </div> -->
           </div>
         </el-col>
       </el-row>
@@ -63,6 +80,7 @@ export default {
   data() {
     return {
       activeName: "all",
+      tabPosition: "left",
     };
   },
   async asyncData({ query, store, $axios }) {
@@ -79,47 +97,41 @@ export default {
   .home-body {
     width: 100%;
     .left-body {
+      // min-height: 600px;
       background: #fff;
       box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
-      ul {
-        li {
-          padding: 10px 20px;
-          .cateName {
-            font-size: 16px;
-            padding: 5px 0;
-            // border-bottom: 1px solid #eaecef;
-          }
-          .child-cate {
-            width: 100%;
-            padding: 10px 0;
-            display: flex;
-            flex-wrap: wrap;
-            .cate-item {
-              width: 22%;
-              font-size: 16px;
-              padding: 10px;
-              border-radius: 5px;
-              margin-right: 10px;
-              margin-bottom: 10px;
-              // border: 1px solid #f5f5f5;
+      .child-cate {
+        width: 100%;
+        padding: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        .cate-item {
+          width: 24%;
+          font-size: 16px;
+          padding: 10px;
+          border-radius: 5px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          // border: 1px solid #f5f5f5;
 
-              .title {
-                font-size: 14px;
-                a {
-                  color: #0366d6;
-                }
-              }
-
-              .content {
-                font-size: 12px;
-                padding: 5px 0;
-              }
+          .title {
+            font-size: 14px;
+            a {
+              color: #0366d6;
             }
           }
-          a {
-            color: #666;
+
+          .content {
+            font-size: 12px;
+            padding: 5px 0;
+            height: 60px;
+            display: flex;
+            align-items: center;
           }
         }
+      }
+      a {
+        color: #666;
       }
     }
   }
