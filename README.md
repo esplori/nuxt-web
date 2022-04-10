@@ -1,4 +1,6 @@
 
+<div><a href="">中文</a>  |  <a href="">english</a></div>
+
 <h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">nuxt-web</h1>
 <h4 align="center">基于nuxtjs开发的博客系统</h4>
 <p align="center">
