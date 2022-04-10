@@ -72,3 +72,8 @@ $ npm run start
 
 $ npm run generate
 ```
+
+### Thanks appreciate
+Creation is not easy, your appreciation and recognition are the driving force for continuous updating!
+
+<img src="./assets/img/zanshan.jpeg" alt="赞赏" width="400px" />

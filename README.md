@@ -94,7 +94,7 @@ $ npm run generate
 
 ### 感谢赞赏
 
-您的支持是持续更新的动力！
+创作不易，你的赞赏和认可是持续更新的动力！
 
 <img src="./assets/img/zanshan.jpeg" alt="赞赏" width="400px" />
 
