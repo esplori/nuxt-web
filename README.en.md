@@ -1,3 +1,13 @@
+<div><a href="https://github.com/esplori/nuxt-web/blob/master/README.md">中文</a>  |  <a href="https://github.com/esplori/nuxt-web/blob/master/README.en.md">english</a></div>
+
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">nuxt-web</h1>
+<h4 align="center">Blog system developed based on nuxtjs</h4>
+<p align="center">
+	<a href="https://gitee.com/wilkwo/nuxt-web.git"><img src="https://gitee.com/wilkwo/nuxt-web/badge/star.svg?theme=dark"></a>
+	<a href="https://gitee.com/wilkwo/nuxt-web.git"><img src="https://gitee.com/wilkwo/nuxt-web/badge/fork.svg?theme=dark"></a>
+</p>
+
+
 ### Project Introduction:
 - Main technology: Nuxtjs 2.0, ElementUI 2.0
 
@@ -40,6 +50,9 @@
 ```
 # download code
 github: git clone https://gitee.com/wilkwo/nuxt-web.git
+
+or
+
 gitee: git clone https://github.com/esplori/nuxt-web.git
 
 
