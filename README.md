@@ -19,7 +19,7 @@
 ### 关联项目
 
 
-* 后台管理：vueAdmin ( https://gitee.com/wilkwo/vueAdmin ) 
+* 后台管理：vueAdmin ( https://gitee.com/wilkwo/vueAdmin 、https://github.com/esplori/vueAdmin.git) 
   
 * 地址：http://admin.dsiab.com
 
