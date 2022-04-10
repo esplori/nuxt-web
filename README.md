@@ -65,7 +65,9 @@
 ```bash
 
 # 下载代码
-git clone https://gitee.com/wilkwo/nuxt-web.git
+github: git clone https://gitee.com/wilkwo/nuxt-web.git
+gitee: git clone https://github.com/esplori/nuxt-web.git
+
 
 # 安装依赖
 $ npm install
