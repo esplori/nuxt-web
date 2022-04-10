@@ -10,7 +10,7 @@
             </div>
             <div class="head-info">
               <div class="title">
-                <span class="userName"> {{ detailData.createBy }}</span>
+                <span class="userName"> {{ detailData.nickname || detailData.createBy}}</span>
               </div>
               <div class="other-info">
                 <span class="createDate"> {{ detailData.createDate }}</span>
