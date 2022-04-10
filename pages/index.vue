@@ -224,7 +224,7 @@ export default {
     async getCate() {
       let res = await getCateApi2({});
       if (res) {
-        this.cateList = res.data.result.slice(1, 9);
+        this.cateList = res.data.result.slice(0, 8);
       }
     },
     /**
