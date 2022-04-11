@@ -233,6 +233,9 @@ export default {
   .detail-post-content img {
     width: 70%;
   }
+  .detail-post-content p {
+    padding: 0 0 10px 0;
+  }
   #bigImg {
     width: 100%;
   }
