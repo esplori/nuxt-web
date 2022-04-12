@@ -234,7 +234,8 @@ export default {
     width: 70%;
   }
   .detail-post-content p {
-    padding: 0 0 10px 0;
+    // text-indent: 2rem;
+    padding: 0 0 20px 0;
   }
   #bigImg {
     width: 100%;
