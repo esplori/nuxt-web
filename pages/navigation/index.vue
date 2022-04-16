@@ -91,7 +91,6 @@ export default {
   },
 };
 </script>
-
 <style lang="less" scoped>
 .container {
   .home-body {

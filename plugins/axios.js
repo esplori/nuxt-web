@@ -31,7 +31,7 @@ myaxios.interceptors.request.use(function (config) {
  * */
 
 // get请求
-export function get(url, params, options) {
+export function get(url, params) {
 
   return new Promise((resolve, reject) => {
     myaxios({
@@ -40,14 +40,12 @@ export function get(url, params, options) {
       params: params // params是要与请求一起发送的URL参数
     }).then(res => {
       handleData(res, resolve, reject)
-    }).catch((err) =>
-      console.log("err:" + err),
-    ) // 捕获异常
+    }) // 捕获异常
   })
 }
 
 // post请求
-export function post(url, param, options) {
+export function post(url, param) {
   return new Promise((resolve, reject) => {
     myaxios({
       method: 'post',
@@ -55,9 +53,7 @@ export function post(url, param, options) {
       data: param // data是要作为请求主体发送的数据,仅适用于请求方法“PUT”，“POST”和“PATCH”
     }).then(res => {
       handleData(res, resolve, reject)
-    }).catch((err) =>
-      console.log(err)
-    ) // 捕获异常
+    }) // 捕获异常
   })
 }
 
