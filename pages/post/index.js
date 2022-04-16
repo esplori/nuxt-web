@@ -87,3 +87,10 @@ export async function getSiteInfoApi(data) {
   const options = {}
   return post(url, data, options)
 }
+
+// 获取专题数据
+export async function getTopicListApi(data) {
+  const url = baseUrl + '/admin/getTopicList'
+  const options = {}
+  return get(url, data, options)
+}

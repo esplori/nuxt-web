@@ -17,6 +17,28 @@
       </li>
       <div class="_clzacg58dkb"></div>
       <li>
+        <div class="module category">
+          <div class="cate">专题推荐</div>
+          <el-carousel
+            indicator-position="outside"
+            height="140px"
+            class="car-item"
+          >
+            <el-carousel-item v-for="(item, index) in topicList" :key="index">
+              <div class="carousel-item-container">
+                <a :href="'/topic/' + item.id" target="_blank"
+                  ><img
+                    src="https://source.dsiab.com/upload/cf172b78-9a2b-4ed3-8ae8-18ecaf612d98.jpg"
+                    alt=""
+                    style="height: 140px; width: 100%"
+                /></a>
+                <div class="carousel-item-desc">{{ item.name }}</div>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+      </li>
+      <li>
         <div class="module">
           <div class="cate">推荐阅读</div>
           <el-tabs v-model="activeName" @tab-click="handleClick">
@@ -77,6 +99,7 @@ import {
   getRecomListApi4Brower,
   getCateApi4Brower,
   getTagsApi4Brower,
+  getTopicListApi
 } from "../../pages/post/index";
 export default {
   props: {},
@@ -87,10 +110,17 @@ export default {
       recommandList: [],
       cateList: [],
       tagsList: [],
+      topicList: [],
     };
   },
   computed: {},
   methods: {
+    async getTopicList() {
+      let res = await getTopicListApi({});
+      if (res) {
+        this.topicList = res.data.result|| [];
+      }
+    },
     async getRecomList(type) {
       let res = await getRecomListApi4Brower({ type });
       if (res) {
@@ -138,6 +168,8 @@ export default {
       this.getCate();
       // 查标签
       this.getTags();
+      // 查分类
+      this.getTopicList()
     }
     // side 1
     (window.slotbydup = window.slotbydup || []).push({
@@ -182,6 +214,21 @@ export default {
 .side-bar > ul > li {
   padding: 15px 0;
   .module {
+    .carousel-item-container {
+      position: relative;
+      cursor: pointer;
+      .carousel-item-desc {
+        width: 100%;
+        padding: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #000;
+        color: #fff;
+        opacity: 0.8;
+        text-align: center;
+      }
+    }
     .cate {
       padding: 10px 0;
       border-bottom: 1px solid #eaeeef;

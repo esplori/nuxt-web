@@ -90,7 +90,7 @@
                 </el-col>
               </el-row>
             </div>
-            <h2 class="big-title">专题推荐</h2>
+            <!-- <h2 class="big-title">专题推荐</h2>
             <div class="card">
               <el-row :gutter="20">
                 <el-col
@@ -119,7 +119,7 @@
                   </el-card>
                 </el-col>
               </el-row>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -173,23 +173,7 @@ export default {
           url: "",
         },
       ],
-      cateList: [],
-      topicList: [
-        {
-          name: "JAVASCRIPT",
-          id: 4,
-        },
-        {
-          name: "VUE",
-        },
-        {
-          name: "CSS",
-        },
-        {
-          name: "VUE + TS",
-          id: 1,
-        },
-      ],
+      cateList: []
     };
   },
   // 所有接口通过服务端调用渲染
