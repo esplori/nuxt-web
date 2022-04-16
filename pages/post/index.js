@@ -22,7 +22,7 @@ export async function getListByCateApi(params, data) {
   return get(url, data, options)
 }
 // 大事记，浏览器端渲染
-export async function getListByCateApi2(params, data) {
+export async function getListByCateApi4Brower(params, data) {
   if (!params.page) {
     params.page = 1
   }
@@ -40,7 +40,7 @@ export async function getListByTagsApi(params, data) {
   return get(url, data, options)
 }
 // 查看推荐列表,浏览器渲染
-export async function getRecomListApi2(data) {
+export async function getRecomListApi4Brower(data) {
   const url = '/bootService/pages/getRecomList/' + data.type
   const options = {}
   return post(url, data, options)
@@ -58,13 +58,13 @@ export async function getCateApi(id, data) {
   return get(url, data, options)
 }
 //  查看分类列表,浏览器渲染
-export async function getCateApi2(id, data) {
+export async function getCateApi4Brower(id, data) {
   const url = '/bootService/pages/getCate'
   const options = {}
   return get(url, data, options)
 }
 // 获取所有标签，浏览器渲染
-export async function getTagsApi2(id, data) {
+export async function getTagsApi4Brower(id, data) {
   const url = '/bootService/pages/getTags'
   const options = {}
   return get(url, data, options)

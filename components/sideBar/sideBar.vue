@@ -74,9 +74,9 @@
 </template>
 <script>
 import {
-  getRecomListApi2,
-  getCateApi2,
-  getTagsApi2,
+  getRecomListApi4Brower,
+  getCateApi4Brower,
+  getTagsApi4Brower,
 } from "../../pages/post/index";
 export default {
   props: {},
@@ -92,7 +92,7 @@ export default {
   computed: {},
   methods: {
     async getRecomList(type) {
-      let res = await getRecomListApi2({ type });
+      let res = await getRecomListApi4Brower({ type });
       if (res) {
         this.recommandList = res.data;
       }
@@ -116,13 +116,13 @@ export default {
       return colorList[Math.floor(Math.random() * (max - min + 1) + min)];
     },
     async getCate() {
-      let res = await getCateApi2({});
+      let res = await getCateApi4Brower({});
       if (res) {
         this.cateList = res.data.result;
       }
     },
     async getTags() {
-      let res = await getTagsApi2({});
+      let res = await getTagsApi4Brower({});
       if (res) {
         this.tagsList = res.data.result;
       }

@@ -139,7 +139,7 @@
 </template>
 
 <script>
-import { getListApi, getSiteInfoApi, getCateApi2 } from "./post/index";
+import { getListApi, getSiteInfoApi, getCateApi4Brower } from "./post/index";
 export default {
   components: {
     listBody: () => import("@/components/home/pageListBody.vue"),
@@ -222,7 +222,7 @@ export default {
      * 查询分类
      */
     async getCate() {
-      let res = await getCateApi2({});
+      let res = await getCateApi4Brower({});
       if (res) {
         this.cateList = res.data.result.slice(0, 8);
       }

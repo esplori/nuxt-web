@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import { getDetailApi, getRecomListApi2, getCateApi2 } from "./index";
+import { getDetailApi, getRecomListApi4Brower, getCateApi4Brower } from "./index";
 import "highlight.js/styles/monokai-sublime.css";
 export default {
   components: {
@@ -140,7 +140,7 @@ export default {
      * 查询推荐
      */
     async getRecomList() {
-      let res = await getRecomListApi2({ type: "all" });
+      let res = await getRecomListApi4Brower({ type: "all" });
       if (res) {
         this.recommandList = res.data;
       }
@@ -149,7 +149,7 @@ export default {
      * 获取分类
      */
     async getCate() {
-      let res = await getCateApi2({});
+      let res = await getCateApi4Brower({});
       if (res) {
         this.cateList = res.data.result;
       }

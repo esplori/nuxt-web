@@ -28,22 +28,6 @@
                 </div>
               </el-tab-pane>
             </el-tabs>
-
-            <!-- <div class="cateName">{{ item.name }}</div> -->
-            <!-- <div class="child-cate">
-                  <div
-                    class="cate-item"
-                    v-for="(it, ix) in item.children"
-                    :key="ix"
-                  >
-                    <el-card shadow="always">
-                      <div class="title">
-                        <a :href="it.url" target="_blank"> {{ it.title }}</a>
-                      </div>
-                      <div class="content">{{ it.content }}</div>
-                    </el-card>
-                  </div>
-                </div> -->
           </div>
         </el-col>
       </el-row>

@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { getListByCateApi2 } from "../post/index.js";
+import { getListByCateApi4Brower } from "../post/index.js";
 import { delHtmlTag } from "@/plugins/utils.js";
 export default {
   name: "index",
@@ -57,7 +57,7 @@ export default {
   methods: {
     async getList() {
       this.page = ++this.page;
-      let res = await getListByCateApi2({ cate: 126, page: this.page || 1 });
+      let res = await getListByCateApi4Brower({ cate: 126, page: this.page || 1 });
       if (res && res.data && res.data.result.length) {
         res.data.result = res.data.result.map((item) => {
           item.content = this.deleteHtmlTag(item.content);
