@@ -90,7 +90,7 @@ export async function getSiteInfoApi(data) {
 
 // 获取专题数据
 export async function getTopicListApi(data) {
-  const url = baseUrl + '/admin/getTopicList'
+  const url = '/bootService/admin/getTopicList'
   const options = {}
   return get(url, data, options)
 }
