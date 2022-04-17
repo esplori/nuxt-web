@@ -260,6 +260,9 @@ export default {
     .list-index{
       color: #06c;
       background: #e6f1fb;
+      padding: 0 5px;
+      margin-right: 10px;
+      border-radius: 2px;
     }
   }
   .category > ul > li {
