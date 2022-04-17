@@ -50,7 +50,7 @@
             <li v-for="(item, index) in recommandList" :key="index">
               <div class="title">
                 <a :href="'/post/' + item.id" target="_blank">
-                  {{ item.title }}
+                  <span class="list-index">{{index + 1}}</span>{{item.title }}
                 </a>
               </div>
               <div class="excerpt">
@@ -256,6 +256,10 @@ export default {
     .views {
       font-size: 12px;
       color: #999;
+    }
+    .list-index{
+      color: #06c;
+      background: #e6f1fb;
     }
   }
   .category > ul > li {
