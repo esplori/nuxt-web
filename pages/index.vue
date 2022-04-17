@@ -90,36 +90,6 @@
                 </el-col>
               </el-row>
             </div>
-            <!-- <h2 class="big-title">专题推荐</h2>
-            <div class="card">
-              <el-row :gutter="20">
-                <el-col
-                  :span="6"
-                  v-for="(item, index) in topicList"
-                  :key="index"
-                >
-                  <el-card
-                    class="elCard"
-                    shadow="never"
-                    :body-style="{
-                      padding: '0px',
-                      width: '100%',
-                      height: '80px',
-                    }"
-                  >
-                    <img
-                      src="https://source.dsiab.com/upload/cf172b78-9a2b-4ed3-8ae8-18ecaf612d98.jpg"
-                      class="image"
-                    />
-                    <div class="card-title">
-                      <a :href="'/topic/' + item.id" target="_blank">{{
-                        item.name
-                      }}</a>
-                    </div>
-                  </el-card>
-                </el-col>
-              </el-row>
-            </div> -->
           </div>
         </div>
 

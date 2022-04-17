@@ -19,9 +19,9 @@
               }}</a>
             </div>
             <div class="home-post-excerpt">
-              <a :href="'/post/' + item.id" target="_blank">{{
+              <div :href="'/post/' + item.id" target="_blank">{{
                 deleteHtmlTag(item.content.slice(0, 220))
-              }}</a>
+              }}</div>
             </div>
             <div class="home-post-info">
               <span class="create-date el-icon-date">
