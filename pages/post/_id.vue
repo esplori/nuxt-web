@@ -230,9 +230,9 @@ export default {
   .image-container-fill {
     padding-bottom: 0 !important;
   }
-  .detail-post-content img {
-    width: 70%;
-  }
+  // .detail-post-content img {
+    // width: 70%;
+  // }
   .detail-post-content p {
     // text-indent: 2rem;
     padding: 0 0 20px 0;
