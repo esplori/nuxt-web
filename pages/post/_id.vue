@@ -271,7 +271,7 @@ export default {
       box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
       .detail-post-title {
         color: #141414;
-        font-size: 30px;
+        font-size: 24px;
         margin-bottom: 5px;
       }
       .post-info {

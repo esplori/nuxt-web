@@ -50,6 +50,13 @@ export default {
       maxAge: 1000 * 60 * 60
     }]
   ],
+  hooks:{
+    // 去除window._nuxt文件
+    // 'vue-renderer:ssr:context'(context){
+    //   const routePath = JSON.stringify(context.nuxt.routePath)
+    //   context.nuxt = {serverRendered: true,routePath}
+    // }
+  },
   // axios: {
   //   proxy: true
   // },
