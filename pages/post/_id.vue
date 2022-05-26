@@ -117,8 +117,8 @@ export default {
     };
     if (result.detailData.content.length > 2000) {
       // 大于2000字符显示查看更多按钮
-      result.detailData.content = result.detailData.content.slice(0, 2500);
-      result.showAll = true;
+      // result.detailData.content = result.detailData.content.slice(0, 2500);
+      // result.showAll = true;
     }
     return result;
   },
