@@ -94,3 +94,9 @@ export async function getTopicListApi(data) {
   const options = {}
   return get(url, data, options)
 }
+// 单篇文章推荐列表
+export async function getRecommendBySameTagsApi(data) {
+  const url = "/bootService/pages/getRecommendBySameTags"
+  const options = {}
+  return get(url, data, options)
+}

@@ -4,8 +4,8 @@
       <div class="left-body">
         <div class="recommand">
           <div class="carousel">
-            <div class="carousel-item">
-              <el-carousel
+            <div class="carousel-item" v-if="carouselEnable==='Y'">
+              <el-carousel 
                 indicator-position="outside"
                 height="330px"
                 class="car-item"
@@ -74,7 +74,7 @@
                     :body-style="{
                       padding: '0px',
                       width: '100%',
-                      height: '80px',
+                      height: '40px',
                     }"
                   >
                     <img
@@ -143,7 +143,8 @@ export default {
           url: "",
         },
       ],
-      cateList: []
+      cateList: [],
+      carouselEnable: 'N' // 是否开启轮播
     };
   },
   // 所有接口通过服务端调用渲染
@@ -188,6 +189,7 @@ export default {
       let res = await getSiteInfoApi({});
       if (res) {
         this.carouselList = JSON.parse(res.data.carouselUrl);
+        this.carouselEnable = res.data.carouselEnable
       }
     },
   },
@@ -296,9 +298,9 @@ export default {
               width: 100%;
               text-align: center;
               padding: 5px 0;
-              font-size: 24px;
+              font-size: 18px;
               position: absolute;
-              bottom: 10px;
+              bottom: 0px;
               font-weight: bold;
               a {
                 color: #fff;

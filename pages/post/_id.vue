@@ -47,6 +47,7 @@
             </div>
           </div>
         </div>
+        <recommend-read :id="detailData.id"></recommend-read>
         <comments></comments>
       </div>
     </div>
@@ -69,6 +70,7 @@ export default {
   components: {
     homeHeader: () => import("@/components/common/homeHeader.vue"),
     comments: () => import("@/components/common/comments.vue"),
+    RecommendRead:()=> import("@/components/common/recommendRead.vue")
   },
   data() {
     return {
