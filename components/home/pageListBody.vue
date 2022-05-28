@@ -3,25 +3,17 @@
     <ul v-show="list.length">
       <li v-for="(item, index) in list" :key="index">
         <div class="post-item">
-          <div class="img-box">
-            <img
-              :src="imgsList[index]"
-              alt=""
-              width="150px"
-              height="115px"
-              class="item-img"
-            />
-          </div>
           <div class="item-info">
             <div class="home-post-title">
               <a :href="'/post/' + (item.uid || item.id)" target="_blank">{{
                 item.title
               }}</a>
             </div>
+            
             <div class="home-post-excerpt">
-              <div>{{
-                deleteHtmlTag(item.content.slice(0, 220))
-              }}</div>
+              {{
+                deleteHtmlTag(item.content.slice(0, 300))
+              }}
             </div>
             <div class="home-post-info">
               <span class="create-date el-icon-date">
@@ -56,18 +48,6 @@ export default {
   },
   data() {
     return {
-      imgsList: [
-        "http://source.dsiab.com/upload/7437e62a-1033-4a91-a357-10993de1a08f.jpg",
-        "http://source.dsiab.com/upload/9a2bae64-f914-4678-a642-95972333e201.jpg",
-        "https://source.dsiab.com/upload/fdf3eba1-5f16-4fdb-91c2-28c22fea7b74.jpg",
-        "http://source.dsiab.com/upload/c0661416-31d9-4b57-9845-802ca01fa69c.jpg",
-        "http://source.dsiab.com/upload/88a60855-9768-4a0b-b202-d4c2e06e6ac8.jpg",
-        "http://source.dsiab.com/upload/08e52e67-b7c7-4de7-8c70-9a9f65d5ce65.jpg",
-        "http://source.dsiab.com/upload/fdf3eba1-5f16-4fdb-91c2-28c22fea7b74.jpg",
-        "http://source.dsiab.com/upload/0913ca3e-fb3c-4120-98fe-62bd86cf9b42.jpeg",
-        "http://source.dsiab.com/upload/5d1c60a0-7194-4c14-b3fe-c7f88d958a78.jpg",
-        "http://source.dsiab.com/upload/cd2a655e-0f6b-41d8-a424-b334dce6cb84.png",
-      ],
     };
   },
   computed: {
@@ -95,32 +75,33 @@ export default {
   }
   ul {
     li {
-      padding: 30px 20px;
-      border-bottom: 1px solid #f5f5f5;
+      padding: 10px 20px;
+      // border-bottom: 1px solid #f5f5f5;
       .home-post-title {
-        padding-bottom: 20px;
+        padding: 5px 0;
       }
       .home-post-title a {
+        color: #424242;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 18px;
         text-overflow: ellipsis;
       }
       .home-post-title a:hover {
         color: #06c;
       }
       .home-post-excerpt {
+        padding: 10px 0;
         line-height: 22px;
         font-size: 14px;
         color: #888;
         word-break: break-all;
       }
-      .home-post-excerpt a {
-        color: #888;
-      }
       .home-post-info {
-        padding-top: 10px;
+        padding:5px 0;
         font-size: 12px;
         color: #828a92;
+        // border-top: 1px dashed #ddd;
+        border-bottom: 1px dashed #ddd;
         span {
           margin-right: 10px;
         }
@@ -139,6 +120,9 @@ export default {
       .post-item {
         display: flex;
         align-items: center;
+        .item-info{
+          width: 100%;
+        }
         .img-box {
           width: 150px;
           height: 115px;
@@ -149,10 +133,10 @@ export default {
         }
       }
     }
-    li:hover {
-      background: #f9fafb;
-      box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
-    }
+    // li:hover {
+    //   background: #f9fafb;
+    //   box-shadow: 0 1px 3px rgba(27, 95, 160, 0.1);
+    // }
   }
 }
 </style>

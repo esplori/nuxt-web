@@ -2,7 +2,7 @@ html,body,div,p,ul,li{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font: 16px/1.8  "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font: 14px/1.8  "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 }
 ul,li{
   list-style: none;
@@ -18,8 +18,8 @@ body{
 pre{
   border-radius: 5px;
   padding: 10px;
-  color: rgb(231, 227, 227);
-  background-color: #2d2d2d!important;
+  color:#333;
+  background-color: #f8f8f8!important;
   white-space: pre-wrap;
 }
 pre code {

@@ -201,6 +201,7 @@ export default {
     display: flex;
     justify-content: space-between;
     .big-title {
+      font-size: 20px;
       padding: 5px 0;
       border-bottom: 1px solid #f5f5f5;
     }

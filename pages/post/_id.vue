@@ -271,11 +271,13 @@ export default {
       box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
       .detail-post-title {
         color: #141414;
-        font-size: 24px;
+        font-size: 18px;
         margin-bottom: 5px;
       }
       .post-info {
-        padding: 0;
+        // border-top: 1px dashed #ddd;
+        // border-bottom: 1px dashed #ddd;
+        margin: 10px 0;
         font-size: 14px;
         color: #020202;
         display: flex;
@@ -303,7 +305,7 @@ export default {
             color: #969696;
           }
           .userName {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
           }
           .createDate {
