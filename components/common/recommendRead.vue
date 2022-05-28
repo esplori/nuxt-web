@@ -1,5 +1,5 @@
 <template>
-  <div class="postRecommend">
+  <div class="postRecommend" v-if="list.length">
     <h3>推荐阅读：</h3>
     <ul>
       <li v-for="(item,index) in list" :key="index">

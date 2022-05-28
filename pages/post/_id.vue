@@ -20,11 +20,6 @@
             </div>
           </div>
           <div v-html="detailData.content" class="detail-post-content"></div>
-          <div class="getMore" v-show="showAll">
-            <el-button @click="getMore" type="primary" class="getMoreBtn"
-              >查看更多</el-button
-            >
-          </div>
           <!-- <div class="_utrtw8kq5so"></div> -->
           <div class="_cwvxpd9dl8s"></div>
         </div>
@@ -79,7 +74,6 @@ export default {
       cateList: [],
       dialogVisible: false,
       imgUrl: "",
-      showAll: false,
     };
   },
   /**
@@ -117,18 +111,10 @@ export default {
       postId: route.params.id,
       contentAll: detail.data.result.content,
     };
-    if (result.detailData.content.length > 2000) {
-      // 大于2000字符显示查看更多按钮
-      // result.detailData.content = result.detailData.content.slice(0, 2500);
-      // result.showAll = true;
-    }
+    console.log("result",result)
     return result;
   },
   methods: {
-    getMore() {
-      this.showAll = false;
-      this.detailData.content = this.contentAll;
-    },
     addImgEvent() {
       window.addEventListener("click", (e) => {
         let target = e.target;
@@ -329,12 +315,6 @@ export default {
         word-break: break-word;
         white-space: normal;
         overflow-x: auto;
-      }
-      .getMore {
-        margin-bottom:20px;
-        .getMoreBtn {
-          width: 100%;
-        }
       }
       .copy-desc {
         padding: 20px 10px;
