@@ -4,7 +4,7 @@
       <div class="left-body">
         <div class="recommand">
           <div class="carousel">
-            <div class="carousel-item" v-if="carouselEnable==='Y'">
+            <div class="carousel-item" v-if="siteInfo.carouselEnable==='Y'">
               <el-carousel 
                 indicator-position="outside"
                 height="330px"
@@ -144,7 +144,14 @@ export default {
         },
       ],
       cateList: [],
-      carouselEnable: 'N' // 是否开启轮播
+      siteInfo:{
+        beianNo: '',
+        carouselEnable: 'N',
+        carouselUrl: "",
+        siteDesc: '',
+        siteName: '',
+        siteUrl: ''
+      }
     };
   },
   // 所有接口通过服务端调用渲染
@@ -188,8 +195,8 @@ export default {
     async getSiteInfo() {
       let res = await getSiteInfoApi({});
       if (res) {
+        this.siteInfo = res.data
         this.carouselList = JSON.parse(res.data.carouselUrl);
-        this.carouselEnable = res.data.carouselEnable
       }
     },
   },
