@@ -83,7 +83,7 @@ export async function getCommentApi(data) {
 }
 // 获取站点信息，主要用来查询轮播图等
 export async function getSiteInfoApi(data) {
-  const url = '/bootService/admin/getSiteInfo'
+  const url = '/bootService/pages/getBasicSiteInfo'
   const options = {}
   return post(url, data, options)
 }
