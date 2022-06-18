@@ -60,7 +60,7 @@
 
 <script>
 import { getDetailApi, getRecomListApi4Brower, getCateApi4Brower } from "./index";
-import "highlight.js/styles/monokai-sublime.css";
+// import "highlight.js/styles/monokai-sublime.css";
 export default {
   components: {
     homeHeader: () => import("@/components/common/homeHeader.vue"),
