@@ -82,8 +82,8 @@ export default {
       }
       .home-post-title a {
         color: #424242;
-        font-weight: bold;
-        font-size: 18px;
+        // font-weight: bold;
+        font-size: 20px;
         text-overflow: ellipsis;
       }
       .home-post-title a:hover {
@@ -93,13 +93,13 @@ export default {
         padding: 10px 0;
         line-height: 22px;
         font-size: 14px;
-        color: #888;
+        color: #424242;
         word-break: break-all;
       }
       .home-post-info {
         padding:5px 0;
         font-size: 12px;
-        color: #828a92;
+        color: #424242;
         // border-top: 1px dashed #ddd;
         border-bottom: 1px dashed #ddd;
         span {
@@ -108,13 +108,13 @@ export default {
         .cate-name a {
           font-weight: 400;
           line-height: 18px;
-          color: #828a92;
+          // color: #828a92;
         }
         .create-date {
-          color: #828a92;
+          // color: #828a92;
         }
         .views {
-          color: #828a92;
+          // color: #828a92;
         }
       }
       .post-item {
