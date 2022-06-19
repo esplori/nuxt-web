@@ -2,7 +2,7 @@ html,body,div,p,ul,li{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font: 14px/1.8  "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font: 14px/2  "Microsoft YaHei","PingFang SC","微软雅黑","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 ul,li{
   list-style: none;
