@@ -60,36 +60,6 @@
               </div>
             </div>
             <div class="_lrzdvi6yazm"></div>
-            <h2 class="big-title">分类推荐</h2>
-            <div class="card">
-              <el-row :gutter="20">
-                <el-col
-                  :span="6"
-                  v-for="(item, index) in cateList"
-                  :key="index"
-                >
-                  <el-card
-                    class="elCard"
-                    shadow="never"
-                    :body-style="{
-                      padding: '0px',
-                      width: '100%',
-                      height: '40px',
-                    }"
-                  >
-                    <img
-                      src="https://source.dsiab.com/upload/cf172b78-9a2b-4ed3-8ae8-18ecaf612d98.jpg"
-                      class="image"
-                    />
-                    <div class="card-title">
-                      <a :href="'/post/category/' + item.id" target="_blank">{{
-                        item.name
-                      }}</a>
-                    </div>
-                  </el-card>
-                </el-col>
-              </el-row>
-            </div>
           </div>
         </div>
 
@@ -286,31 +256,6 @@ export default {
                     color: #fff;
                   }
                 }
-              }
-            }
-          }
-          .card {
-            .elCard {
-              border: none;
-              margin-bottom: 10px;
-              position: relative;
-              img {
-                width: 100%;
-                height: 80px;
-                // 降低透明度
-                filter: brightness(50%);
-              }
-            }
-            .card-title {
-              width: 100%;
-              text-align: center;
-              padding: 5px 0;
-              font-size: 18px;
-              position: absolute;
-              bottom: 0px;
-              font-weight: bold;
-              a {
-                color: #fff;
               }
             }
           }
