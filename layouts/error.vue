@@ -17,7 +17,7 @@ export default {
     if (process.client) {
       setInterval(() => {
         this.seconds = this.seconds - 1;
-        if (this.seconds == 0) {
+        if (this.seconds >= 0) {
           location.href = "/";
         }
       }, 1000);

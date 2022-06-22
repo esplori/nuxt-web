@@ -14,7 +14,9 @@
       >
         <el-card>
           <div class="title">
-            <a :href="'/post/' + (item.uid|| item.id)" target="_blank">{{ item.title }}</a>
+            <a :href="'/post/' + (item.uid || item.id)" target="_blank">{{
+              item.title
+            }}</a>
           </div>
 
           <div class="content" v-html="item.content"></div>
@@ -57,7 +59,10 @@ export default {
   methods: {
     async getList() {
       this.page = ++this.page;
-      let res = await getListByCateApi4Brower({ cate: 126, page: this.page || 1 });
+      let res = await getListByCateApi4Brower({
+        cate: 126,
+        page: this.page || 1,
+      });
       if (res && res.data && res.data.result.length) {
         res.data.result = res.data.result.map((item) => {
           item.content = this.deleteHtmlTag(item.content);

@@ -9,7 +9,6 @@
   </div>
 </template>
 <script>
-// import FingerprintJS from "@fingerprintjs/fingerprintjs";
 export default {
   head() {
     return {

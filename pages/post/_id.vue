@@ -10,7 +10,9 @@
             </div>
             <div class="head-info">
               <div class="title">
-                <span class="userName"> {{ detailData.nickname || detailData.createBy}}</span>
+                <span class="userName">
+                  {{ detailData.nickname || detailData.createBy }}</span
+                >
               </div>
               <div class="other-info">
                 <span class="createDate"> {{ detailData.createDate }}</span>
@@ -59,13 +61,17 @@
 </template>
 
 <script>
-import { getDetailApi, getRecomListApi4Brower, getCateApi4Brower } from "./index";
+import {
+  getDetailApi,
+  getRecomListApi4Brower,
+  getCateApi4Brower,
+} from "./index";
 // import "highlight.js/styles/monokai-sublime.css";
 export default {
   components: {
     homeHeader: () => import("@/components/common/homeHeader.vue"),
     comments: () => import("@/components/common/comments.vue"),
-    RecommendRead:()=> import("@/components/common/recommendRead.vue")
+    RecommendRead: () => import("@/components/common/recommendRead.vue"),
   },
   data() {
     return {
@@ -111,7 +117,7 @@ export default {
       postId: route.params.id,
       contentAll: detail.data.result.content,
     };
-    console.log("result",result)
+    console.log("result", result);
     return result;
   },
   methods: {
@@ -219,7 +225,7 @@ export default {
     padding-bottom: 0 !important;
   }
   // .detail-post-content img {
-    // width: 70%;
+  // width: 70%;
   // }
   .detail-post-content p {
     // text-indent: 2rem;

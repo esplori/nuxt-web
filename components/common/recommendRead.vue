@@ -2,8 +2,13 @@
   <div class="postRecommend" v-if="list.length">
     <h3>推荐阅读：</h3>
     <ul>
-      <li v-for="(item,index) in list" :key="index">
-        <a :href="'/post/' + (item.uid || item.id)" target="_blank" rel="noopener noreferrer">{{item.title}}</a>
+      <li v-for="(item, index) in list" :key="index">
+        <a
+          :href="'/post/' + (item.uid || item.id)"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ item.title }}</a
+        >
       </li>
     </ul>
   </div>
@@ -42,16 +47,16 @@ export default {
 };
 </script>
 <style lang="less">
-  .postRecommend{
-    padding: 0 20px;
-    ul{
-      li{
-        list-style-type: disc;
-        padding: 2px 0;
-        &:hover{
-          text-decoration: underline;
-        }
+.postRecommend {
+  padding: 0 20px;
+  ul {
+    li {
+      list-style-type: disc;
+      padding: 2px 0;
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
+}
 </style>

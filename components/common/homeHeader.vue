@@ -61,7 +61,7 @@ export default {
             {
               name: "react教程",
               path: "http://www.dsiab.com/course/react/react.docschina.org/index.html",
-            }
+            },
           ],
         },
         {

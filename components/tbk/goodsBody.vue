@@ -9,7 +9,6 @@
     >
       <div>
         <a><img :src="item.pict_url" alt="" width="160px" height="160px" /></a>
-        <!-- <a><img :src="item.pict_url" alt="" width="160px" height="160px" /></a> -->
         <div class="item-title">{{ item.title }}</div>
         <div class="item-sale-info">
           <div>
@@ -78,7 +77,7 @@ export default {
       .rmbicon {
         font-size: 12px;
       }
-      .volume{
+      .volume {
         font-size: 12px;
       }
     }

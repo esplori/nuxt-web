@@ -9,11 +9,9 @@
                 item.title
               }}</a>
             </div>
-            
+
             <div class="home-post-excerpt">
-              {{
-                deleteHtmlTag(item.content.slice(0, 300))
-              }}
+              {{ deleteHtmlTag(item.content.slice(0, 300)) }}
             </div>
             <div class="home-post-info">
               <span class="create-date el-icon-date">
@@ -47,8 +45,7 @@ export default {
     },
   },
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
     deleteHtmlTag() {
@@ -97,7 +94,7 @@ export default {
         word-break: break-all;
       }
       .home-post-info {
-        padding:5px 0;
+        padding: 5px 0;
         font-size: 12px;
         color: #424242;
         // border-top: 1px dashed #ddd;
@@ -120,7 +117,7 @@ export default {
       .post-item {
         display: flex;
         align-items: center;
-        .item-info{
+        .item-info {
           width: 100%;
         }
         .img-box {
