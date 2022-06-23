@@ -50,7 +50,6 @@ export default {
 
         // This is the visitor identifier:
         const visitorId = result.visitorId;
-        // console.log(visitorId);
         setTimeout(() => {
           _this.initWebStat(visitorId);
         }, 200);

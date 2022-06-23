@@ -117,7 +117,6 @@ export default {
       postId: route.params.id,
       contentAll: detail.data.result.content,
     };
-    console.log("result", result);
     return result;
   },
   methods: {

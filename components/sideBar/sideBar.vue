@@ -49,8 +49,9 @@
           <ul>
             <li v-for="(item, index) in recommandList" :key="index">
               <div class="title">
-                <a :href="'/post/' + (item.id)||item.id" target="_blank">
-                  <span class="list-index">{{index + 1}}</span>{{item.title }}
+                <a :href="'/post/' + item.id || item.id" target="_blank">
+                  <span class="list-index">{{ index + 1 }}</span
+                  >{{ item.title }}
                 </a>
               </div>
               <div class="excerpt">
@@ -84,7 +85,7 @@
                 ><span
                   class="tag-item"
                   :style="{ background: randomRgbColor() }"
-                  >{{ item.keyword }}({{ item.num }})</span
+                  >{{ item.keyword }}</span
                 ></a
               >
             </li>
@@ -99,7 +100,7 @@ import {
   getRecomListApi4Brower,
   getCateApi4Brower,
   getTagsApi4Brower,
-  getTopicListApi
+  getTopicListApi,
 } from "../../pages/post/index";
 export default {
   props: {},
@@ -118,7 +119,7 @@ export default {
     async getTopicList() {
       let res = await getTopicListApi({});
       if (res) {
-        this.topicList = res.data.result|| [];
+        this.topicList = res.data.result || [];
       }
     },
     async getRecomList(type) {
@@ -139,16 +140,16 @@ export default {
     },
     randomRgbColor() {
       // 随机生成RGB颜色
-      let colorList = ["#409eff", "#67c23a", "#909399", "#e6a23c", "#f56c6c"];
+      let colorList = ["#409eff", "#67c23a", "#e6a23c", "#f56c6c"];
       //随机生成5种颜色中的其中一种
-      let max = 4;
+      let max = 3;
       let min = 0;
       return colorList[Math.floor(Math.random() * (max - min + 1) + min)];
     },
     async getCate() {
       let res = await getCateApi4Brower({});
       if (res) {
-        this.cateList = res.data.result;
+        this.cateList = res.data.result.slice(0, 12);
       }
     },
     async getTags() {
@@ -169,7 +170,7 @@ export default {
       // 查标签
       this.getTags();
       // 查分类
-      this.getTopicList()
+      this.getTopicList();
     }
     // side 1
     (window.slotbydup = window.slotbydup || []).push({
@@ -238,16 +239,17 @@ export default {
     }
   }
   .module > ul > li {
-    padding: 10px 0;
+    padding: 5px 0;
     border-bottom: 1px solid #eaeeef;
     a:hover {
       color: #06c;
     }
     .title {
       font-size: 14px;
-      padding: 10px 0;
-      font-weight: 400;
-      word-break: break-all;
+      padding: 5px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .excerpt {
       color: #828a92;
@@ -257,8 +259,8 @@ export default {
       font-size: 12px;
       color: #999;
     }
-    .list-index{
-      color: #06c;
+    .list-index {
+      color: #828a92;
       background: #e6f1fb;
       padding: 0 5px;
       margin-right: 10px;
