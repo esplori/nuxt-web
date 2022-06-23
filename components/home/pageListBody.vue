@@ -86,12 +86,15 @@ export default {
       .home-post-title a:hover {
         color: #06c;
       }
+      // 文字超出显示...
       .home-post-excerpt {
         padding: 10px 0;
         line-height: 22px;
         font-size: 14px;
         color: #424242;
-        word-break: break-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
       }
       .home-post-info {
         padding: 5px 0;

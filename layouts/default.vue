@@ -25,7 +25,7 @@ export default {
     display: flex;
     justify-content: space-between;
     .nuxt-router {
-      width: 100%;
+      max-width: 895px;
     }
     .layouts-sideBar {
       width: 385px;
