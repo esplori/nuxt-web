@@ -11,28 +11,29 @@
 
 ### 项目介绍：
 
-- 主要技术: Nuxtjs 2.0 、ElementUI 2.0
+- 主要技术: nuxtjs 2.0 、element-ui 2.0
 
-- 主要使用插件： axios（请求）  、 less（css编译） 、 highlight.js（代码高亮） 、 @nuxtjs/component-cache （缓存）
+- 主要使用插件： axios、 less 、 highlight.js、 component-cache
   
-- 适合小型站点、个人网站
+### 目标用户
+
+- 小型站点、个人网站
+
 
 
 ### 关联项目
 
+* 后台管理项目： <a href="https://gitee.com/wilkwo/vueAdmin">vueAdmin</a>
 
-* 后台管理：vueAdmin ( https://gitee.com/wilkwo/vueAdmin 、https://github.com/esplori/vueAdmin.git) 
+* 后台管理地址：http://admin.dsiab.com
+
+- 体验账号： test / test
   
-* 地址：http://admin.dsiab.com
-
-* 测试账号、密码：test / test
 
 
 ### 演示地址
 
 * 官网：[https: //www.dsiab.com](https://www.dsiab.com)
-
-* 拉取代码后运行可看到效果（如果报错请配置跨域），不用跑后端服务，直接调用官网接口。
 
 
 
@@ -66,7 +67,8 @@
 
 ```bash
 
-# 下载代码，
+# 下载代码
+
 github: git clone https://gitee.com/wilkwo/nuxt-web.git
 
 或者
@@ -91,6 +93,11 @@ $ npm run start
 $ npm run generate
 ```
 
+* 默认调用官网接口，数据跟官网同步
+  
+* 如果要使用本地接口，请修改/plugins/baseUrl.js 文件中的baseUrl
+  
+* 如果想要在浏览器端调用接口，请修改nuxt.config.js文件中的proxy, 将对应接口转发至本地服务即可
 
 ### 感谢赞赏
 
