@@ -41,12 +41,13 @@ export default {
 .goodBodyComp {
   display: flex;
   flex-wrap: wrap;
+  padding: 5px;
   .tbk-item:hover {
     border: 1px solid #ff5000;
   }
   .tbk-item {
     display: inline-block;
-    width: 160.8px;
+    width: 157px;
     padding: 8px;
     border: 1px solid #f4f4f4;
     cursor: pointer;
