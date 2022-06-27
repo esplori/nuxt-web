@@ -5,9 +5,9 @@
         <div>
           <h1 class="detail-post-title">{{ detailData.title }}</h1>
           <div class="post-info">
-            <div class="avatar">
+            <!-- <div class="avatar">
               <i class="profile-photo"></i>
-            </div>
+            </div> -->
             <div class="head-info">
               <div class="title">
                 <span class="userName">
@@ -292,7 +292,7 @@ export default {
           background-size: cover;
         }
         .head-info {
-          padding: 0 10px;
+          padding: 0 10px 0 0;
           .other-info {
             font-size: 14px;
             color: #969696;
