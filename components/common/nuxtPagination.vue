@@ -49,18 +49,17 @@ export default {
         let list = [
           left2,
           left1,
-          this.currentPage,
-          this.currentPage + 1,
-          this.currentPage + 2,
-        ].filter((item) => {
-          return item;
-        });
-        // 保持显示五个页码
-        if (list.length < 5) {
-          list.push(list[list.length - 1] + 1);
-        }
-        if (list.length < 5) {
-          list.push(list[list.length - 1] + 1);
+          this.currentPage
+        ]
+        if (this.currentPage <=totalPage) {
+          if (this.currentPage + 1 <=totalPage) {
+            list = list.concat([this.currentPage + 1])
+          }
+          if (this.currentPage + 2 <=totalPage) {
+            list = list.concat([this.currentPage + 2,])
+          }
+        } else{
+          return
         }
         return list;
       } else {
