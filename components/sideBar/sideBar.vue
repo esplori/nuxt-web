@@ -49,7 +49,7 @@
           <ul>
             <li v-for="(item, index) in recommandList" :key="index">
               <div class="title">
-                <a :href="'/post/' + item.id || item.id" target="_blank">
+                <a :href="'/post/' + (item.uid || item.id)" target="_blank">
                   <span class="list-index">{{ index + 1 }}</span
                   >{{ item.title }}
                 </a>
