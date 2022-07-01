@@ -14,20 +14,20 @@ export default {
     return {
       script: [
         { src: "https://cpro.baidustatic.com/cpro/ui/cm.js" },
-        { src: "https://source.dsiab.com/compress-js/dist/js/fp.min.js" },
-        { src: "https://source.dsiab.com/compress-js/dist/js/WebStats.js" },
+        { src: "https://unpkg.com/webstatistics/index.js" },
       ],
     };
   },
   mounted() {
     if (process.client) {
       // 添加统计
-      this.initFingerprint();
+      this.initWebStat();
     }
   },
   methods: {
-    initWebStat(visitorId) {
-      let webStats = new WebStats({
+    initWebStat() {
+      debugger
+      new webStatistics({
         baseUrl: "/bootService", // 基础接口地址url
         url: "/stats/getStats.gif", // 请求上报api的接口地址
         routeMode: "history", // 填写单页面应用中使用的路由模式。
@@ -37,23 +37,6 @@ export default {
           id: "visitorId",
         },
       });
-      webStats.setUserId(visitorId);
-    },
-    initFingerprint() {
-      let _this = this;
-      // Initialize an agent at application startup.
-      const fpPromise = FingerprintJS.load();
-      (async () => {
-        // Get the visitor identifier when you need it.
-        const fp = await fpPromise;
-        const result = await fp.get();
-
-        // This is the visitor identifier:
-        const visitorId = result.visitorId;
-        setTimeout(() => {
-          _this.initWebStat(visitorId);
-        }, 200);
-      })();
     },
   },
 };

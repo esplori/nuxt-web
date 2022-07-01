@@ -11,7 +11,6 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "@fingerprintjs/fingerprintjs": "^3.3.0",
     "@nuxtjs/component-cache": "^1.1.6",
     "@nuxtjs/proxy": "^2.0.1",
     "axios": "^0.21.0",
