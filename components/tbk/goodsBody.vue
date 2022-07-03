@@ -47,7 +47,7 @@ export default {
   }
   .tbk-item {
     display: inline-block;
-    width: 157px;
+    width: 180px;
     padding: 8px;
     border: 1px solid #f4f4f4;
     cursor: pointer;
