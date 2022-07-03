@@ -20,12 +20,13 @@ export default {
 <style lang="less" scoped>
 .nuxt-router {
   .router {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 10px auto;
     display: flex;
     justify-content: space-between;
     .nuxt-router {
-      max-width: 895px;
+      width:100%;
+      max-width: 815px;
     }
     .layouts-sideBar {
       width: 385px;

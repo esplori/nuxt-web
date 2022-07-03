@@ -104,7 +104,7 @@ export default {
     border-bottom: none;
   }
   .site-info {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
