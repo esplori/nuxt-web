@@ -14,7 +14,7 @@ export default {
     return {
       script: [
         { src: "https://cpro.baidustatic.com/cpro/ui/cm.js" },
-        { src: "https://unpkg.com/webstatistics/index.js" },
+        { src: "https://source.dsiab.com/plugins/webstatistics.js" },
       ],
     };
   },
