@@ -56,11 +56,11 @@ export default {
             },
             {
               name: "less教程",
-              path: "http://www.dsiab.com/course/less/less.bootcss.com/index.html",
+              path: "http://source.dsiab.com/course/less/less.bootcss.com/index.html",
             },
             {
               name: "react教程",
-              path: "http://www.dsiab.com/course/react/react.docschina.org/index.html",
+              path: "http://source.dsiab.com/course/react/react.docschina.org/index.html",
             },
           ],
         },
@@ -70,10 +70,10 @@ export default {
           children: [
             {
               name: "java教程",
-              path: "http://www.dsiab.com/course/how2j/default.html",
+              path: "http://source.dsiab.com/course/how2j/default.html",
             },
-            { name: "c语言教程", path: "http://www.dsiab.com/course/C/" },
-            { name: "mysql教程", path: "http://www.dsiab.com/course/mysql/" },
+            { name: "c语言教程", path: "http://source.dsiab.com/course/C/" },
+            { name: "mysql教程", path: "http://source.dsiab.com/course/mysql/" },
           ],
         },
         { name: "大事记", path: "/bigEvents" },
