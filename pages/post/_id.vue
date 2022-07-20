@@ -21,8 +21,8 @@
               </div>
             </div>
           </div>
+          <div class="_utrtw8kq5so"></div>
           <div v-html="detailData.content" class="detail-post-content"></div>
-          <!-- <div class="_utrtw8kq5so"></div> -->
           <div class="_cwvxpd9dl8s"></div>
         </div>
         <div>
@@ -199,7 +199,7 @@ export default {
       this.getCate();
       // 添加图片放大功能
       this.addImgEvent();
-      // 底部
+      // 底部广告
       (window.slotbydup = window.slotbydup || []).push({
         id: "u6324927",
         container: "_cwvxpd9dl8s",
@@ -207,12 +207,12 @@ export default {
       });
     }
 
-    // 底部
-    // (window.slotbydup = window.slotbydup || []).push({
-    //   id: "u6324930",
-    //   container: "_utrtw8kq5so",
-    //   async: true,
-    // });
+    // 顶部广告
+    (window.slotbydup = window.slotbydup || []).push({
+      id: "u6324930",
+      container: "_utrtw8kq5so",
+      async: true,
+    });
   },
 };
 </script>
