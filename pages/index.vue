@@ -167,6 +167,7 @@ export default {
       if (res) {
         this.siteInfo = res.data
         this.carouselList = JSON.parse(res.data.carouselUrl);
+        localStorage.setItem("siteInfo",JSON.stringify(this.siteInfo))
       }
     },
   },
