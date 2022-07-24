@@ -91,7 +91,7 @@ export default {
         padding: 10px 0;
         line-height: 22px;
         font-size: 14px;
-        color: #424242;
+        color: #8c8c8c;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
