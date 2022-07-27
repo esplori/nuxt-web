@@ -57,15 +57,15 @@ export default {
     //   context.nuxt = {serverRendered: true,routePath}
     // }
   },
-  // axios: {
-  //   proxy: true
-  // },
-  // proxy: {
-  //   '/bootService': {
-  //     // target: 'http://localhost:8091/'
-  //     target: 'http://admin.dsiab.com/'
-  //   }
-  // },
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/bootService': {
+      // target: 'http://localhost:8091/'
+      target: 'http://admin.dsiab.com/'
+    }
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
