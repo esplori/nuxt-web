@@ -17,7 +17,7 @@
               <div class="other-info">
                 <span class="createDate"> {{ detailData.createDate }}</span>
                 <span>阅读: {{ detailData.views }} </span>
-                <!-- <span>分类: {{ detailData.cateName }} </span> -->
+                <span>字数: {{ detailData.wordsNum }} </span>
               </div>
             </div>
           </div>
