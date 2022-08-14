@@ -17,7 +17,6 @@
               <div class="other-info">
                 <span class="createDate"> {{ detailData.createDate }}</span>
                 <span>阅读: {{ detailData.views }} </span>
-                <span>字数: {{ detailData.wordsNum }} </span>
                 <span v-if="detailData.wordsNum">字数: {{ detailData.wordsNum }} </span>
               </div>
             </div>
