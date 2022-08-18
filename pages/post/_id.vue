@@ -52,8 +52,8 @@
     <el-dialog
       custom-class="custom-dialog-class"
       :visible.sync="dialogVisible"
-      style="height: 80%"
       :show-close="false"
+      width="50%"
     >
       <img :src="imgUrl" alt="" id="bigImg" />
     </el-dialog>
