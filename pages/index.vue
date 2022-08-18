@@ -60,6 +60,7 @@
               </div>
             </div>
             <div class="_lrzdvi6yazm"></div>
+            <a href="https://curl.qcloud.com/tcHI6pAl"><img src="../assets/img/tencent_tg.jpg" width="100%" alt=""></a>
           </div>
         </div>
 
