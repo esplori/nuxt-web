@@ -26,6 +26,9 @@
             <a href="/tbk" target="_blank">优乐购</a>
           </el-menu-item>
           <el-menu-item>
+            <a href="https://source.dsiab.com/games/index.html" target="_blank">在线游戏</a>
+          </el-menu-item>
+          <el-menu-item>
             <a href="/post/13">关于</a>
           </el-menu-item>
           <el-menu-item>
