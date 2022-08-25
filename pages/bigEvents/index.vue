@@ -85,6 +85,9 @@ export default {
       font-weight: bold;
       padding-bottom: 15px;
       border-bottom: 1px solid #f5f5f5;
+      a{
+        font-size: 1.5rem;
+      }
     }
 
     .content {

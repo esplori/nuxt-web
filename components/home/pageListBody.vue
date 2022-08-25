@@ -80,7 +80,7 @@ export default {
       .home-post-title a {
         color: #424242;
         // font-weight: bold;
-        font-size: 20px;
+        font-size: 1.5rem;
         text-overflow: ellipsis;
       }
       .home-post-title a:hover {
@@ -90,7 +90,7 @@ export default {
       .home-post-excerpt {
         padding: 10px 0;
         line-height: 22px;
-        font-size: 14px;
+        font-size: 1rem;
         color: #8c8c8c;
         text-overflow: ellipsis;
         overflow: hidden;

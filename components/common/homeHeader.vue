@@ -112,12 +112,19 @@ export default {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    .site-name {
-      font-size: 22px;
-      cursor: pointer;
-    }
-    .menu {
+    .menu{
       width: 100%;
+      display: flex;
+      align-items: center;
+      .el-menu-item{
+        font-size: 1.2rem;
+      }
+      .el-submenu__title{
+        font-size: 1.2rem;
+      }
+      .el-menu--horizontal>.el-submenu .el-submenu__title{
+        line-height: 65px;
+      }
     }
   }
 }
