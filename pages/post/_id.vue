@@ -227,6 +227,7 @@ export default {
   // width: 70%;
   // }
   .detail-post-content p {
+    font-size: 1.2rem;
     // text-indent: 2rem;
     padding: 0 0 20px 0;
   }
@@ -264,7 +265,7 @@ export default {
       box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
       .detail-post-title {
         color: #141414;
-        font-size: 18px;
+        font-size: 1.5rem;
         margin-bottom: 5px;
       }
       .post-info {
