@@ -324,12 +324,15 @@ export default {
       }
       .copy-desc {
         padding: 20px 10px;
-        font-size: 12px;
         background: #f5f5f5;
         word-break: break-all;
         border-radius: 5px;
+        div{
+          font-size: 1rem ;
+        }
       }
       .tags {
+        font-size: 1.2rem;
         padding: 20px 0;
         a {
           margin-right: 10px;

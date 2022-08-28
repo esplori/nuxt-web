@@ -51,6 +51,7 @@ export default {
   padding: 0 20px;
   ul {
     li {
+      font-size: 1.2rem;
       list-style-type: disc;
       padding: 2px 0;
       &:hover {
