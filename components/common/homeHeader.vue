@@ -79,6 +79,14 @@ export default {
             { name: "mysql教程", path: "http://source.dsiab.com/course/mysql/" },
           ],
         },
+        {
+          name: "文学鉴赏",
+          path: "",
+          children: [
+            { name: "诗词鉴赏", path: "https://www.dsiab.com/post/category/137" },
+            { name: "网络文学", path: "https://www.dsiab.com/post/category/160" },
+          ],
+        },
         { name: "大事记", path: "/bigEvents" },
       ],
     };
