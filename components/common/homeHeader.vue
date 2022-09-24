@@ -71,10 +71,6 @@ export default {
           name: "后端教程",
           path: "",
           children: [
-            {
-              name: "java教程",
-              path: "http://source.dsiab.com/course/how2j/default.html",
-            },
             { name: "c语言教程", path: "http://source.dsiab.com/course/C/" },
             { name: "mysql教程", path: "http://source.dsiab.com/course/mysql/" },
           ],
