@@ -36,6 +36,11 @@
               >更新日志</a
             >
           </el-menu-item>
+          <el-menu-item>
+            <a href="http://admin.dsiab.com/#/login" target="_blank"
+              >登录</a
+            >
+          </el-menu-item>
         </el-menu>
       </div>
     </div>
