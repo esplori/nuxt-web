@@ -11,8 +11,7 @@
             <div class="head-info">
               <div class="title">
                 <span class="userName">
-                  {{ detailData.nickname || detailData.createBy }}</span
-                >
+                  {{ detailData.nickname || detailData.createBy }}</span>
               </div>
               <div class="other-info">
                 <span class="createDate"> {{ detailData.createDate }}</span>
@@ -27,13 +26,8 @@
         </div>
         <div>
           <div class="tags" v-if="detailData.keywords">
-            标签：<a
-              :href="'/post/tags/' + item"
-              v-for="(item, index) in detailData.keywords.split(',')"
-              :key="index"
-              target="_blank"
-              >{{ item }}</a
-            >
+            标签：<a :href="'/post/tags/' + item" v-for="(item, index) in detailData.keywords.split(',')" :key="index"
+              target="_blank">{{ item }}</a>
           </div>
           <div class="copy-desc">
             <div>
@@ -49,12 +43,7 @@
       </div>
     </div>
 
-    <el-dialog
-      custom-class="custom-dialog-class"
-      :visible.sync="dialogVisible"
-      :show-close="false"
-      width="50%"
-    >
+    <el-dialog custom-class="custom-dialog-class" :visible.sync="dialogVisible" :show-close="false" width="50%">
       <img :src="imgUrl" alt="" id="bigImg" />
     </el-dialog>
   </div>
@@ -223,20 +212,29 @@ export default {
   .image-container-fill {
     padding-bottom: 0 !important;
   }
-  // .detail-post-content img {
-  // width: 70%;
-  // }
+
+  .detail-post-content {
+    blockquote {
+      background: #f5f5f5 !important;
+      padding: 10px !important;
+      margin: 0 !important;
+    }
+  }
+
   .detail-post-content p {
     font-size: 1.2rem;
     // text-indent: 2rem;
     padding: 0 0 20px 0;
   }
+
   #bigImg {
     width: 100%;
   }
+
   .el-dialog.custom-dialog-class .el-dialog__body {
     padding: 0;
   }
+
   .el-dialog.custom-dialog-class .el-dialog__header {
     padding: 0;
   }
@@ -247,14 +245,18 @@ export default {
   ._cwvxpd9dl8s {
     display: none;
   }
+
   ._utrtw8kq5so {
     display: none;
   }
 }
+
 #post-id {
+
   .home-body {
     display: flex;
     justify-content: space-between;
+
     .left-body {
       width: 100%;
       display: flex;
@@ -263,11 +265,13 @@ export default {
       background: #fff;
       padding: 20px;
       box-shadow: 0 0 20px rgba(210, 211, 216, 0.3);
+
       .detail-post-title {
         color: #141414;
         font-size: 1.5rem;
         margin-bottom: 5px;
       }
+
       .post-info {
         // border-top: 1px dashed #ddd;
         // border-bottom: 1px dashed #ddd;
@@ -277,31 +281,37 @@ export default {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+
         span {
           margin-right: 10px;
         }
+
         .avatar {
           display: flex;
         }
+
         .profile-photo {
           display: inline-block;
           width: 46px;
           height: 46px;
           border-radius: 50%;
-          background: url("https://source.dsiab.com/upload/bb4f38bd-160a-4e89-9697-2733231a8f84.jpg")
-            no-repeat;
+          background: url("https://source.dsiab.com/upload/bb4f38bd-160a-4e89-9697-2733231a8f84.jpg") no-repeat;
           background-size: cover;
         }
+
         .head-info {
           padding: 0 10px 0 0;
+
           .other-info {
             font-size: 14px;
             color: #969696;
           }
+
           .userName {
             font-size: 14px;
             font-weight: bold;
           }
+
           .createDate {
             font-size: 14px;
             color: #969696;
@@ -321,25 +331,31 @@ export default {
         word-break: break-word;
         white-space: normal;
         overflow-x: auto;
+
       }
+
       .copy-desc {
         padding: 20px 10px;
         background: #f5f5f5;
         word-break: break-all;
         border-radius: 5px;
-        div{
-          font-size: 1rem ;
+
+        div {
+          font-size: 1rem;
         }
       }
+
       .tags {
         font-size: 1.2rem;
         padding: 20px 0;
+
         a {
           margin-right: 10px;
           text-decoration: underline;
         }
       }
     }
+
     // .right-sidebar {
     //   max-width: 385px;
     // }
@@ -348,6 +364,7 @@ export default {
       //   display: none;
       // }
     }
+
     .side-bar {
       padding: 20px;
       background: #fff;
