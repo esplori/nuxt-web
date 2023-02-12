@@ -15,7 +15,7 @@
 
 - 主要使用插件： axios、 less 、 highlight.js、 component-cache
   
-- 加qq群一起交流：514450699
+ - 加qq群一起交流：514450699
 
 
 
