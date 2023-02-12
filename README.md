@@ -15,9 +15,6 @@
 
 - 主要使用插件： axios、 less 、 highlight.js、 component-cache
   
-### 目标用户
-
-- 小型站点、个人网站
 - 加qq群一起交流：514450699
 
 
@@ -48,8 +45,6 @@
 
 ### 不足
 
-- 由于Nuxt采用服务端渲染，所以影响页面打开速度的因素很多，包括页面内容大小，服务器性能，网络带宽等。nuxt项目可以将页面的主要内容进行服务端渲染，其他不用考虑搜索引擎的的内容可以在浏览器渲染，即在页面加载完成后再进行ajax请求，这样可以大大减少服务器压力。
-
 - element-ui部分功能对搜索引擎及seo不够友好，部分组件需要手写或者在element-ui的基础上做修改。比如菜单部分、分页组件都需要进行修改，因为没有a链接, 而a链接对搜索引擎比较友好。本项目有重写分页组件，方便seo,当然你也可以选择其他组件库或者不用组件库。
 
 
@@ -75,21 +70,14 @@ github: git clone https://gitee.com/wilkwo/nuxt-web.git
 
 gitee: git clone https://github.com/esplori/nuxt-web.git
 
-
 # 安装依赖
 $ npm install
-
 # 本地启动在 localhost:3000
 $ npm run dev
-
 # 部署到服务器，先build，再执行start启动
-
 $ npm run build
-
 $ npm run start
-
 # 生成静态项目
-
 $ npm run generate
 ```
 
