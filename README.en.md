@@ -1,4 +1,4 @@
-<div><a href="https://gitee.com/wilkwo/nuxt-web/blob/master/README.md">中文</a>  |  <a href="https://gitee.com/wilkwo/nuxt-web/blob/master/README.en.md">english</a></div>
+<div><a href="https://gitee.com/wilkwo/nuxt-web/blob/master/README.md">中文</a>  |  <a href="https://gitee.com/wilkwo/nuxt-web/blob/master/README.en.md">ENGLISH</a></div>
 
 <h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">nuxt-web</h1>
 <h4 align="center">Blog system developed based on nuxtjs</h4>

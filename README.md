@@ -1,5 +1,5 @@
 
-<div><a href="https://gitee.com/wilkwo/nuxt-web/blob/master/README.md">中文</a>  |  <a href="https://gitee.com/wilkwo/nuxt-web/blob/master/README.en.md">english</a></div>
+<div><a href="https://gitee.com/wilkwo/nuxt-web/blob/master/README.md">中文</a>  |  <a href="https://gitee.com/wilkwo/nuxt-web/blob/master/README.en.md">ENGLISH</a></div>
 
 <h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">nuxt-web</h1>
 <h4 align="center">基于nuxtjs开发的博客系统</h4>
@@ -38,7 +38,7 @@
 
 - nuxt开发的项目能被搜索引擎收录,能进行seo。
 
-- 上手简单，语法跟vue基本一致，部分写法有差异，只需要将文件按目录新建好，nuxt会自动生成对应路由。
+- 上手简单，语法跟vue一致，部分写法有差异，只需要将文件按目录新建好，nuxt会自动生成对应路由。
 
 - 能正常接入统计跟广告代码
 
@@ -80,12 +80,13 @@ $ npm run start
 # 生成静态项目
 $ npm run generate
 ```
+### 注意
 
-* 默认调用官网接口，数据跟官网同步
+- 默认调用官网接口，数据跟官网同步
   
-* 如果要使用本地接口，请修改/plugins/baseUrl.js 文件中的baseUrl
+- 如果要使用本地接口，请修改/plugins/baseUrl.js 文件中的baseUrl
   
-* 如果想要在浏览器端调用接口，请修改nuxt.config.js文件中的proxy, 将对应接口转发至本地服务即可
+- 如果想要在浏览器端调用接口，请修改nuxt.config.js文件中的proxy, 将对应接口转发至本地服务即可
 
 
 ### 感谢赞赏
